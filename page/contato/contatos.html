@@ -1,29 +1,73 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contatos</title>
-  <link rel="stylesheet" href="contatos.css" />
-  <script src="../../script/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Planttools</title>
+  <link rel="stylesheet" href="contatos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="logo">PLANTTOOLS</div>
-    <nav>
-      <ul>
-        <li><a href="/index.html">Início</a></li>
-        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
-        <li><a href="../servico/servicos.html">Serviços</a></li>
-        <li><a href="../contato/contatos.html" class="active" >Contatos</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1 class="logo">PLANTTOOLS</h1>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html">Serviços</a></li>
+          <li><a href="contatos.html" class="active">Contatos</a></li>
+          <div class="profile-menu-container">
+          <img src="img/perfil.png" alt="Perfil" class="profile-icon" id="profileIcon">
+          <div class="profile-dropdown" id="profileDropdown">
+            <a href="login/index.html">Login</a>
+          </div>
+          </div>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <h1>Contatos</h1>
-    <p>Entre em contato conosco pelo e-mail contato@planttools.com ou nos siga nas redes sociais.</p>
+    <section class="contact-section">
+      <div class="contact-info">
+        <h2>Contato</h2>
+        <p>
+          Inserir um pouquinho de texto Inserir um pouquinho de texto Inserir um pouquinho de texto Inserir um pouquinho de texto
+        </p>
+
+        <div class="info-item">
+          <span>📧</span>
+          <p>planttools@gmail.com</p>
+        </div>
+
+        <div class="info-item">
+          <span>📞</span>
+          <p>12345678</p>
+        </div>
+
+        <div class="info-item">
+          <span>📍</span>
+          <p>quinto dos infernos, 6</p>
+        </div>
+
+        <div class="info-item">
+          <span>🌐</span>
+          <p>www.planttools.com</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Entre em contato</h3>
+        <form>
+          <input type="text" placeholder="Nome" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Mensagem" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
   </main>
 </body>
 </html>
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Planta - Planttools</title>
+  <link rel="stylesheet" href="/page/planta/planta.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">PLANTTOOLS</h1>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html">Serviços</a></li>
+          <li><a href="contatos.html" class="active">Contatos</a></li>
+          <div class="profile-menu-container">
+          <img src="img/perfil.png" alt="Perfil" class="profile-icon" id="profileIcon">
+          <div class="profile-dropdown" id="profileDropdown">
+            <a href="login/index.html">Login</a>
+          </div>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="planta-container">
+      <div class="planta-card">
+        <div class="planta-icon">
+          <img src="/img/cadastroplanta.png" alt="cadastroplanta">
+        </div>
+        <h2>Registrar Planta</h2>
+        <form>
+          <label for="tipo">Tipo de planta</label>
+          <select id="tipo" required>
+            <option>Vegetal</option>
+            <option>Fruta</option>
+            <option>Flor</option>
+          </select>
+
+          <label for="planta">Planta</label>
+          <select id="planta" required>
+            <option>Berinjela</option>
+            <option>Tomate</option>
+            <option>Rosa</option>
+            <option>Maçã</option>
+          </select>
+
+          <label for="nome">Nome da planta</label>
+          <input type="text" id="nome" placeholder="Ex: Nathan Lindo" required>
+          <label for="local">Local que vai plantar</label>
+          <select id="local" required>
+            <option>Num vaso</option>
+            <option>No jardim</option>
+            <option>Estufa</option>
+          </select>
+
+          <div class="medidas">
+            <div>
+              <label for="medida">Medida do local</label>
+              <input type="text" id="medida" placeholder="cm">
+            </div>
+            <div>
+              <label for="ph">pH <a href="#">(Não sabe o pH?)</a></label>
+              <input type="number" id="ph" value="7">
+            </div>
+          </div>
+
+          <button type="submit">Registrar Planta</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
