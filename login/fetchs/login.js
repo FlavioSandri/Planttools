@@ -34,7 +34,7 @@ async function login(data) {
         } else {
             localStorage.setItem('token', JSON.stringify(resp.tokenUsuario))
             localStorage.setItem('dadosUsuario', JSON.stringify(resp.dadosUsuario))
-            window.location.href = './index.js'
+            window.location.href = '../../index.html'
         }
     } catch (error) {
         alert(error)

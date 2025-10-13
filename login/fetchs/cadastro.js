@@ -26,11 +26,12 @@ async function cadastrar(data) {
             body: JSON.stringify(data)
         })
 
-        if (response.ok) {
+        console.log(response)
+        if (response.status !== 409) {
             alert('Cadastro realizado com sucesso!');
             window.location.href = 'index.html'
         } else {
-            alert(`Ops... ${data.message || 'Falha no cadastro'}`)
+            alert(`Ops... ${response.erro || 'Falha no cadastro'}`)
         }
     } catch (error) {
         console.error('Erro no cadastro:', error.message);
