@@ -9,7 +9,7 @@ main {
   background-color: #ffffff;
   width: 95vw; 
   max-width: 1600px;
-  margin: 20px auto; 
+  margin: 15px auto; /* Reduzida a margem superior */
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -19,9 +19,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px; /* Já ajustado no sidebar.css */
   background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  height: 60px; /* Altura fixa menor */
 }
 
 .logo {

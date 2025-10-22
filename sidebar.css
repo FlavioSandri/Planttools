@@ -1,0 +1,182 @@
+/* Estilos para o menu hambúrguer e sidebar */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+    margin-left: auto;
+}
+  
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #1f4032;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+  
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+  
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+  
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+  
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff;
+    transition: right 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+    visibility: hidden;
+    /* REMOVIDA A SOMBRA */
+}
+  
+.sidebar.active {
+    right: 0;
+    visibility: visible;
+}
+
+.sidebar-content {
+    padding: 70px 25px 30px; /* Reduzido o padding-top para ficar mais próximo do header */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+  
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+}
+  
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+  
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 auto 0;
+}
+  
+.sidebar-menu li {
+    margin-bottom: 5px; /* Reduzido o espaçamento entre os itens */
+}
+  
+.sidebar-menu a {
+    display: block;
+    text-decoration: none;
+    color: #1f4032;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 16px; /* Reduzido o padding vertical */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+  
+.sidebar-menu a:hover {
+    background-color: #d2edc3;
+    border-left: 3px solid #1f4032;
+    padding-left: 20px;
+}
+  
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    padding: 15px 0 0 0; /* Reduzido o padding */
+    border-top: 2px solid #e8f4e1;
+    margin-top: 15px; /* Reduzida a margem */
+}
+  
+.sidebar-profile img {
+    width: 40px; /* Reduzido o tamanho */
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #d2edc3;
+}
+  
+.sidebar-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Reduzido o gap */
+}
+  
+.sidebar-profile-info a {
+    text-decoration: none;
+    color: #1f4032;
+    font-size: 0.9rem; /* Reduzida a fonte */
+    padding: 5px 10px; /* Reduzido o padding */
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.sidebar-profile-info a:hover {
+    background-color: #d2edc3;
+}
+
+/* Estilos para header - DIMINUIR A ALTURA */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px; /* Reduzido o padding vertical */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    position: relative;
+    z-index: 1000;
+    height: 60px; /* Altura fixa menor */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1rem; /* Reduzida a fonte se necessário */
+    margin: 0;
+}
+
+/* Para telas maiores - esconder navegação desktop e mostrar apenas hamburger */
+@media (min-width: 769px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+    }
+}
+
+/* Para telas menores - também mostrar hamburger */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+    }
+}
