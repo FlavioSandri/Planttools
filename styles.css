@@ -314,3 +314,100 @@ nav a.active {
   color: #333;
   line-height: 1.4;
 }
+
+
+/* Efeito Flip Card */
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 200px;
+  perspective: 1000px;
+  border-radius: 15px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flip-card-front {
+  background-color: #d9f2cc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back {
+  background-color: #1f4032;
+  color: white;
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteúdo do card frontal (mantém o estilo original) */
+.flip-card-front h3 {
+  color: #1f4032;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.flip-card-front p {
+  color: #1f4032;
+  font-size: 14px;
+}
+
+.flip-card-front button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #1f4032;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Conteúdo do card traseiro */
+.flip-card-back h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.flip-card-back p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.flip-card-back button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #d9f2cc;
+  color: #1f4032;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
