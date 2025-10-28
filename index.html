@@ -6,10 +6,11 @@
   <title>Planttools</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sidebar.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Sidebar DEVE vir antes do container principal -->
+  <!-- Sidebar -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-content">
       <ul class="sidebar-menu">
@@ -32,126 +33,228 @@
   <!-- Overlay do Sidebar -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <div class="container">
-    <header>
-      <h1 class="logo">PLANTTOOLS</h1>
-      <nav class="desktop-nav">
-        <ul>
-          <li><a href="">Início</a></li>
-          <li><a href="page/sobre/sobre.html">Sobre Nós</a></li>
-          <li><a href="page/servico/servicos.html">Serviços</a></li>
-          <li><a href="page/contato/contatos.html">Contatos</a></li>
+  <!-- Header estilo Nike -->
+  <header class="nike-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="#" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Início</a></li>
+          <li><a href="page/sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="page/servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="page/contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="page/guia/guias.html" class="nav-link">Guias</a></li>
         </ul>
       </nav>
-      
-      <!-- Menu Hambúrguer -->
-      <div class="hamburger-menu" id="hamburgerMenu">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícone Plantas (substitui o coração) -->
+        <a href="/page/planta/planta.html" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="/page/planta/planta.html" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="page/contato/contatos.html" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="intro">
-        <div class="intro-text">
-          <div class="main-title">Planttools</div>
-          <div class="subtitle">AJUDANDO VOCÊ A<br>CULTIVAR PLANTAS</div>
-          <p>Inserir um pouquinho de texto Inserir um pouquinho de texto Inserir um pouquinho de texto Inserir um pouquinho de texto Inserir um pouquinho de texto</p>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="brand-subtitle fade-in-up">Planttools</div>
+          <h1 class="hero-title fade-in-up" data-delay="0.2">AJUDANDO VOCÊ A<br><span class="highlight">CULTIVAR PLANTAS</span></h1>
+          <p class="hero-description fade-in-up" data-delay="0.4">Descubra o prazer de cultivar plantas com nossa plataforma inteligente. Desde o plantio até os cuidados diários, estamos aqui para transformar seu jardim em um oasis verde.</p>
         </div>
-        <div class="intro-image">
-          <img src="img/vasoplanta.png" alt="Planta">
+        <div class="hero-image fade-in" data-delay="0.6">
+          <img src="img/vasoplanta.png" alt="Planta em vaso">
         </div>
-      </section>
+      </div>
+    </section>
 
-      <div class="cards-container">
-        <div class="cards-container">
-          <!-- Card 1 com efeito flip -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>Procure plantas por tipos</h3>
-              </div>
-              <div class="flip-card-back">
-                <h3>Procure plantas por tipos</h3>
-                <p>Encontre a planta perfeita para seu espaço e necessidades</p>
-                <button>Explorar</button>
-              </div>
-            </div>
-          </div>
-        
-          <!-- Card 2 com efeito flip -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>Deixe nossa IA te ajudar</h3>
-              </div>
-              <div class="flip-card-back">
-                <h3>IA Personalizada</h3>
-                <p>Receba recomendações inteligentes baseadas nas suas plantas e ambiente</p>
-                <button>Experimentar</button>
-              </div>
-            </div>
-          </div>
-        
-          <!-- Card 3 com efeito flip -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>Sugestões do que plantar</h3>
-              </div>
-              <div class="flip-card-back">
-                <h3>Sugestões Personalizadas</h3>
-                <p>Descubra plantas ideais para sua região e tipo de cultivo</p>
-                <button>Ver Sugestões</button>
-              </div>
-            </div>
-          </div>
-        
-          <!-- Card 4 com efeito flip -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>Tire suas dúvidas com guias</h3>
-              </div>
-              <div class="flip-card-back">
-                <h3>Guias Completos</h3>
-                <p>Aprenda tudo sobre cultivo, cuidados e solução de problemas</p>
-                <button>Acessar Guias</button>
-              </div>
-            </div>
-          </div>
-        <section class="purpose">
-          <h2>Como podemos ajudar você?</h2>
-          <p>
+    <!-- Resto do conteúdo permanece igual -->
+    <!-- Features Section Apple Style - Versão 3 Colunas -->
+<section class="features-apple">
+  <div class="section-container">
+    <div class="features-header">
+      <h2 class="features-title">Recursos Inteligentes</h2>
+      <p class="features-subtitle">Tudo que você precisa para cultivar plantas com sucesso</p>
+    </div>
+    
+    <div class="features-grid-apple-3col">
+      <div class="feature-apple-3col">
+        <div class="feature-icon-apple">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3 class="feature-title-apple">Busca Avançada</h3>
+        <p class="feature-description-apple">Encontre plantas perfeitas para seu espaço, clima e nível de experiência com nossa busca inteligente.</p>
+        <a href="#" class="feature-link-apple">
+          <span>Explorar plantas</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+      <div class="feature-apple-3col">
+        <div class="feature-icon-apple">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3 class="feature-title-apple">IA Personalizada</h3>
+        <p class="feature-description-apple">Receba recomendações inteligentes baseadas nas suas plantas, ambiente e histórico de cuidados.</p>
+        <a href="#" class="feature-link-apple">
+          <span>Experimentar IA</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+      <div class="feature-apple-3col">
+        <div class="feature-icon-apple">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3 class="feature-title-apple">Sugestões Inteligentes</h3>
+        <p class="feature-description-apple">Descubra plantas ideais para sua região, tipo de cultivo e condições específicas do seu espaço.</p>
+        <a href="#" class="feature-link-apple">
+          <span>Ver sugestões</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+      <div class="feature-apple-3col">
+        <div class="feature-icon-apple">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <h3 class="feature-title-apple">Guias Completos</h3>
+        <p class="feature-description-apple">Aprenda tudo sobre cultivo, cuidados específicos, solução de problemas e técnicas avançadas.</p>
+        <a href="#" class="feature-link-apple">
+          <span>Acessar guias</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+      <div class="feature-apple-3col">
+        <div class="feature-icon-apple">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h3 class="feature-title-apple">Lembretes Inteligentes</h3>
+        <p class="feature-description-apple">Receba notificações personalizadas para regar, adubar e cuidar das suas plantas no momento certo.</p>
+        <a href="#" class="feature-link-apple">
+          <span>Configurar lembretes</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+      <div class="feature-apple-3col">
+        <div class="feature-icon-apple">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="feature-title-apple">Comunidade</h3>
+        <p class="feature-description-apple">Conecte-se com outros cultivadores, compartilhe experiências e aprenda com a comunidade.</p>
+        <a href="#" class="feature-link-apple">
+          <span>Entrar na comunidade</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Purpose Section com Botões -->
+    <section class="purpose">
+      <div class="section-container">
+        <div class="purpose-content">
+          <h2 class="scroll-fade-in">Como podemos ajudar você?</h2>
+          <p class="purpose-description scroll-fade-in" data-delay="0.2">
             O <strong>Planttools</strong> é uma ferramenta pensada para facilitar o cuidado com suas plantas, hortas ou pomares.
             Basta você nos dizer o que está cultivando, e nós oferecemos orientações sobre como plantar, regar, cuidar e até
             resolver possíveis problemas.
           </p>
 
           <div class="benefits">
-            <div class="benefit">
-              <img src="img/vaso1.png" alt="Planta">
+            <div class="benefit scroll-slide-in" data-direction="left">
+              <div class="benefit-image">
+                <img src="img/vaso1.png" alt="Identificar plantas">
+              </div>
               <h3>Identifique e registre</h3>
               <p>Informe qual planta você está cuidando e nós ajudamos no monitoramento.</p>
+              <button class="benefit-btn">Começar Agora</button>
             </div>
-            <div class="benefit">
-              <img src="img/vasoplanta.png" alt="Planta">
+            
+            <div class="benefit scroll-slide-in" data-direction="up">
+              <div class="benefit-image">
+                <img src="img/vasoplanta.png" alt="Dicas de tratamento">
+              </div>
               <h3>Dicas de tratamento</h3>
               <p>Receba recomendações personalizadas para manter suas plantas saudáveis.</p>
+              <button class="benefit-btn">Ver Dicas</button>
             </div>
-            <div class="benefit">
-              <img src="img/vasoplanta.png" alt="Planta">
+            
+            <div class="benefit scroll-slide-in" data-direction="right">
+              <div class="benefit-image">
+                <img src="img/vasoplanta.png" alt="Acompanhamento">
+              </div>
               <h3>Acompanhamento</h3>
               <p>Veja o histórico da sua planta e continue aprendendo com nossos guias.</p>
+              <button class="benefit-btn">Acompanhar</button>
             </div>
           </div>
-        </section>
-      </div> 
-    </main>
-  </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <script src="script/script.js"></script>
   <script src="script/verificaLogin.js"></script>
   <script src="script/sidebar.js"></script>
+  <script src="script/animations.js"></script>
+  <script src="script/carousel.js"></script>
+  <script src="script/header.js"></script>
 </body>
 </html>
