@@ -1,93 +1,272 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre Nós - Planttools</title>
-  <link rel="stylesheet" href="../../styles.css" />
-  <link rel="stylesheet" href="sobre.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../sidebar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1 class="logo">PLANTTOOLS</h1>
-    <nav>
-      <ul>
-        <li><a href="/index.html">Início</a></li>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul class="sidebar-menu">
+        <li><a href="../../index.html">Início</a></li>
         <li><a href="">Sobre Nós</a></li>
-        <li><a href="/page/servico/servicos.html">Serviços</a></li>
-        <li><a href="/page/contato/contatos.html">Contatos</a></li>
-        <div class="profile-menu-container">
-        <img src="/img/perfil.png" alt="Perfil" class="profile-icon" id="profileIcon">
-        <div class="profile-dropdown" id="profileDropdown">
-            <a href="/login/index.html">Login</a>
-        </div>
-        </div>
+        <li><a href="../servico/servicos.html">Serviços</a></li>
+        <li><a href="../contato/contatos.html">Contatos</a></li>
       </ul>
-    </nav>
-
-  </header>
-  <div class="container">
-    <main class="sobre-nos">
-      <h1>Sobre Nós</h1>
-
-      <section class="intro-section">
-        <div>
-          <h2>Quem somos?</h2>
-          <p>
-            Inserir um pouquinho de texto<br>
-            Inserir um pouquinho de textoInserir um pouquinho de texto<br>
-            Inserir um pouquinho de textoInserir um pouquinho de texto<br>
-            Inserir um pouquinho de texto
-          </p>
+      
+      <div class="sidebar-profile">
+        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
+        <div class="sidebar-profile-info">
+          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
+          <a href="../planta/planta.html">Planta</a>
         </div>
-        <img src="../../img/vasoplanta.png" alt="Ilustração de planta">
-      </section>
-
-      <section class="missoes">
-        <div class="coluna">
-          <h2>Nossa Missão</h2>
-          <p>
-            Inserir um pouquinho de texto<br>
-            Inserir um pouquinho de textoInserir um pouquinho de texto<br>
-            Inserir um pouquinho de textoInserir um pouquinho de texto<br>
-            Inserir um pouquinho de texto
-          </p>
-        </div>
-
-        <div class="coluna">
-          <h2>Nossa Visão</h2>
-          <p>
-            Inserir um pouquinho de texto<br>
-            Inserir um pouquinho de textoInserir um pouquinho de texto<br>
-            Inserir um pouquinho de textoInserir um pouquinho de texto<br>
-            Inserir um pouquinho de texto
-          </p>
-        </div>
-      </section>
-
-      <section class="valores-equipe">
-        <ul class="valores">
-          <li><strong>🌱 Sustentabilidade</strong></li>
-          <li><strong>🌿 Inovação</strong></li>
-          <li><strong>🍃 Simplicidade</strong></li>
-          <li><strong>🌾 Comunidade</strong></li>
-        </ul>
-        <div class="coluna">
-          <h2>Nossa Equipe</h2>
-          <p>
-            Inserir um pouquinho de texto<br>
-            Inserir um pouquinho de textoInserir um pouquinho de texto<br>
-            Inserir um pouquinho de texto
-          </p>
-        </div>
-      </section>
-
-      <div class="botao-voltar">
-        <a href="../../index.html" class="btn-voltar">Voltar para o início</a>
       </div>
-    </main>
-  </div>
-  <script src="/script/script.js"></script>
+    </div>
+  </aside>
+
+  <!-- Overlay do Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Header estilo Nike -->
+  <header class="nike-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="../../index.html" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícone Plantas -->
+        <a href="../planta/planta.html" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="../../login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="../planta/planta.html" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="../contato/contatos.html" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section Sobre Nós -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="brand-subtitle fade-in-up">Planttools</div>
+          <h1 class="hero-title fade-in-up" data-delay="0.2">CONHEÇA NOSSA <span class="highlight">HISTÓRIA</span></h1>
+          <p class="hero-description fade-in-up" data-delay="0.4">
+            Somos apaixonados por plantas e acreditamos que o cultivo pode transformar vidas e espaços. 
+            Nossa missão é tornar o cuidado com plantas acessível a todos, independentemente do nível de experiência.
+          </p>
+        </div>
+        <div class="hero-image fade-in" data-delay="0.6">
+          <img src="../../img/sobre.png" alt="Planta em vaso">
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Quem Somos -->
+    <section class="features-apple">
+      <div class="section-container">
+        <div class="features-header">
+          <h2 class="features-title">Quem Somos</h2>
+          <p class="features-subtitle">Conheça a equipe por trás do Planttools</p>
+        </div>
+        
+        <div class="features-grid-apple-3col">
+          <div class="feature-apple-3col">
+            <div class="feature-icon-apple">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="feature-title-apple">Nossa Paixão</h3>
+            <p class="feature-description-apple">
+              Somos um grupo de entusiastas de plantas, designers e desenvolvedores unidos pela paixão 
+              por tornar o cultivo de plantas mais acessível e prazeroso para todos.
+            </p>
+          </div>
+          
+          <div class="feature-apple-3col">
+            <div class="feature-icon-apple">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="feature-title-apple">Nossa Jornada</h3>
+            <p class="feature-description-apple">
+              Começamos em 2020 com uma simples ideia: ajudar pessoas a cuidarem melhor de suas plantas. 
+              Desde então, crescemos e evoluímos para oferecer soluções cada vez mais inteligentes.
+            </p>
+          </div>
+          
+          <div class="feature-apple-3col">
+            <div class="feature-icon-apple">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="feature-title-apple">Nossa Comunidade</h3>
+            <p class="feature-description-apple">
+              Já ajudamos milhares de pessoas a cultivar plantas com sucesso. Nossa comunidade 
+              cresce a cada dia, compartilhando experiências e conhecimentos sobre o mundo verde.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Nossa Missão e Valores -->
+    <section class="purpose">
+      <div class="section-container">
+        <div class="purpose-content">
+          <h2 class="scroll-fade-in">Nossa Missão e Valores</h2>
+          <p class="purpose-description scroll-fade-in" data-delay="0.2">
+            No <strong>Planttools</strong>, acreditamos que o cultivo de plantas pode transformar não apenas 
+            espaços, mas também vidas. Nossos valores fundamentais guiam tudo o que fazemos.
+          </p>
+
+          <div class="benefits">
+            <div class="benefit scroll-slide-in" data-direction="left">
+              <div class="benefit-image">
+                <i class="fas fa-bullseye" style="font-size: 3rem; color: #2d5a42;"></i>
+              </div>
+              <h3>Nossa Missão</h3>
+              <p>
+                Facilitar o cuidado com plantas através de tecnologia acessível, 
+                educação contínua e uma comunidade acolhedora para todos os amantes do cultivo.
+              </p>
+            </div>
+            
+            <div class="benefit scroll-slide-in" data-direction="up">
+              <div class="benefit-image">
+                <i class="fas fa-eye" style="font-size: 3rem; color: #2d5a42;"></i>
+              </div>
+              <h3>Nossa Visão</h3>
+              <p>
+                Ser a principal plataforma de referência para cultivo de plantas, 
+                conectando pessoas e promovendo um estilo de vida mais verde e sustentável.
+              </p>
+            </div>
+            
+            <div class="benefit scroll-slide-in" data-direction="right">
+              <div class="benefit-image">
+                <i class="fas fa-star" style="font-size: 3rem; color: #2d5a42;"></i>
+              </div>
+              <h3>Nossos Valores</h3>
+              <p>
+                Sustentabilidade, Inovação, Simplicidade e Comunidade. 
+                Acreditamos no poder transformador das plantas e na importância de compartilhar conhecimento.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Nossa Equipe -->
+    <section class="features-apple" style="background: #f8fdf8;">
+      <div class="section-container">
+        <div class="features-header">
+          <h2 class="features-title">Nossa Equipe</h2>
+          <p class="features-subtitle">Conheça as pessoas que fazem o Planttools acontecer</p>
+        </div>
+        
+        <div class="features-grid-apple-3col">
+          <div class="feature-apple-3col">
+            <div class="feature-icon-apple">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="feature-title-apple">Desenvolvedores</h3>
+            <p class="feature-description-apple">
+              Nossa equipe de tecnologia trabalha incansavelmente para criar 
+              ferramentas intuitivas e eficientes para sua experiência de cultivo.
+            </p>
+          </div>
+          
+          <div class="feature-apple-3col">
+            <div class="feature-icon-apple">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3 class="feature-title-apple">Especialistas em Plantas</h3>
+            <p class="feature-description-apple">
+              Botânicos e horticultores especializados garantem que todas as 
+              informações e recomendações sejam precisas e confiáveis.
+            </p>
+          </div>
+          
+          <div class="feature-apple-3col">
+            <div class="feature-icon-apple">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3 class="feature-title-apple">Designers</h3>
+            <p class="feature-description-apple">
+              Criamos experiências visuais agradáveis que tornam o cuidado com 
+              plantas uma jornada inspiradora e satisfatória.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../script/script.js"></script>
+  <script src="../../script/verificaLogin.js"></script>
+  <script src="../../script/sidebar.js"></script>
+  <script src="../../script/animations.js"></script>
+  <script src="../../script/header.js"></script>
 </body>
 </html>
