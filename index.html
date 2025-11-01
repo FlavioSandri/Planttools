@@ -21,7 +21,7 @@
       </ul>
       
       <div class="sidebar-profile">
-        <img src="img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
+        <img src="img/perfil.png" alt="Perfil" class="sidebar-profile-icon" id="profileIcon">
         <div class="sidebar-profile-info">
           <a id="sidebarEntrar" href="login/index.html">Login</a>
           <a href="/page/planta/planta.html">Planta</a>
@@ -80,9 +80,9 @@
           <a href="login/index.html" class="action-icon profile-icon">
             <i class="fas fa-user"></i>
           </a>
-          <div class="profile-dropdown">
-            <a href="login/index.html" class="dropdown-item">
-              <i class="fas fa-sign-in-alt"></i>
+          <div class="profile-dropdown" id="profileDropdown">
+            <a href="login/index.html" class="dropdown-item" id="entrar">
+              <i class="fas fa-sign-in-alt" id="icon"></i>
               Fazer Login
             </a>
             <a href="/page/planta/planta.html" class="dropdown-item">
@@ -251,7 +251,7 @@
   </main>
 
   <script src="script/script.js"></script>
-  <script src="script/verificaLogin.js"></script>
+  <script type="module" src="script/verificaLogin.js"></script>
   <script src="script/sidebar.js"></script>
   <script src="script/animations.js"></script>
   <script src="script/carousel.js"></script>

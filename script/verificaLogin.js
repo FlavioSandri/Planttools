@@ -1,16 +1,22 @@
+export const token = JSON.parse(localStorage.getItem('token'))
+export const usuario = JSON.parse(localStorage.getItem('dadosUsuario'))
+
 const img = document.querySelector("#profileIcon")
-const dropDown = document.querySelector("#profileDropdown") 
+const dropDown = document.querySelector("#profileDropdown")
 const mudarRota = document.querySelector('#entrar')
+const icon = document.querySelector('#icon')
 
 window.addEventListener('DOMContentLoaded', () => {
-    const token = JSON.parse(localStorage.getItem('token'))
-    const usuario = JSON.parse(localStorage.getItem('dadosUsuario'))
+    console.log(`${!token || !usuario ? 'sem dados no localStorage' : 'Usuário já logado'}`)
 
-    console.log(`${!token || !usuario ? 'sem dados no localStorage':'Usuário já logado'}`)
-
-    if(token || usuario){
+    if (token || usuario) {
         mudarRota.innerText = 'Perfil'
-        mudarRota.href = './page/perfil.html'
+        mudarRota.href = 'page/perfil/perfil.html'
+
+        icon.classList.remove('fas')
+        icon.classList.remove('fa-sign-in-alt')
+        icon.classList.add('fa-solid', 'fa-user')
+
         criarTag()
         trocarIcone(token, usuario)
     }
@@ -18,9 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 async function trocarIcone(token, dadosUsuario) {
-    const fotoPerfil = document.querySelector('#profileIcon')
 
-    
     try {
         // troque esse IP nathan (ou qualque dev) do futuro.
         if (dadosUsuario) {
@@ -31,17 +35,24 @@ async function trocarIcone(token, dadosUsuario) {
                 }
             })
 
+            if (response.status !== 200) {
+                throw new Error("Não foi possível obter a imagem de perfil.")
+            }
+
             img.src = response.url
         }
 
+
+
     } catch (error) {
-        console.log(error)
+        console.error('Erro ao buscar a imagem de perfil:', error)
     }
 }
 
 function criarTag() {
     const btn = document.createElement('a')
 
+    btn.classList.add('dropdown-item')
     btn.textContent = "Sair"
     btn.style.color = "Red"
 
@@ -50,7 +61,7 @@ function criarTag() {
 
         let pergunta = confirm("Você tem certeza?")
 
-        if(pergunta == true) {
+        if (pergunta == true) {
             localStorage.removeItem("token")
             localStorage.removeItem("dadosUsuario")
 
