@@ -5,60 +5,268 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Serviços - Planttools</title>
   <link rel="stylesheet" href="servicos.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
-  <header>
-    <h1 class="logo">PLANTTOOLS</h1>
-    <nav>
-      <ul>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul class="sidebar-menu">
         <li><a href="../../index.html">Início</a></li>
         <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
-        <li><a class="active" href="servicos.html">Serviços</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
         <li><a href="../contato/contatos.html">Contatos</a></li>
-        <div class="profile-menu-container">
-          <img src="/img/perfil.png" alt="Perfil" class="profile-icon" id="profileIcon" />
-          <div class="profile-dropdown" id="profileDropdown">
-            <a href="/login/index.html">Login</a>
-            <a href="../planta/planta.html">Planta</a>
-          </div>
+      </ul>
+      
+      <div class="sidebar-profile">
+        <img src="/img/perfil.png" alt="Perfil" class="sidebar-profile-icon" id="profileIcon">
+        <div class="sidebar-profile-info">
+          <a id="sidebarEntrar" href="/login/index.html">Login</a>
+          <a href="../planta/planta.html">Planta</a>
         </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Header estilo Nike - CORRIGIDO -->
+  <header class="nike-header">
+  <div class="header-container">
+    <!-- Logo -->
+    <div class="header-logo">
+      <a href="../../index.html" class="logo-link">
+        <div class="plant-logo">
+          <i class="fas fa-seedling"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Navegação Principal -->
+    <nav class="header-nav">
+      <ul class="nav-menu">
+        <li><a href="../../index.html" class="nav-link">Início</a></li>
+        <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+        <li><a href="servicos.html" class="nav-link active">Serviços</a></li>
+        <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+        <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
       </ul>
     </nav>
-  </header>
+
+    <!-- Lado Direito - Ações -->
+    <div class="header-actions">
+      <!-- Barra de Pesquisa -->
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" class="search-input" placeholder="Buscar plantas...">
+        </div>
+      </div>
+
+      <!-- Ícone Plantas -->
+      <a href="../planta/planta.html" class="action-icon plants-icon">
+        <i class="fas fa-leaf"></i>
+        <span class="icon-badge">3</span>
+      </a>
+
+      <!-- Ícone Perfil -->
+      <div class="profile-container">
+        <a href="/login/index.html" class="action-icon profile-icon">
+          <i class="fas fa-user"></i>
+        </a>
+        <div class="profile-dropdown" id="profileDropdown">
+          <a href="/login/index.html" class="dropdown-item" id="entrar">
+            <i class="fas fa-sign-in-alt" id="icon"></i>
+            Fazer Login
+          </a>
+          <a href="../planta/planta.html" class="dropdown-item">
+            <i class="fas fa-leaf"></i>
+            Minhas Plantas
+          </a>
+          <a href="../contato/contatos.html" class="dropdown-item">
+            <i class="fas fa-headset"></i>
+            Suporte
+          </a>
+        </div>
+      </div>
+
+      <!-- Menu Hambúrguer para Mobile -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>
 
   <main>
-    <section class="intro">
-      <div class="intro-text">
-        <h2 class="main-title">Nossos Serviços</h2>
-        <p class="subtitle">Oferecemos suporte completo para cuidar das suas plantas.</p>
-      </div>
-      <div class="intro-image">
-        <img src="../../img/vasoplanta.png" alt="Planta" />
+    <!-- Hero Section -->
+    <section class="hero-services">
+      <div class="hero-content-services">
+        <div class="hero-text-services">
+          <div class="brand-subtitle-services">Nossos Serviços</div>
+          <h1 class="hero-title-services">Cultive com <span class="highlight">Confiança</span></h1>
+          <p class="hero-description-services">Do iniciante ao especialista, oferecemos ferramentas inteligentes para transformar seu cultivo em uma experiência simples e bem-sucedida.</p>
+          <div class="hero-actions">
+            <button class="cta-button primary">Começar Agora</button>
+            <button class="cta-button secondary">Ver Demonstração</button>
+          </div>
+        </div>
+        <div class="hero-image-services">
+          <img src="../../img/vasoplanta.png" alt="Planta em vaso">
+        </div>
       </div>
     </section>
 
-    <section class="purpose">
-      <h2>O que oferecemos?</h2>
-      <p>Nosso objetivo é auxiliar você no cuidado com suas plantas, hortas ou frutas. Ao registrar uma planta no site, oferecemos sugestões personalizadas de cuidados, irrigação, ambiente e muito mais com a ajuda da inteligência artificial.</p>
+    <!-- Serviços em Destaque -->
+    <section class="featured-services">
+      <div class="section-container">
+        <div class="services-header">
+          <h2 class="services-title">Soluções Completas para Seu Cultivo</h2>
+          <p class="services-subtitle">Tecnologia inteligente aliada ao conhecimento botânico para resultados excepcionais</p>
+        </div>
+
+        <div class="services-grid-apple">
+          <div class="service-card-apple">
+            <div class="service-icon-apple">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="service-title-apple">Assistência com IA</h3>
+            <p class="service-description-apple">Respostas instantâneas e personalizadas para todas as suas dúvidas sobre plantas, com diagnósticos precisos e recomendações específicas.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Diagnóstico de problemas</li>
+              <li><i class="fas fa-check"></i> Recomendações personalizadas</li>
+              <li><i class="fas fa-check"></i> Suporte 24/7</li>
+            </ul>
+            <a href="#" class="service-link-apple">
+              <span>Experimentar IA</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card-apple">
+            <div class="service-icon-apple">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h3 class="service-title-apple">Guias Personalizados</h3>
+            <p class="service-description-apple">Passo a passo detalhado para cada espécie, desde o plantio até a colheita, adaptado às suas condições específicas.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Instruções passo a passo</li>
+              <li><i class="fas fa-check"></i> Cronogramas personalizados</li>
+              <li><i class="fas fa-check"></i> Dicas de especialistas</li>
+            </ul>
+            <a href="#" class="service-link-apple">
+              <span>Explorar Guias</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card-apple">
+            <div class="service-icon-apple">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3 class="service-title-apple">Sugestões de Plantio</h3>
+            <p class="service-description-apple">Descubra as plantas perfeitas para seu espaço, clima e objetivos, com base em análise inteligente do seu ambiente.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Análise de clima local</li>
+              <li><i class="fas fa-check"></i> Recomendações sazonais</li>
+              <li><i class="fas fa-check"></i> Planejamento de jardim</li>
+            </ul>
+            <a href="#" class="service-link-apple">
+              <span>Ver Sugestões</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="benefits">
-      <div class="benefit">
-        <h3>Assistência com IA</h3>
-        <p>Respostas automatizadas e personalizadas para dúvidas sobre sua planta.</p>
+    <!-- Serviços Adicionais -->
+    <section class="additional-services">
+      <div class="section-container">
+        <div class="additional-header">
+          <h2>Mais Ferramentas para Seu Sucesso</h2>
+          <p>Recursos avançados para cultivadores que buscam excelência</p>
+        </div>
+
+        <div class="additional-grid">
+          <div class="additional-card">
+            <div class="additional-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="additional-content">
+              <h3>Lembretes Inteligentes</h3>
+              <p>Notificações personalizadas para regar, adubar e podar no momento perfeito.</p>
+            </div>
+          </div>
+
+          <div class="additional-card">
+            <div class="additional-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="additional-content">
+              <h3>Acompanhamento de Progresso</h3>
+              <p>Monitore o crescimento e saúde das suas plantas com métricas detalhadas.</p>
+            </div>
+          </div>
+
+          <div class="additional-card">
+            <div class="additional-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="additional-content">
+              <h3>Comunidade Especializada</h3>
+              <p>Conecte-se com outros cultivadores e compartilhe experiências.</p>
+            </div>
+          </div>
+
+          <div class="additional-card">
+            <div class="additional-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="additional-content">
+              <h3>Aplicativo Mobile</h3>
+              <p>Acesse todos os recursos pelo celular, onde e quando precisar.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="benefit">
-        <h3>Guias Personalizados</h3>
-        <p>Passo a passo para o cultivo ideal da sua planta ou fruta favorita.</p>
-      </div>
-      <div class="benefit">
-        <h3>Sugestões de Plantio</h3>
-        <p>Descubra o que plantar de acordo com sua região e estação do ano.</p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="section-container">
+        <div class="cta-content">
+          <h2>Pronto para Transformar Seu Cultivo?</h2>
+          <p>Junte-se a milhares de cultivadores que já estão tendo resultados incríveis com nossas ferramentas.</p>
+          <div class="cta-buttons">
+            <button class="cta-button large primary">Começar Gratuitamente</button>
+            <button class="cta-button large secondary">Agendar Demonstração</button>
+          </div>
+          <div class="cta-stats">
+            <div class="stat">
+              <div class="stat-number">10K+</div>
+              <div class="stat-label">Plantas Cuidadas</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Taxa de Sucesso</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Suporte Disponível</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <script src="/script/script.js"></script>
+  <script src="/script/header.js"></script>
+  <script src="/script/servico.js"></script>
 </body>
 </html>
