@@ -1,21 +1,25 @@
+import { mostrarNotificacao } from "../script/notification.js";
+
 export const token = JSON.parse(localStorage.getItem('token'))
 export const usuario = JSON.parse(localStorage.getItem('dadosUsuario'))
 
 const img = document.querySelector("#profileIcon")
 const dropDown = document.querySelector("#profileDropdown")
 const mudarRota = document.querySelector('#entrar')
-const icon = document.querySelector('#icon')
+const icon = document.querySelector('i#icon')
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log(`${!token || !usuario ? 'sem dados no localStorage' : 'Usuário já logado'}`)
 
     if (token || usuario) {
+        mostrarNotificacao("Bem-vindo de volta!", "sucesso", 3000);
+
         mudarRota.innerText = 'Perfil'
         mudarRota.href = 'page/perfil/perfil.html'
 
+        icon.classList.add('fa-solid', 'fa-user')
         icon.classList.remove('fas')
         icon.classList.remove('fa-sign-in-alt')
-        icon.classList.add('fa-solid', 'fa-user')
 
         criarTag()
         trocarIcone(token, usuario)
@@ -59,8 +63,8 @@ function criarTag() {
     btn.addEventListener('click', (event) => {
         event.preventDefault()
 
-        let pergunta = confirm("Você tem certeza?")
-
+        let pergunta = confirm("Tem certeza que deseja sair?")
+        console.log(pergunta)
         if (pergunta == true) {
             localStorage.removeItem("token")
             localStorage.removeItem("dadosUsuario")
