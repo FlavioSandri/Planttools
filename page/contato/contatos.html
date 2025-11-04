@@ -4,70 +4,271 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato - Planttools</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../sidebar.css">
   <link rel="stylesheet" href="contatos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1 class="logo">PLANTTOOLS</h1>
-    <nav>
-      <ul>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul class="sidebar-menu">
         <li><a href="../../index.html">Início</a></li>
         <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
-        <li><a class="active" href="servicos.html">Serviços</a></li>
-        <li><a href="../contato/contatos.html">Contatos</a></li>
-        <div class="profile-menu-container">
-          <img src="/img/perfil.png" alt="Perfil" class="profile-icon" id="profileIcon" />
-          <div class="profile-dropdown" id="profileDropdown">
-            <a href="/login/index.html">Login</a>
-            <a href="../planta/planta.html">Planta</a>
+        <li><a href="../servico/servicos.html">Serviços</a></li>
+        <li><a href="">Contatos</a></li>
+      </ul>
+      
+      <div class="sidebar-profile">
+        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
+        <div class="sidebar-profile-info">
+          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
+          <a href="../planta/planta.html">Planta</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Header estilo Nike -->
+  <header class="nike-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="../../index.html" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <span class="logo-text">Planttools</span>
+        </a>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="" class="nav-link">Contatos</a></li>
+          <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
           </div>
         </div>
-      </ul>
-    </nav>
+
+        <!-- Ícone Plantas (substitui o coração) -->
+        <a href="../planta/planta.html" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="../../login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="../planta/planta.html" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="contact-section">
-      <div class="contact-info">
-        <h2>Contato</h2>
-        <p>
-          Inserir um pouquinho de texto Inserir um pouquinho de texto Inserir um pouquinho de texto Inserir um pouquinho de texto
-        </p>
-
-        <div class="info-item">
-          <span>📧</span>
-          <p>planttools@gmail.com</p>
+    <!-- Hero Section Contatos -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="brand-subtitle fade-in-up">Planttools</div>
+          <h1 class="hero-title fade-in-up" data-delay="0.2">PRECISA DE <span class="highlight">AJUDA?</span></h1>
+          <p class="hero-description fade-in-up" data-delay="0.4">
+            Estamos aqui para ajudar você! Entre em contato com nossa equipe de especialistas 
+            e tire todas suas dúvidas sobre plantas, cuidados e nossa plataforma.
+          </p>
+          <div class="hero-stats fade-in-up" data-delay="0.6">
+            <div class="stat">
+              <span class="stat-number">24h</span>
+              <span class="stat-label">Tempo de Resposta</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">95%</span>
+              <span class="stat-label">Satisfação</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Gratuito</span>
+            </div>
+          </div>
         </div>
-
-        <div class="info-item">
-          <span>📞</span>
-          <p>12345678</p>
-        </div>
-
-        <div class="info-item">
-          <span>📍</span>
-          <p>quinto dos infernos, 6</p>
-        </div>
-
-        <div class="info-item">
-          <span>🌐</span>
-          <p>www.planttools.com</p>
+        <div class="hero-image fade-in" data-delay="0.6">
+          <img src="../../img/ctt.png" alt="Suporte e contato">
         </div>
       </div>
+    </section>
 
-      <div class="contact-form">
-        <h3>Entre em contato</h3>
-        <form>
-          <input type="text" placeholder="Nome" required>
-          <input type="email" placeholder="Email" required>
-          <textarea placeholder="Mensagem" required></textarea>
-          <button type="submit">Enviar</button>
-        </form>
+    <!-- Seção de Contato -->
+    <section class="features-apple">
+      <div class="section-container">
+        <div class="contact-section">
+          <div class="contact-info">
+            <h2 class="features-title">Fale Conosco</h2>
+            <p class="features-subtitle">
+              Tem alguma dúvida, sugestão ou precisa de ajuda? Nossa equipe está pronta para atendê-lo!
+            </p>
+
+            <div class="contact-methods-grid">
+              <div class="contact-method">
+                <div class="method-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="method-info">
+                  <h3>Email</h3>
+                  <p>planttools@gmail.com</p>
+                  <span>Respondemos em até 24h</span>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="method-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="method-info">
+                  <h3>Telefone</h3>
+                  <p>(11) 1234-5678</p>
+                  <span>Segunda a Sexta, 9h-18h</span>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="method-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="method-info">
+                  <h3>Endereço</h3>
+                  <p>Rua das Flores, 123<br>Jardim Botânico<br>São Paulo - SP</p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="method-icon">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <div class="method-info">
+                  <h3>Website</h3>
+                  <p>www.planttools.com</p>
+                  <span>Conheça mais sobre nós</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <div class="contact-form">
+              <h3>Envie sua Mensagem</h3>
+              <form>
+                <div class="form-group">
+                  <input type="text" placeholder="Seu nome completo" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Seu melhor email" required>
+                </div>
+                <div class="form-group">
+                  <select required>
+                    <option value="">Assunto</option>
+                    <option value="duvida">Dúvida sobre plantas</option>
+                    <option value="suporte">Suporte técnico</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="parceria">Parceria</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <textarea placeholder="Conte-nos como podemos ajudar..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i>
+                  Enviar Mensagem
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção FAQ -->
+    <section class="purpose" style="background: #f8fdf8;">
+      <div class="section-container">
+        <div class="purpose-content">
+          <h2>Perguntas Frequentes</h2>
+          <p class="purpose-description">
+            Encontre respostas para as dúvidas mais comuns sobre nossa plataforma e cuidados com plantas.
+          </p>
+
+          <div class="faq-grid">
+            <div class="faq-item">
+              <h3>Como começar a usar o Planttools?</h3>
+              <p>Basta criar uma conta gratuita, adicionar suas plantas e seguir nossas recomendações personalizadas.</p>
+            </div>
+            
+            <div class="faq-item">
+              <h3>O Planttools é realmente gratuito?</h3>
+              <p>Sim! Oferecemos todas as funcionalidades básicas gratuitamente. Temos planos premium com recursos extras.</p>
+            </div>
+            
+            <div class="faq-item">
+              <h3>Como identificar uma planta doente?</h3>
+              <p>Use nossa ferramenta de diagnóstico por foto ou descreva os sintomas para nossa IA ajudar.</p>
+            </div>
+            
+            <div class="faq-item">
+              <h3>Preciso ser especialista em plantas?</h3>
+              <p>Não! Criamos o Planttools justamente para ajudar iniciantes a cuidarem melhor de suas plantas.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <script src="/script/script.js"></script> 
+
+  <script src="../../script/script.js"></script>
+  <script src="../../script/verificaLogin.js"></script>
+  <script src="../../script/sidebar.js"></script>
+  <script src="../../script/animations.js"></script>
+  <script src="../../script/header.js"></script>
 </body>
 </html>
-
