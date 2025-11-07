@@ -319,9 +319,10 @@ main {
 .hero-services {
   background: linear-gradient(135deg, #f8fdf8 0%, #e8f5e8 100%);
   padding: 100px 0 80px;
-  min-height: 80vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
+  margin-top: -9px;
 }
 
 .hero-content-services {

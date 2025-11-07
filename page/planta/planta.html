@@ -4,70 +4,232 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar Planta - Planttools</title>
-  <link rel="stylesheet" href="/page/planta/planta.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../sidebar.css">
+  <link rel="stylesheet" href="planta.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1 class="logo">PLANTTOOLS</h1>
-    <nav>
-      <ul>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul class="sidebar-menu">
         <li><a href="../../index.html">Início</a></li>
         <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
-        <li><a class="active" href="servicos.html">Serviços</a></li>
+        <li><a href="../servico/servicos.html">Serviços</a></li>
         <li><a href="../contato/contatos.html">Contatos</a></li>
-        <div class="profile-menu-container">
-          <img src="/img/perfil.png" alt="Perfil" class="profile-icon" id="profileIcon" />
-          <div class="profile-dropdown" id="profileDropdown">
-            <a href="/login/index.html">Login</a>
-            <a href="../planta/planta.html">Planta</a>
+      </ul>
+      
+      <div class="sidebar-profile">
+        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
+        <div class="sidebar-profile-info">
+          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
+          <a href="">Planta</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Header estilo Nike -->
+  <header class="nike-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="../../index.html" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <span class="logo-text">Planttools</span>
+        </a>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
           </div>
         </div>
-      </ul>
-    </nav>
+
+        <!-- Ícone Plantas (substitui o coração) -->
+        <a href="" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="../../login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="../contato/contatos.html" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="planta-container">
-      <div class="planta-card">
-        <div class="planta-icon">
-          <img src="/img/cadastroplanta.png" alt="cadastroplanta">
+    <!-- Hero Section Registrar Planta -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="brand-subtitle fade-in-up">Planttools</div>
+          <h1 class="hero-title fade-in-up" data-delay="0.2">REGISTRE SUA <span class="highlight">PLANTA</span></h1>
+          <p class="hero-description fade-in-up" data-delay="0.4">
+            Adicione suas plantas à nossa plataforma e receba cuidados personalizados, 
+            lembretes inteligentes e dicas específicas para cada espécie.
+          </p>
         </div>
-        <h2>Registrar Planta</h2>
-        <form>
-          <label for="nome">Nome da planta</label>
-          <input type="text" id="nome" placeholder="Ex: Nathan Lindo" required>
+        <div class="hero-image fade-in" data-delay="0.6">
+          <img src="../../img/cadastroplanta.png" alt="Cadastro de planta">
+        </div>
+      </div>
+    </section>
 
-
-          <label for="planta">Planta</label>
-          <select id="planta" required>
-          </select>
-
-    
-          <label for="local">Local que vai plantar</label>
-          <select id="local" required>
-            <option>Num vaso</option>
-            <option>No jardim</option>
-            <option>Estufa</option>
-          </select>
-
-          <div class="medidas">
-            <div>
-              <label for="medida">Medida do local</label>
-              <input type="text" id="medida" placeholder="cm">
+    <!-- Seção do Formulário -->
+    <section class="features-apple">
+      <div class="section-container">
+        <div class="planta-section">
+          <div class="planta-card">
+            <div class="planta-header">
+              <div class="planta-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <h2>Registrar Nova Planta</h2>
+              <p>Preencha as informações abaixo para começar a monitorar sua planta</p>
             </div>
-            <div>
-              <label for="ph">pH <a href="#">(Não sabe o pH?)</a></label>
-              <input type="number" id="ph" value="7">
-            </div>
+            
+            <form class="planta-form">
+              <div class="form-group">
+                <label for="nome">Nome da planta</label>
+                <input type="text" id="nome" placeholder="Ex: Rosa do Deserto" required>
+              </div>
+
+              <div class="form-group">
+                <label for="planta">Tipo de planta</label>
+                <select id="planta" required>
+                  <option value="">Selecione uma espécie</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="local">Local de cultivo</label>
+                <select id="local" required>
+                  <option value="">Onde você vai cultivar?</option>
+                  <option value="vaso">Num vaso</option>
+                  <option value="jardim">No jardim</option>
+                  <option value="estufa">Estufa</option>
+                  <option value="interno">Ambiente interno</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="medida">Tamanho do local</label>
+                  <input type="text" id="medida" placeholder="Ex: 30cm">
+                  <span class="input-help">Diâmetro ou área</span>
+                </div>
+                
+                <div class="form-group">
+                  <label for="ph">
+                    Nível de pH 
+                    <span class="help-tooltip" title="O pH ideal varia conforme a espécie">(?)</span>
+                  </label>
+                  <input type="number" id="ph" min="0" max="14" step="0.1" value="7.0">
+                  <span class="input-help">Escala de 0 a 14</span>
+                </div>
+              </div>
+
+              <button type="submit" id="registro" class="submit-btn">
+                <i class="fas fa-plus-circle"></i>
+                Registrar Planta
+              </button>
+            </form>
           </div>
 
-          <button type="submit" id="registro">Registrar Planta</button>
-        </form>
+          <div class="planta-info">
+            <h3>Por que registrar suas plantas?</h3>
+            <div class="benefits-list">
+              <div class="benefit-item">
+                <i class="fas fa-bell"></i>
+                <div>
+                  <h4>Lembretes Inteligentes</h4>
+                  <p>Receba alertas para regar, adubar e podar no momento certo</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-chart-line"></i>
+                <div>
+                  <h4>Acompanhamento</h4>
+                  <p>Monitore o crescimento e saúde da sua planta</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-book"></i>
+                <div>
+                  <h4>Guias Específicos</h4>
+                  <p>Receba cuidados personalizados para cada espécie</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-users"></i>
+                <div>
+                  <h4>Comunidade</h4>
+                  <p>Compartilhe experiências com outros cultivadores</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
   <script type="module" src="./scripts/pegarDados.js"></script>
   <script type="module" src="./scripts/registra.js"></script>
+  <script src="../../script/script.js"></script>
+  <script src="../../script/verificaLogin.js"></script>
+  <script src="../../script/sidebar.js"></script>
+  <script src="../../script/animations.js"></script>
+  <script src="../../script/header.js"></script>
 </body>
 </html>

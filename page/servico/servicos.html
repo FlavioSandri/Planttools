@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Serviços - Planttools</title>
   <link rel="stylesheet" href="servicos.css"/>
+  <link rel="stylesheet" href="../../sidebar.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 </head>
@@ -15,15 +16,15 @@
       <ul class="sidebar-menu">
         <li><a href="../../index.html">Início</a></li>
         <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="../servico/servicos.html">Serviços</a></li>
         <li><a href="../contato/contatos.html">Contatos</a></li>
       </ul>
       
       <div class="sidebar-profile">
-        <img src="/img/perfil.png" alt="Perfil" class="sidebar-profile-icon" id="profileIcon">
+        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
         <div class="sidebar-profile-info">
-          <a id="sidebarEntrar" href="/login/index.html">Login</a>
-          <a href="../planta/planta.html">Planta</a>
+          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
+          <a href="">Planta</a>
         </div>
       </div>
     </div>
@@ -32,75 +33,78 @@
   <!-- Overlay do Sidebar -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <!-- Header estilo Nike - CORRIGIDO -->
+  <!-- Header estilo Nike -->
   <header class="nike-header">
-  <div class="header-container">
-    <!-- Logo -->
-    <div class="header-logo">
-      <a href="../../index.html" class="logo-link">
-        <div class="plant-logo">
-          <i class="fas fa-seedling"></i>
-        </div>
-      </a>
-    </div>
-
-    <!-- Navegação Principal -->
-    <nav class="header-nav">
-      <ul class="nav-menu">
-        <li><a href="../../index.html" class="nav-link">Início</a></li>
-        <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
-        <li><a href="servicos.html" class="nav-link active">Serviços</a></li>
-        <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
-        <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
-      </ul>
-    </nav>
-
-    <!-- Lado Direito - Ações -->
-    <div class="header-actions">
-      <!-- Barra de Pesquisa -->
-      <div class="search-container">
-        <div class="search-box">
-          <i class="fas fa-search search-icon"></i>
-          <input type="text" class="search-input" placeholder="Buscar plantas...">
-        </div>
-      </div>
-
-      <!-- Ícone Plantas -->
-      <a href="../planta/planta.html" class="action-icon plants-icon">
-        <i class="fas fa-leaf"></i>
-        <span class="icon-badge">3</span>
-      </a>
-
-      <!-- Ícone Perfil -->
-      <div class="profile-container">
-        <a href="/login/index.html" class="action-icon profile-icon">
-          <i class="fas fa-user"></i>
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="../../index.html" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <span class="logo-text">Planttools</span>
         </a>
-        <div class="profile-dropdown" id="profileDropdown">
-          <a href="/login/index.html" class="dropdown-item" id="entrar">
-            <i class="fas fa-sign-in-alt"></i>
-            Fazer Login
-          </a>
-          <a href="../planta/planta.html" class="dropdown-item">
-            <i class="fas fa-leaf"></i>
-            Minhas Plantas
-          </a>
-          <a href="../contato/contatos.html" class="dropdown-item">
-            <i class="fas fa-headset"></i>
-            Suporte
-          </a>
-        </div>
       </div>
 
-      <!-- Menu Hambúrguer para Mobile -->
-      <div class="hamburger-menu" id="hamburgerMenu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícone Plantas (substitui o coração) -->
+        <a href="" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="../../login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="../contato/contatos.html" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <main>
     <!-- Hero Section -->
