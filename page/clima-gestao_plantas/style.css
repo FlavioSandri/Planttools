@@ -1,0 +1,184 @@
+/* ======== RESET ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #f6f9f6 0%, #e8f4ea 100%);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 40px 15px;
+  animation: fadeSlide 1s ease-out;
+}
+
+header h1 {
+  color: #2d5a42;
+  font-size: 2.3rem;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+#status {
+  font-size: 0.95rem;
+  color: #555;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* ======== SEÇÕES ======== */
+.section {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px 0;
+  animation: fadeSlide 1s ease-out;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #2d5a42;
+  font-size: 1.6rem;
+}
+
+/* ======== CLIMA ATUAL ======== */
+.current-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.current-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.main-info {
+  flex: 1;
+}
+
+.temp {
+  font-size: 3rem;
+  color: #2d5a42;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.current-card:hover .temp {
+  color: #1b3f2d;
+}
+
+.details {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 25px;
+  font-size: 0.95rem;
+}
+
+/* ======== HOUR CARDS ======== */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.hour-card {
+  min-width: 130px;
+  background: white;
+  border-radius: 15px;
+  padding: 18px 10px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  scroll-snap-align: start;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeUp 0.8s ease forwards;
+}
+
+.hour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hour-card .temp {
+  color: #2d5a42;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+/* ======== DAILY CARDS ======== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+.day-card {
+  background: white;
+  border-radius: 15px;
+  padding: 18px 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeUp 0.8s ease forwards;
+}
+
+.day-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.day-card h4 {
+  color: #2d5a42;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 25px;
+  margin-top: 50px;
+  border-top: 1px solid #dcdcdc;
+  animation: fadeIn 2s ease-out;
+}
+
+/* ======== ANIMAÇÕES ======== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardFadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}

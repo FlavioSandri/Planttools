@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Climático</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>🌦 Clima Atual</h1>
+        <p id="status">Carregando localização...</p>
+    </header>
+
+    <main>
+        <!-- Clima Atual -->
+        <section id="current" class="section">
+            <h2>Condições Atuais</h2>
+            <div class="current-card">
+                <div class="main-info">
+                    <h3 id="current-desc">--</h3>
+                    <p class="temp" id="current-temp">-- °C</p>
+                    <p id="current-time">--</p>
+                </div>
+                <div class="details" id="current-details"></div>
+            </div>
+        </section>
+
+        <!-- Previsão por Hora -->
+        <section id="hourly" class="section">
+            <h2>Previsão por Hora</h2>
+            <div class="scroll-container" id="hourly-container">
+                <p>Carregando...</p>
+            </div>
+        </section>
+
+        <!-- Previsão Diária -->
+        <section id="daily" class="section">
+            <h2>Previsão dos Próximos Dias</h2>
+            <div class="grid" id="daily-container">
+                <p>Carregando...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 PlantTool Clima — Dados em tempo real via Open-Meteo</p>
+    </footer>
+
+    <script>
+        async function carregarClima() {
+            const status = document.getElementById("status");
+
+            try {
+                // 1️⃣ Pega a localização do usuário
+                const pos = await new Promise((resolve, reject) =>
+                    navigator.geolocation.getCurrentPosition(resolve, reject, {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                    })
+                );
+
+                const latitude = pos.coords.latitude;
+                const longitude = pos.coords.longitude;
+
+                status.textContent = `Localização: ${latitude.toFixed(3)}, ${longitude.toFixed(3)}`;
+                const params = new URLSearchParams({ latitude, longitude });
+
+                const url = `http://localhost:3000/planttool/v1/clima?${params}`;
+                const response = await fetch(url);
+                const data = await response.json();
+
+                console.log("🌤 Dados do servidor:", data);
+
+                exibirClimaAtual(data.current);
+                exibirClimaPorHora(data.hourly);
+                exibirClimaDiario(data.daily);
+
+            } catch (error) {
+                console.error("Erro ao carregar clima:", error);
+                status.textContent = "❌ Não foi possível carregar os dados climáticos.";
+            }
+        }
+
+        // === SEÇÃO 1: CLIMA ATUAL ===
+        function exibirClimaAtual(c) {
+            document.getElementById("current-temp").textContent = c.temperature_2m;
+            document.getElementById("current-desc").textContent = c.weather_code.description;
+            document.getElementById("current-time").textContent = c.time;
+
+            const detalhes = document.getElementById("current-details");
+            detalhes.innerHTML = `
+        <p><strong>Sensação:</strong> ${c.apparent_temperature}</p>
+        <p><strong>Umidade:</strong> ${c.relative_humidity_2m}</p>
+        <p><strong>Nuvens:</strong> ${c.cloud_cover}</p>
+        <p><strong>Chuva:</strong> ${c.rain}</p>
+        <p><strong>Precipitação:</strong> ${c.precipitation}</p>
+        <p><strong>É dia?</strong> ${c.is_day ? "Sim ☀️" : "Não 🌙"}</p>
+      `;
+        }
+
+        // === SEÇÃO 2: CLIMA HORÁRIO ===
+        function exibirClimaPorHora(hourly) {
+            const container = document.getElementById("hourly-container");
+            container.innerHTML = "";
+            hourly.slice(0, 12).forEach(h => {
+                const card = document.createElement("div");
+                card.className = "hour-card";
+                card.innerHTML = `
+          <h4>${h.time}</h4>
+          <p>${getIcon(h.weather_code.code)}</p>
+          <p class="temp">${h.temperature_80m}</p>
+          <p>${h.weather_code.description}</p>
+          <small>💧 ${h.precipitation_probability}</small>
+        `;
+                container.appendChild(card);
+            });
+        }
+
+        // === SEÇÃO 3: CLIMA DIÁRIO ===
+        function exibirClimaDiario(daily) {
+            const container = document.getElementById("daily-container");
+            container.innerHTML = "";
+            daily.forEach(d => {
+                const card = document.createElement("div");
+                card.className = "day-card";
+                card.innerHTML = `
+          <h4>${d.time}</h4>
+          <p>${getIcon(d.weather_code.code)}</p>
+          <p>${d.weather_code.description}</p>
+          <p><strong>Máx:</strong> ${d.temperature_2m_max}</p>
+          <p><strong>Mín:</strong> ${d.temperature_2m_min}</p>
+          <p>🌧️ ${d.rain_sum}</p>
+          <p>☀️ ${d.sunrise} | 🌇 ${d.sunset}</p>
+        `;
+                container.appendChild(card);
+            });
+        }
+
+        // === ÍCONES DO CLIMA ===
+        function getIcon(code) {
+            if ([0].includes(code)) return "☀️";
+            if ([1, 2].includes(code)) return "🌤️";
+            if ([3].includes(code)) return "☁️";
+            if ([45, 48].includes(code)) return "🌫️";
+            if ([51, 61, 80].includes(code)) return "🌦️";
+            if ([63, 65, 82].includes(code)) return "🌧️";
+            if ([95, 99].includes(code)) return "⛈️";
+            return "🌍";
+        }
+
+        carregarClima();
+    </script>
+</body>
+
+</html>
