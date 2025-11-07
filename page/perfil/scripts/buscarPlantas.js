@@ -18,7 +18,6 @@ async function buscarPlantas() {
             throw new Error(`HTTP ${response.status} - ${errorText}`);
         }
         const plantas = await response.json();
-        console.log(plantas);
         return plantas;
     } catch (error) {
         console.error('Erro ao buscar plantas do usuário:', error);
@@ -29,6 +28,9 @@ async function exibirPlantas() {
     let container = document.querySelector('#plants-grid');
     const plantas = await buscarPlantas();
 
+    if(!plantas) {
+        return
+    }
 
     plantas.forEach(planta => {
         container.innerHTML +=
