@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guias - Planttools</title>
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="stylesheet" href="guias.css"/>
+  <link rel="stylesheet" href="/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul class="sidebar-menu">
+        <li><a href="../../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../servico/servicos.html">Serviços</a></li>
+        <li><a href="../contato/contatos.html">Contatos</a></li>
+      </ul>
+      
+      <div class="sidebar-profile">
+        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
+        <div class="sidebar-profile-info">
+          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
+          <a href="">Planta</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Header estilo Nike -->
+  <header class="nike-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="../../index.html" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <span class="logo-text">Planttools</span>
+        </a>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícone Plantas (substitui o coração) -->
+        <a href="" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="../../login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="../contato/contatos.html" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-guides">
+      <div class="hero-content-guides">
+        <div class="hero-text-guides">
+          <div class="brand-subtitle-guides">Biblioteca de Conhecimento</div>
+          <h1 class="hero-title-guides">Aprenda a <span class="highlight">Cultivar</span> como um Especialista</h1>
+          <p class="hero-description-guides">Guias completos, tutoriais passo a passo e dicas especializadas para transformar você em um mestre da jardinagem.</p>
+          <div class="hero-actions">
+            <button class="cta-button primary">Explorar Guias</button>
+            <button class="cta-button secondary">Ver Tutoriais</button>
+          </div>
+        </div>
+        <div class="hero-image-guides">
+          <img src="../../img/vasoplanta.png" alt="Guias de cultivo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Guias em Destaque -->
+    <section class="featured-guides">
+      <div class="section-container">
+        <div class="guides-header">
+          <h2 class="guides-title">Guias Completos para Seu Cultivo</h2>
+          <p class="guides-subtitle">Aprenda tudo sobre cultivo, cuidados específicos, solução de problemas e técnicas avançadas</p>
+        </div>
+
+        <div class="guides-grid-apple">
+          <div class="guide-card-apple">
+            <div class="guide-icon-apple">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3 class="guide-title-apple">Guia do Iniciante</h3>
+            <p class="guide-description-apple">Tudo que você precisa saber para começar sua jornada no cultivo de plantas, desde a escolha das espécies até os primeiros cuidados.</p>
+            <ul class="guide-features">
+              <li><i class="fas fa-check"></i> Escolha de plantas ideais</li>
+              <li><i class="fas fa-check"></i> Preparação do solo</li>
+              <li><i class="fas fa-check"></i> Primeiros cuidados</li>
+            </ul>
+            <a href="#" class="guide-link-apple">
+              <span>Acessar Guia</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <div class="guide-card-apple">
+            <div class="guide-icon-apple">
+              <i class="fas fa-tint"></i>
+            </div>
+            <h3 class="guide-title-apple">Guia de Rega</h3>
+            <p class="guide-description-apple">Aprenda a regar corretamente cada tipo de planta, identificando sinais de excesso ou falta de água.</p>
+            <ul class="guide-features">
+              <li><i class="fas fa-check"></i> Frequência ideal</li>
+              <li><i class="fas fa-check"></i> Quantidade correta</li>
+              <li><i class="fas fa-check"></i> Sinais de problemas</li>
+            </ul>
+            <a href="#" class="guide-link-apple">
+              <span>Acessar Guia</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <div class="guide-card-apple">
+            <div class="guide-icon-apple">
+              <i class="fas fa-bug"></i>
+            </div>
+            <h3 class="guide-title-apple">Controle de Pragas</h3>
+            <p class="guide-description-apple">Identifique, previna e trate pragas e doenças com métodos naturais e eficazes para manter suas plantas saudáveis.</p>
+            <ul class="guide-features">
+              <li><i class="fas fa-check"></i> Identificação de pragas</li>
+              <li><i class="fas fa-check"></i> Métodos preventivos</li>
+              <li><i class="fas fa-check"></i> Tratamentos naturais</li>
+            </ul>
+            <a href="#" class="guide-link-apple">
+              <span>Acessar Guia</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutoriais Passo a Passo -->
+    <section class="step-by-step-guides">
+      <div class="section-container">
+        <div class="step-header">
+          <h2>Tutoriais Passo a Passo</h2>
+          <p>Aprenda com instruções detalhadas e visuais para técnicas específicas</p>
+        </div>
+
+        <div class="tutorials-grid-apple">
+          <div class="tutorial-card-apple">
+            <div class="tutorial-icon-apple">
+              <i class="fas fa-spa"></i>
+            </div>
+            <h3 class="tutorial-title-apple">Preparação do Solo</h3>
+            <p class="tutorial-description-apple">Aprenda a criar a mistura de solo perfeita para diferentes tipos de plantas.</p>
+            <div class="tutorial-steps">
+              <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-text">Escolha dos componentes</span>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-text">Proporções ideais</span>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-text">Preparação e esterilização</span>
+              </div>
+            </div>
+            <a href="#" class="tutorial-link-apple">
+              <span>Ver Tutorial Completo</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <div class="tutorial-card-apple">
+            <div class="tutorial-icon-apple">
+              <i class="fas fa-cut"></i>
+            </div>
+            <h3 class="tutorial-title-apple">Técnicas de Poda</h3>
+            <p class="tutorial-description-apple">Domine as técnicas de poda para manter suas plantas saudáveis e bonitas.</p>
+            <div class="tutorial-steps">
+              <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-text">Ferramentas necessárias</span>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-text">Técnicas básicas</span>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-text">Cuidados pós-poda</span>
+              </div>
+            </div>
+            <a href="#" class="tutorial-link-apple">
+              <span>Ver Tutorial Completo</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <div class="tutorial-card-apple">
+            <div class="tutorial-icon-apple">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="tutorial-title-apple">Propagação por Estacas</h3>
+            <p class="tutorial-description-apple">Aprenda a multiplicar suas plantas favoritas através de estacas.</p>
+            <div class="tutorial-steps">
+              <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-text">Seleção de galhos</span>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-text">Preparação das estacas</span>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-text">Enraizamento e plantio</span>
+              </div>
+            </div>
+            <a href="#" class="tutorial-link-apple">
+              <span>Ver Tutorial Completo</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guias por Categoria -->
+    <section class="categories-guides">
+      <div class="section-container">
+        <div class="categories-header">
+          <h2>Explore por Categoria</h2>
+          <p>Encontre o guia perfeito para sua necessidade específica</p>
+        </div>
+
+        <div class="categories-grid-apple">
+          <div class="category-card-apple">
+            <div class="category-icon-apple">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="category-content">
+              <h3>Iniciantes</h3>
+              <p>Comece sua jornada no cultivo com bases sólidas e orientações claras.</p>
+              <span class="guide-count">12 guias disponíveis</span>
+            </div>
+          </div>
+
+          <div class="category-card-apple">
+            <div class="category-icon-apple">
+              <i class="fas fa-tint"></i>
+            </div>
+            <div class="category-content">
+              <h3>Rega e Água</h3>
+              <p>Aprenda a regar corretamente cada tipo de planta e evite erros comuns.</p>
+              <span class="guide-count">8 guias disponíveis</span>
+            </div>
+          </div>
+
+          <div class="category-card-apple">
+            <div class="category-icon-apple">
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="category-content">
+              <h3>Luz e Temperatura</h3>
+              <p>Entenda as necessidades de iluminação e clima das suas plantas.</p>
+              <span class="guide-count">10 guias disponíveis</span>
+            </div>
+          </div>
+
+          <div class="category-card-apple">
+            <div class="category-icon-apple">
+              <i class="fas fa-vial"></i>
+            </div>
+            <div class="category-content">
+              <h3>Adubação e Solo</h3>
+              <p>Nutrientes e preparo de solo para plantas saudáveis e vigorosas.</p>
+              <span class="guide-count">15 guias disponíveis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-guides">
+      <div class="section-container">
+        <div class="cta-content">
+          <h2>Pronto para Dominar a Arte do Cultivo?</h2>
+          <p>Junte-se a milhares de cultivadores que já transformaram seus jardins usando nossos guias especializados</p>
+          <div class="cta-buttons">
+            <button class="cta-button large primary">Explorar Todos os Guias</button>
+            <button class="cta-button large secondary">Baixar App</button>
+          </div>
+          <div class="cta-stats">
+            <div class="stat">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Guias Disponíveis</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">50K+</div>
+              <div class="stat-label">Cultivadores Ativos</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">Taxa de Sucesso</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/script/header.js"></script>
+  <script src="guias.js"></script>
+</body>
+</html>
