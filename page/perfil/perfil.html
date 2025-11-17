@@ -9,32 +9,86 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="stylesheet" href="/page/perfil/perfil.css">
-    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./perfil.css">
+   
 </head>
 <body>
-    <header>
-        <h1 class="logo">PLANTTOOLS</h1>
-    <nav>
-      <ul>
-        <li><a href="/index.html">Início</a></li>
-        <li><a href="page/sobre/sobre.html">Sobre Nós</a></li>
-        <li><a href="page/servico/servicos.html">Serviços</a></li>
-        <li><a href="page/contato/contatos.html">Contatos</a></li>
-        <div class="profile-menu-container">
-        <img src="/img/perfil.png" alt="Perfil" class="profile-icon" id="profileIcon">
-        <div class="profile-dropdown" id="profileDropdown">
-            <a id="entrar" href="login/index.html">Login</a>
-            <a href="/page/planta/planta.html">Planta</a>
+    <!-- Header estilo Nike -->
+    <header class="nike-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="header-logo">
+                <a href="../../index.html" class="logo-link">
+                    <div class="plant-logo">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span class="logo-text">Planttools</span>
+                </a>
+            </div>
+
+            <!-- Navegação Principal -->
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li><a href="../../index.html" class="nav-link">Início</a></li>
+                    <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+                    <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+                    <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+                </ul>
+            </nav>
+
+            <!-- Lado Direito - Ações -->
+            <div class="header-actions">
+                <!-- Barra de Pesquisa -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Buscar plantas...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ícone Plantas (substitui o coração) -->
+                <a href="../planta/planta.html" class="action-icon plants-icon">
+                    <i class="fas fa-leaf"></i>
+                    <span class="icon-badge">3</span>
+                </a>
+
+                <!-- Ícone Perfil -->
+                <div class="profile-container">
+                    <a href="../login/index.html" class="action-icon profile-icon">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="../login/index.html" class="dropdown-item" id="entrar">
+                            <i class="fas fa-sign-in-alt" id="icon"></i>
+                            Fazer Login
+                        </a>
+                        <a href="../planta/planta.html" class="dropdown-item">
+                            <i class="fas fa-leaf"></i>
+                            Minhas Plantas
+                        </a>
+                        <a href="../contato/contatos.html" class="dropdown-item">
+                            <i class="fas fa-headset"></i>
+                            Suporte
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menu Hambúrguer para Mobile -->
+                <div class="hamburger-menu" id="hamburgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
-        </div>
-      </ul>
-    </nav>
     </header>
 
-    <main class="profile-container">
+    <main class="profile-main-container">
         <aside class="profile-sidebar">
             <div class="profile-pic">
                 <i class="fas fa-user"></i>
@@ -70,7 +124,45 @@
                 <p>Gerencie todas as plantas do seu jardim virtual.</p>
                 
                 <div class="plants-grid" id="plants-grid">
-                    <!-- Plant cards will be dynamically inserted here -->
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #e8f5e9;">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Samambaia</h3>
+                            <p>Próxima rega: Amanhã</p>
+                        </div>
+                    </div>
+                    
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #f1f8e9;">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Suculenta</h3>
+                            <p>Próxima rega: 3 dias</p>
+                        </div>
+                    </div>
+                    
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #e8f5e9;">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Bonsai</h3>
+                            <p>Próxima rega: Hoje</p>
+                        </div>
+                    </div>
+                    
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #f1f8e9;">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Orquídea</h3>
+                            <p>Próxima rega: 2 dias</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -145,7 +237,25 @@
                 <p>Suas receitas de adubos, pesticidas naturais e soluções caseiras.</p>
                 
                 <div class="plants-grid" id="receitas">
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #fff3e0;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Adubo Caseiro</h3>
+                            <p>Fertilizante natural com cascas de banana</p>
+                        </div>
+                    </div>
                     
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #fce4ec;">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Repelente Natural</h3>
+                            <p>Contra pulgões e cochonilhas</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -190,9 +300,7 @@
 
     <footer>
         <div class="footer-content">
-            <div class="copyright">
-                &copy; 2025 PLANTTOOLS. Todos os direitos reservados.
-            </div>
+            <p>&copy; 2024 PLANTTOOLS. Todos os direitos reservados.</p>
             <div class="footer-links">
                 <a href="#">Política de Privacidade</a>
                 <a href="#">Termos de Uso</a>
@@ -200,9 +308,60 @@
             </div>
         </div>
     </footer>
-    <script src="/script/perfil.js"></script>
-    <script src="/script/script.js"></script>
-    <script type="module" src="./scripts/buscarPlantas.js"></script>
-    <script type="module" src="./scripts/receitas.js"></script>
+
+    <script>
+        // Navegação entre as seções do perfil
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuLinks = document.querySelectorAll('.menu-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const contentTitle = document.getElementById('content-title');
+            
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove a classe active de todos os links e seções
+                    menuLinks.forEach(item => item.classList.remove('active'));
+                    contentSections.forEach(section => section.classList.remove('active'));
+                    
+                    // Adiciona a classe active ao link clicado
+                    this.classList.add('active');
+                    
+                    // Mostra a seção correspondente
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                        
+                        // Atualiza o título da seção
+                        const sectionTitles = {
+                            'minhas-plantas': 'Minhas Plantas',
+                            'informacoes': 'Informações Pessoais',
+                            'posts-salvos': 'Posts Salvos',
+                            'minhas-receitas': 'Minhas Receitas',
+                            'configuracoes': 'Configurações'
+                        };
+                        
+                        contentTitle.textContent = sectionTitles[targetId] || 'Minhas Plantas';
+                    }
+                });
+            });
+            
+            // Botão de editar
+            const editButton = document.getElementById('edit-button');
+            editButton.addEventListener('click', function() {
+                alert('Modo de edição ativado!');
+                // Aqui você pode adicionar a lógica para habilitar a edição dos campos
+            });
+            
+            // Menu hambúrguer para mobile
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const headerNav = document.querySelector('.header-nav');
+            
+            hamburgerMenu.addEventListener('click', function() {
+                headerNav.style.display = headerNav.style.display === 'flex' ? 'none' : 'flex';
+            });
+        });
+    </script>
 </body>
 </html>
