@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca Avançada - Planttools</title>
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../sidebar.css">
+  <link rel="stylesheet" href="busca.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul class="sidebar-menu">
+        <li><a href="../../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../servico/servicos.html">Serviços</a></li>
+        <li><a href="../contato/contatos.html">Contatos</a></li>
+      </ul>
+      
+      <div class="sidebar-profile">
+        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
+        <div class="sidebar-profile-info">
+          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
+          <a href="../planta/planta.html">Planta</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Header estilo Nike -->
+  <header class="nike-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="../../index.html" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <span class="logo-text">Planttools</span>
+        </a>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícone Plantas -->
+        <a href="../planta/planta.html" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="../../login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="../planta/planta.html" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="../contato/contatos.html" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section Busca Avançada -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="brand-subtitle fade-in-up">Planttools</div>
+          <h1 class="hero-title fade-in-up" data-delay="0.2">BUSCA <span class="highlight">AVANÇADA</span></h1>
+          <p class="hero-description fade-in-up" data-delay="0.4">
+            Encontre plantas perfeitas para seu espaço, clima e nível de experiência 
+            com nossa busca inteligente e filtros personalizados.
+          </p>
+        </div>
+        <div class="hero-image fade-in" data-delay="0.6">
+          <img src="../../img/busca-hero.png" alt="Busca de plantas">
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Busca e Filtros -->
+    <section class="features-apple">
+      <div class="section-container">
+        <div class="busca-section">
+          <!-- Barra de Busca Principal -->
+          <div class="busca-principal">
+            <div class="search-box-advanced">
+              <div class="search-input-container">
+                <i class="fas fa-search search-icon-advanced"></i>
+                <input type="text" class="search-input-advanced" placeholder="Digite o nome da planta, espécie ou características...">
+                <button class="search-btn-advanced">
+                  <i class="fas fa-search"></i>
+                  Buscar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filtros Avançados -->
+          <div class="filtros-section">
+            <div class="filtros-header">
+              <h3>Filtros Avançados</h3>
+              <button class="limpar-filtros">
+                <i class="fas fa-times"></i>
+                Limpar Filtros
+              </button>
+            </div>
+
+            <div class="filtros-grid">
+              <!-- Tipo de Planta -->
+              <div class="filtro-group">
+                <label for="tipo-planta">Tipo de Planta</label>
+                <select id="tipo-planta">
+                  <option value="">Todos os tipos</option>
+                  <option value="ornamental">Ornamental</option>
+                  <option value="suculenta">Suculenta</option>
+                  <option value="vegetal">Vegetal</option>
+                  <option value="aromática">Aromática</option>
+                  <option value="medicinal">Medicinal</option>
+                  <option value="frutífera">Frutífera</option>
+                </select>
+              </div>
+
+              <!-- Dificuldade -->
+              <div class="filtro-group">
+                <label for="dificuldade">Nível de Dificuldade</label>
+                <select id="dificuldade">
+                  <option value="">Qualquer nível</option>
+                  <option value="iniciante">Iniciante</option>
+                  <option value="intermediario">Intermediário</option>
+                  <option value="avancado">Avançado</option>
+                </select>
+              </div>
+
+              <!-- Local de Cultivo -->
+              <div class="filtro-group">
+                <label for="local-cultivo">Local de Cultivo</label>
+                <select id="local-cultivo">
+                  <option value="">Qualquer local</option>
+                  <option value="interno">Ambiente Interno</option>
+                  <option value="externo">Ambiente Externo</option>
+                  <option value="vaso">Vaso</option>
+                  <option value="jardim">Jardim</option>
+                  <option value="estufa">Estufa</option>
+                </select>
+              </div>
+
+              <!-- Necessidade de Luz -->
+              <div class="filtro-group">
+                <label for="luz">Necessidade de Luz</label>
+                <select id="luz">
+                  <option value="">Qualquer intensidade</option>
+                  <option value="sombra">Sombra</option>
+                  <option value="meia-sombra">Meia Sombra</option>
+                  <option value="sol-pleno">Sol Pleno</option>
+                </select>
+              </div>
+
+              <!-- Frequência de Rega -->
+              <div class="filtro-group">
+                <label for="rega">Frequência de Rega</label>
+                <select id="rega">
+                  <option value="">Qualquer frequência</option>
+                  <option value="baixa">Baixa (1x por semana)</option>
+                  <option value="moderada">Moderada (2-3x por semana)</option>
+                  <option value="alta">Alta (Diária)</option>
+                </select>
+              </div>
+
+              <!-- Tamanho Adulto -->
+              <div class="filtro-group">
+                <label for="tamanho">Tamanho Adulto</label>
+                <select id="tamanho">
+                  <option value="">Qualquer tamanho</option>
+                  <option value="pequeno">Pequeno (até 30cm)</option>
+                  <option value="medio">Médio (30cm - 1m)</option>
+                  <option value="grande">Grande (acima de 1m)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Filtros Adicionais -->
+            <div class="filtros-adicionais">
+              <div class="filtro-checkbox">
+                <input type="checkbox" id="pet-friendly" checked>
+                <label for="pet-friendly">Pet Friendly</label>
+              </div>
+              <div class="filtro-checkbox">
+                <input type="checkbox" id="purifica-ar">
+                <label for="purifica-ar">Purifica o Ar</label>
+              </div>
+              <div class="filtro-checkbox">
+                <input type="checkbox" id="floresce">
+                <label for="floresce">Produz Flores</label>
+              </div>
+              <div class="filtro-checkbox">
+                <input type="checkbox" id="frutifera">
+                <label for="frutifera">Produz Frutos</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resultados da Busca -->
+          <div class="resultados-section">
+            <div class="resultados-header">
+              <h3>Resultados da Busca</h3>
+              <div class="resultados-info">
+                <span class="quantidade">12 plantas encontradas</span>
+                <div class="ordenacao">
+                  <label for="ordenar">Ordenar por:</label>
+                  <select id="ordenar">
+                    <option value="relevancia">Relevância</option>
+                    <option value="nome">Nome A-Z</option>
+                    <option value="dificuldade">Dificuldade</option>
+                    <option value="popularidade">Popularidade</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="plantas-grid">
+              <!-- Planta 1 -->
+              <div class="planta-card">
+                <div class="planta-imagem">
+                  <img src="../../img/planta-suculenta.jpg" alt="Suculenta">
+                  <div class="planta-badge facil">Fácil</div>
+                </div>
+                <div class="planta-info">
+                  <h4>Suculenta</h4>
+                  <p class="planta-nome-cientifico">Echeveria elegans</p>
+                  <div class="planta-caracteristicas">
+                    <span class="caracteristica">
+                      <i class="fas fa-sun"></i>
+                      Sol Pleno
+                    </span>
+                    <span class="caracteristica">
+                      <i class="fas fa-tint"></i>
+                      Pouca água
+                    </span>
+                  </div>
+                  <p class="planta-descricao">
+                    Perfeita para iniciantes, requer poucos cuidados e se adapta bem a ambientes internos.
+                  </p>
+                  <button class="btn-detalhes">
+                    <i class="fas fa-info-circle"></i>
+                    Ver Detalhes
+                  </button>
+                </div>
+              </div>
+
+              <!-- Planta 2 -->
+              <div class="planta-card">
+                <div class="planta-imagem">
+                  <img src="../../img/planta-samambaia.jpg" alt="Samambaia">
+                  <div class="planta-badge moderado">Moderado</div>
+                </div>
+                <div class="planta-info">
+                  <h4>Samambaia</h4>
+                  <p class="planta-nome-cientifico">Nephrolepis exaltata</p>
+                  <div class="planta-caracteristicas">
+                    <span class="caracteristica">
+                      <i class="fas fa-sun"></i>
+                      Meia Sombra
+                    </span>
+                    <span class="caracteristica">
+                      <i class="fas fa-tint"></i>
+                      Umidade média
+                    </span>
+                  </div>
+                  <p class="planta-descricao">
+                    Ideal para pendurar, purifica o ar e adora ambientes úmidos como banheiros.
+                  </p>
+                  <button class="btn-detalhes">
+                    <i class="fas fa-info-circle"></i>
+                    Ver Detalhes
+                  </button>
+                </div>
+              </div>
+
+              <!-- Planta 3 -->
+              <div class="planta-card">
+                <div class="planta-imagem">
+                  <img src="../../img/planta-lavanda.jpg" alt="Lavanda">
+                  <div class="planta-badge moderado">Moderado</div>
+                </div>
+                <div class="planta-info">
+                  <h4>Lavanda</h4>
+                  <p class="planta-nome-cientifico">Lavandula angustifolia</p>
+                  <div class="planta-caracteristicas">
+                    <span class="caracteristica">
+                      <i class="fas fa-sun"></i>
+                      Sol Pleno
+                    </span>
+                    <span class="caracteristica">
+                      <i class="fas fa-tint"></i>
+                      Rega moderada
+                    </span>
+                  </div>
+                  <p class="planta-descricao">
+                    Aromática medicinal, produz flores violetas e repele insetos naturalmente.
+                  </p>
+                  <button class="btn-detalhes">
+                    <i class="fas fa-info-circle"></i>
+                    Ver Detalhes
+                  </button>
+                </div>
+              </div>
+
+              <!-- Planta 4 -->
+              <div class="planta-card">
+                <div class="planta-imagem">
+                  <img src="../../img/planta-orquidea.jpg" alt="Orquídea">
+                  <div class="planta-badge avancado">Avançado</div>
+                </div>
+                <div class="planta-info">
+                  <h4>Orquídea</h4>
+                  <p class="planta-nome-cientifico">Phalaenopsis sp</p>
+                  <div class="planta-caracteristicas">
+                    <span class="caracteristica">
+                      <i class="fas fa-sun"></i>
+                      Luz indireta
+                    </span>
+                    <span class="caracteristica">
+                      <i class="fas fa-tint"></i>
+                      Rega controlada
+                    </span>
+                  </div>
+                  <p class="planta-descricao">
+                    Flores exuberantes que requerem cuidados específicos de umidade e iluminação.
+                  </p>
+                  <button class="btn-detalhes">
+                    <i class="fas fa-info-circle"></i>
+                    Ver Detalhes
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paginação -->
+            <div class="paginacao">
+              <button class="pagina-btn disabled">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="pagina-btn active">1</button>
+              <button class="pagina-btn">2</button>
+              <button class="pagina-btn">3</button>
+              <button class="pagina-btn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./busca.js"></script>
+  <script src="../../script/script.js"></script>
+  <script src="../../script/verificaLogin.js"></script>
+  <script src="../../script/sidebar.js"></script>
+  <script src="../../script/animations.js"></script>
+  <script src="../../script/header.js"></script>
+</body>
+</html>

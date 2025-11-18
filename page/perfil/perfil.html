@@ -9,10 +9,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./perfil.css">
-   
 </head>
 <body>
     <!-- Header estilo Nike -->
@@ -28,7 +27,7 @@
                 </a>
             </div>
 
-            <!-- Navegação Principal -->
+            <!-- Navegação Principal - CORRIGIDA -->
             <nav class="header-nav">
                 <ul class="nav-menu">
                     <li><a href="../../index.html" class="nav-link">Início</a></li>
@@ -51,7 +50,7 @@
                     </div>
                 </div>
 
-                <!-- Ícone Plantas (substitui o coração) -->
+                <!-- Ícone Plantas -->
                 <a href="../planta/planta.html" class="action-icon plants-icon">
                     <i class="fas fa-leaf"></i>
                     <span class="icon-badge">3</span>
@@ -59,13 +58,13 @@
 
                 <!-- Ícone Perfil -->
                 <div class="profile-container">
-                    <a href="../login/index.html" class="action-icon profile-icon">
+                    <a href="#" class="action-icon profile-icon">
                         <i class="fas fa-user"></i>
                     </a>
                     <div class="profile-dropdown" id="profileDropdown">
-                        <a href="../login/index.html" class="dropdown-item" id="entrar">
-                            <i class="fas fa-sign-in-alt" id="icon"></i>
-                            Fazer Login
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            Meu Perfil
                         </a>
                         <a href="../planta/planta.html" class="dropdown-item">
                             <i class="fas fa-leaf"></i>
@@ -74,6 +73,10 @@
                         <a href="../contato/contatos.html" class="dropdown-item">
                             <i class="fas fa-headset"></i>
                             Suporte
+                        </a>
+                        <a href="../login/index.html" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sair
                         </a>
                     </div>
                 </div>
@@ -90,8 +93,14 @@
 
     <main class="profile-main-container">
         <aside class="profile-sidebar">
-            <div class="profile-pic">
-                <i class="fas fa-user"></i>
+            <div class="profile-pic-container">
+                <div class="profile-pic">
+                    <i class="fas fa-user"></i>
+                </div>
+                <!-- BOTÃO CÂMERA ADICIONADO -->
+                <button class="camera-btn">
+                    <i class="fas fa-camera"></i>
+                </button>
             </div>
             <h2 class="user-name">Maria Silva</h2>
             <p class="user-email">maria.silva@email.com</p>
@@ -118,54 +127,165 @@
         <section class="profile-content">
             <div class="content-header">
                 <h2 id="content-title">Minhas Plantas</h2>
-                <button class="edit-btn" id="edit-button">Editar</button>
+                <button class="edit-btn" id="edit-button">
+                    <i class="fas fa-edit"></i> Editar
+                </button>
             </div>
+            
+            <!-- SEÇÃO MINHAS PLANTAS ATUALIZADA -->
             <div id="minhas-plantas" class="content-section active">
                 <p>Gerencie todas as plantas do seu jardim virtual.</p>
                 
                 <div class="plants-grid" id="plants-grid">
-                    <div class="plant-card">
-                        <div class="plant-img" style="background-color: #e8f5e9;">
-                            <i class="fas fa-leaf"></i>
+                    <!-- Card 1 - Berinjela -->
+                    <div class="plant-card-new">
+                        <div class="plant-card-header">
+                            <button class="add-plant-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                            <h3>Berinjela</h3>
                         </div>
-                        <div class="plant-info">
-                            <h3>Samambaia</h3>
-                            <p>Próxima rega: Amanhã</p>
+                        
+                        <div class="plant-image-container">
+                            <div class="plant-image">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="plant-progress">
+                                <div class="progress-circle">
+                                    <div class="progress-bar" data-progress="70"></div>
+                                    <div class="progress-text">70%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="plant-info-grid">
+                            <div class="info-item">
+                                <span class="info-label">TIPO</span>
+                                <span class="info-value">Vegetal</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">PLANTA</span>
+                                <span class="info-value">Berinjela</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">LOCAL</span>
+                                <span class="info-value">Horta</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">M²</span>
+                                <span class="info-value">10</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">PH</span>
+                                <span class="info-value">7</span>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img" style="background-color: #f1f8e9;">
-                            <i class="fas fa-spa"></i>
+
+                    <!-- Card 2 - Tomate -->
+                    <div class="plant-card-new">
+                        <div class="plant-card-header">
+                            <button class="add-plant-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                            <h3>Tomate</h3>
                         </div>
-                        <div class="plant-info">
+                        
+                        <div class="plant-image-container">
+                            <div class="plant-image">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="plant-progress">
+                                <div class="progress-circle">
+                                    <div class="progress-bar" data-progress="40"></div>
+                                    <div class="progress-text">40%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="plant-info-grid">
+                            <div class="info-item">
+                                <span class="info-label">TIPO</span>
+                                <span class="info-value">Vegetal</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">PLANTA</span>
+                                <span class="info-value">Tomate</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">LOCAL</span>
+                                <span class="info-value">Horta</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">M²</span>
+                                <span class="info-value">8</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">PH</span>
+                                <span class="info-value">6.5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 - Suculenta -->
+                    <div class="plant-card-new">
+                        <div class="plant-card-header">
+                            <button class="add-plant-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
                             <h3>Suculenta</h3>
-                            <p>Próxima rega: 3 dias</p>
+                        </div>
+                        
+                        <div class="plant-image-container">
+                            <div class="plant-image">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="plant-progress">
+                                <div class="progress-circle">
+                                    <div class="progress-bar" data-progress="90"></div>
+                                    <div class="progress-text">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="plant-info-grid">
+                            <div class="info-item">
+                                <span class="info-label">TIPO</span>
+                                <span class="info-value">Ornamental</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">PLANTA</span>
+                                <span class="info-value">Suculenta</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">LOCAL</span>
+                                <span class="info-value">Vaso</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">M²</span>
+                                <span class="info-value">0.5</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">PH</span>
+                                <span class="info-value">6.8</span>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img" style="background-color: #e8f5e9;">
-                            <i class="fas fa-tree"></i>
-                        </div>
-                        <div class="plant-info">
-                            <h3>Bonsai</h3>
-                            <p>Próxima rega: Hoje</p>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img" style="background-color: #f1f8e9;">
-                            <i class="fas fa-seedling"></i>
-                        </div>
-                        <div class="plant-info">
-                            <h3>Orquídea</h3>
-                            <p>Próxima rega: 2 dias</p>
+
+                    <!-- Card para Adicionar Nova Planta -->
+                    <div class="plant-card-new add-new-card">
+                        <div class="add-new-content">
+                            <div class="add-new-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3>Adicionar Planta</h3>
+                            <p>Clique para adicionar uma nova planta ao seu jardim</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- SEÇÃO INFORMAÇÕES PESSOAIS CORRIGIDA -->
             <div id="informacoes" class="content-section">
                 <p>Suas informações pessoais e dados da conta.</p>
                 
@@ -174,6 +294,7 @@
                         <h3>Informações Básicas</h3>
                         <p><strong>Nome:</strong> Maria Silva</p>
                         <p><strong>Email:</strong> maria.silva@email.com</p>
+                        <p><strong>Telefone:</strong> (11) 99999-9999</p>
                         <p><strong>Localização:</strong> São Paulo, SP</p>
                     </div>
                     
@@ -181,18 +302,21 @@
                         <h3>Estatísticas</h3>
                         <p><strong>Plantas:</strong> 12</p>
                         <p><strong>Posts Salvos:</strong> 8</p>
+                        <p><strong>Receitas:</strong> 5</p>
                         <p><strong>Membro desde:</strong> Jan 2024</p>
                     </div>
                     
                     <div class="info-card">
                         <h3>Interesses</h3>
-                        <p>Plantas ornamentais, Jardinagem interna, Suculentas</p>
+                        <p>Plantas ornamentais, Jardinagem interna, Suculentas, Hortaliças, Plantas medicinais</p>
                     </div>
                     
                     <div class="info-card">
                         <h3>Próximas Tarefas</h3>
-                        <p>Regar Samambaia (15/10)</p>
-                        <p>Adubar Orquídea (18/10)</p>
+                        <p><strong>Regar Samambaia:</strong> Amanhã</p>
+                        <p><strong>Adubar Orquídea:</strong> 18/10</p>
+                        <p><strong>Podar Bonsai:</strong> 20/10</p>
+                        <p><strong>Colher Tomate:</strong> 22/10</p>
                     </div>
                 </div>
             </div>
@@ -230,6 +354,16 @@
                             <p>Métodos naturais para proteger suas plantas</p>
                         </div>
                     </div>
+
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #fff3e0;">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Iluminação Ideal</h3>
+                            <p>Entenda as necessidades de luz das plantas</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -256,6 +390,26 @@
                             <p>Contra pulgões e cochonilhas</p>
                         </div>
                     </div>
+
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #e8f5e9;">
+                            <i class="fas fa-mortar-pestle"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Adubo Líquido</h3>
+                            <p>Com borra de café e cascas de ovo</p>
+                        </div>
+                    </div>
+
+                    <div class="plant-card">
+                        <div class="plant-img" style="background-color: #e1f5fe;">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="plant-info">
+                            <h3>Enraizador Natural</h3>
+                            <p>Para estimular o crescimento de raízes</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -272,6 +426,11 @@
                         <label for="email">Email</label>
                         <input type="email" id="email" value="maria.silva@email.com">
                     </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" value="(11) 99999-9999">
+                    </div>
                     
                     <div class="form-group">
                         <label for="localizacao">Localização</label>
@@ -280,7 +439,7 @@
                     
                     <div class="form-group">
                         <label for="interesses">Interesses</label>
-                        <textarea id="interesses" rows="3">Plantas ornamentais, Jardinagem interna, Suculentas</textarea>
+                        <textarea id="interesses" rows="3">Plantas ornamentais, Jardinagem interna, Suculentas, Hortaliças, Plantas medicinais</textarea>
                     </div>
                     
                     <div class="form-group">
@@ -291,23 +450,23 @@
                             <option>Não receber notificações</option>
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label for="privacidade">Privacidade do Perfil</label>
+                        <select id="privacidade">
+                            <option>Público</option>
+                            <option>Privado</option>
+                            <option>Somente amigos</option>
+                        </select>
+                    </div>
                     
-                    <button class="save-btn">Salvar Alterações</button>
+                    <button class="save-btn">
+                        <i class="fas fa-save"></i> Salvar Alterações
+                    </button>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 PLANTTOOLS. Todos os direitos reservados.</p>
-            <div class="footer-links">
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Uso</a>
-                <a href="#">Contato</a>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Navegação entre as seções do perfil
@@ -354,12 +513,95 @@
                 // Aqui você pode adicionar a lógica para habilitar a edição dos campos
             });
             
+            // Botão da câmera no perfil
+            const cameraBtn = document.querySelector('.camera-btn');
+            if (cameraBtn) {
+                cameraBtn.addEventListener('click', function() {
+                    alert('Funcionalidade de alterar foto de perfil será implementada aqui!');
+                });
+            }
+            
             // Menu hambúrguer para mobile
             const hamburgerMenu = document.getElementById('hamburgerMenu');
             const headerNav = document.querySelector('.header-nav');
             
-            hamburgerMenu.addEventListener('click', function() {
-                headerNav.style.display = headerNav.style.display === 'flex' ? 'none' : 'flex';
+            if (hamburgerMenu && headerNav) {
+                hamburgerMenu.addEventListener('click', function() {
+                    const isVisible = headerNav.style.display === 'flex';
+                    headerNav.style.display = isVisible ? 'none' : 'flex';
+                    
+                    // Anima os spans do hambúrguer
+                    const spans = this.querySelectorAll('span');
+                    if (!isVisible) {
+                        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                    } else {
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                });
+            }
+
+            // Fechar menu ao clicar em um link (mobile)
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        headerNav.style.display = 'none';
+                        const spans = hamburgerMenu.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                });
+            });
+
+            // Inicializar barras de progresso circular
+            function initializeProgressBars() {
+                const progressBars = document.querySelectorAll('.progress-bar');
+                
+                progressBars.forEach(bar => {
+                    const progress = bar.getAttribute('data-progress');
+                    const progressValue = (progress / 100) * 360;
+                    
+                    // Aplica o gradiente conico com animação
+                    setTimeout(() => {
+                        bar.style.background = `conic-gradient(#2d5a42 ${progressValue}deg, #e8f5e8 0deg)`;
+                    }, 300);
+                });
+            }
+
+            // Função para adicionar nova planta
+            function setupAddPlantButton() {
+                const addNewCard = document.querySelector('.add-new-card');
+                
+                if (addNewCard) {
+                    addNewCard.addEventListener('click', function() {
+                        alert('Funcionalidade de adicionar nova planta será implementada aqui!');
+                    });
+                }
+                
+                // Botões de câmera nas plantas
+                const cameraButtons = document.querySelectorAll('.add-plant-btn');
+                cameraButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        alert('Funcionalidade de adicionar foto da planta será implementada aqui!');
+                    });
+                });
+            }
+
+            // Inicializar funcionalidades
+            initializeProgressBars();
+            setupAddPlantButton();
+            
+            // Re-inicializar quando mudar para a seção de plantas
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    setTimeout(initializeProgressBars, 300);
+                });
             });
         });
     </script>

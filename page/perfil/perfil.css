@@ -6,13 +6,14 @@
 }
 
 body {
-    background-color: #f5f9f4;
-    color: #333;
+    background: linear-gradient(135deg, #f8fdf8 0%, #e8f5e8 100%);
+    color: #1a1a1a;
     line-height: 1.6;
-    padding-top: 70px; /* Espaço para o header fixo */
+    padding-top: 70px;
+    min-height: 100vh;
 }
 
-/* Header Styles */
+/* Header Styles - IDÊNTICO à página inicial */
 .nike-header {
     position: fixed;
     top: 0;
@@ -297,56 +298,155 @@ body {
     transition: 0.3s;
 }
 
-/* Profile Container */
+/* CORREÇÃO PARA OS ÍCONES - Container da foto de perfil */
+.profile-pic-container {
+    position: relative;
+    display: inline-block;
+}
+
+.camera-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(45, 90, 66, 0.3);
+}
+
+.camera-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(45, 90, 66, 0.4);
+}
+
+/* CORREÇÃO: Garantir que os ícones do Font Awesome apareçam */
+.fas, .fab, .far {
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900;
+}
+
+.fa-solid {
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900;
+}
+
+/* CORREÇÃO: Ícone no botão editar */
+.edit-btn i {
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+/* CORREÇÃO: Garantir que os ícones do menu apareçam */
+.profile-menu a i {
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900;
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #2d5a42;
+}
+
+/* CORREÇÃO: Ícones do header */
+.action-icon i,
+.search-btn i,
+.dropdown-item i {
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900;
+}
+
+/* CORREÇÃO: Ícones das plantas */
+.plant-image i,
+.add-plant-btn i,
+.add-new-icon i {
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900;
+}
+
+/* Profile Container - ESTILO ATUALIZADO */
 .profile-main-container {
     display: flex;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     max-width: 1200px;
-    margin: 20px auto;
-    min-height: calc(100vh - 110px);
+    margin: 40px auto;
+    min-height: calc(100vh - 180px);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .profile-sidebar {
-    width: 300px;
-    background-color: #e8f5e9;
+    width: 320px;
+    background: linear-gradient(135deg, #f0f7eb 0%, #e8f5e8 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 1px solid #d0e7d2;
-    padding: 2rem 1rem;
+    border-right: 1px solid #e0e0e0;
+    padding: 3rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2d5a42, #4a7c5f);
 }
 
 .profile-pic {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #4caf50, #2d5a27);
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 4rem;
+    font-size: 3.5rem;
     border: 5px solid white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(45, 90, 66, 0.2);
+    transition: all 0.4s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(45, 90, 66, 0.3);
 }
 
 .user-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #2d5a27;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a1a;
     margin-bottom: 0.5rem;
     text-align: center;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .user-email {
     color: #666;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
     text-align: center;
+    font-weight: 400;
 }
 
 .profile-menu {
@@ -355,147 +455,443 @@ body {
 }
 
 .profile-menu li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .profile-menu a {
     display: flex;
     align-items: center;
-    padding: 0.8rem 1rem;
-    background-color: white;
-    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
     text-decoration: none;
-    color: #2d5a27;
+    color: #1a1a1a;
     font-weight: 500;
     transition: all 0.3s ease;
-    border-left: 4px solid transparent;
+    border: 1px solid transparent;
+    backdrop-filter: blur(10px);
 }
 
 .profile-menu a i {
-    margin-right: 10px;
+    margin-right: 12px;
     width: 20px;
     text-align: center;
+    font-size: 1.1rem;
+    color: #2d5a42;
 }
 
 .profile-menu a:hover,
 .profile-menu a.active {
-    background-color: #2d5a27;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
     color: white;
-    border-left-color: #a8e6a3;
+    transform: translateX(8px);
+    box-shadow: 0 5px 15px rgba(45, 90, 66, 0.3);
+}
+
+.profile-menu a:hover i,
+.profile-menu a.active i {
+    color: white;
 }
 
 .profile-content {
     flex: 1;
-    padding: 2rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
+    background: #ffffff;
 }
 
 .content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid #eaeaea;
 }
 
 .content-header h2 {
-    color: #2d5a27;
-    font-size: 1.8rem;
+    color: #1a1a1a;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .edit-btn {
-    background-color: #2d5a27;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
     cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(45, 90, 66, 0.3);
 }
 
 .edit-btn:hover {
-    background-color: #1e3f1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 90, 66, 0.4);
 }
 
 .content-section {
     display: none;
     flex: 1;
+    animation: fadeInUp 0.6s ease;
 }
 
 .content-section.active {
     display: block;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .info-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .info-card {
     background: #f9fdf8;
-    border-radius: 8px;
-    padding: 1.5rem;
-    border-left: 4px solid #4caf50;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    border-left: 4px solid #2d5a42;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .info-card h3 {
-    color: #2d5a27;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    color: #2d5a42;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .info-card p {
     color: #666;
     font-size: 0.95rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
 }
 
+/* NOVOS ESTILOS PARA OS CARDS DE PLANTAS */
 .plants-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-.plant-card {
+.plant-card-new {
     background: white;
-    border-radius: 8px;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s;
 }
 
-.plant-card:hover {
-    transform: translateY(-5px);
+.plant-card-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2d5a42, #4a7c5f);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
-.plant-img {
-    height: 140px;
-    background-color: #c8e6c9;
+.plant-card-new:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.plant-card-new:hover::before {
+    transform: scaleX(1);
+}
+
+.plant-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.plant-card-header h3 {
+    color: #1a1a1a;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.add-plant-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
+    border: none;
+    color: white;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #2d5a27;
-    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
-.plant-info {
-    padding: 1rem;
+.add-plant-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(45, 90, 66, 0.4);
 }
 
-.plant-info h3 {
-    color: #2d5a27;
+.plant-image-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.plant-image {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #e8f5e8, #d0e7d2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #2d5a42;
+    font-size: 3rem;
+    transition: all 0.3s ease;
+}
+
+.plant-card-new:hover .plant-image {
+    background: linear-gradient(135deg, #d0e7d2, #b8dfb8);
+    transform: scale(1.05);
+}
+
+.plant-progress {
+    position: absolute;
+    bottom: -10px;
+    right: 20%;
+    transform: translateX(50%);
+}
+
+.progress-circle {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background: #f8f8f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    background: conic-gradient(#2d5a42 0%, #e8f5e8 0%);
+    transition: background 1s ease;
+}
+
+.progress-text {
+    position: relative;
+    z-index: 2;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #2d5a42;
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plant-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.8rem;
+    background: #f9fdf8;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: #e8f5e8;
+    transform: translateY(-2px);
+}
+
+.info-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: 0.3rem;
 }
 
-.plant-info p {
+.info-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2d5a42;
+}
+
+/* Card para adicionar nova planta */
+.add-new-card {
+    background: linear-gradient(135deg, #f8fdf8, #e8f5e8);
+    border: 2px dashed #2d5a42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 300px;
+}
+
+.add-new-card:hover {
+    background: linear-gradient(135deg, #e8f5e8, #d0e7d2);
+    transform: translateY(-5px);
+    border-color: #4a7c5f;
+}
+
+.add-new-content {
+    text-align: center;
+    color: #2d5a42;
+}
+
+.add-new-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.add-new-card:hover .add-new-icon {
+    transform: scale(1.1);
+}
+
+.add-new-content h3 {
+    color: #2d5a42;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.add-new-content p {
     color: #666;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Estilos para outras seções (Posts Salvos, Receitas) */
+.plants-grid .plant-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+}
+
+.plants-grid .plant-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2d5a42, #4a7c5f);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.plants-grid .plant-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.plants-grid .plant-card:hover::before {
+    transform: scaleX(1);
+}
+
+.plants-grid .plant-img {
+    height: 160px;
+    background: linear-gradient(135deg, #e8f5e8, #d0e7d2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d5a42;
+    font-size: 3rem;
+    transition: all 0.3s ease;
+}
+
+.plants-grid .plant-card:hover .plant-img {
+    background: linear-gradient(135deg, #d0e7d2, #b8dfb8);
+}
+
+.plants-grid .plant-info {
+    padding: 1.5rem;
+}
+
+.plants-grid .plant-info h3 {
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.plants-grid .plant-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .settings-form {
@@ -503,56 +899,68 @@ body {
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #2d5a27;
-    font-weight: 500;
+    margin-bottom: 0.8rem;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 1rem 1.2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background: #f8f8f8;
+    font-family: 'Poppins', sans-serif;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #4caf50;
+    border-color: #2d5a42;
     outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(45, 90, 66, 0.1);
 }
 
 .save-btn {
-    background-color: #2d5a27;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-radius: 25px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(45, 90, 66, 0.3);
 }
 
 .save-btn:hover {
-    background-color: #1e3f1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 90, 66, 0.4);
 }
 
+.save-btn i {
+    margin-right: 8px;
+}
+
+/* Footer Style - COERENTE com a página inicial */
 footer {
-    background-color: #2d5a27;
+    background: linear-gradient(135deg, #2d5a42, #4a7c5f);
     color: white;
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
+    padding: 2rem;
+    margin-top: 3rem;
 }
 
 .footer-content {
@@ -568,10 +976,36 @@ footer {
     text-decoration: none;
     margin-left: 1.5rem;
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 .footer-links a:hover {
     color: #a8e6a3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 0 20px;
+        gap: 30px;
+    }
+    
+    .nav-menu {
+        gap: 25px;
+    }
+    
+    .search-box {
+        width: 240px;
+    }
+    
+    .profile-main-container {
+        margin: 30px 20px;
+    }
+    
+    .plants-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -583,6 +1017,7 @@ footer {
         padding: 0 20px;
         height: 60px;
         gap: 20px;
+        grid-template-columns: auto 1fr;
     }
     
     .nav-menu {
@@ -593,15 +1028,35 @@ footer {
         width: 200px;
     }
     
+    .header-nav {
+        display: none;
+    }
+    
+    .search-container {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+    }
+    
     .profile-main-container {
         flex-direction: column;
-        margin: 10px;
+        margin: 20px;
+        border-radius: 16px;
     }
 
     .profile-sidebar {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid #d0e7d2;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 2rem 1rem;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
     }
 
     .info-grid {
@@ -609,23 +1064,112 @@ footer {
     }
 
     .plants-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+
+    .profile-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .content-header h2 {
+        font-size: 1.8rem;
     }
 
     .footer-content {
         flex-direction: column;
         gap: 1rem;
+        text-align: center;
     }
 
     .footer-links a {
         margin: 0 0.5rem;
     }
-    
-    .hamburger-menu {
-        display: flex;
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 15px;
     }
     
-    .header-nav {
-        display: none;
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .plant-logo {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .header-actions {
+        gap: 10px;
+    }
+    
+    .action-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .profile-main-container {
+        margin: 15px;
+        border-radius: 12px;
+    }
+    
+    .profile-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .content-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .content-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .plants-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plant-card-new {
+        padding: 1.2rem;
+    }
+    
+    .plant-image {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+    
+    .progress-circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .progress-text {
+        width: 42px;
+        height: 42px;
+        font-size: 0.7rem;
+    }
+    
+    .plant-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .info-item {
+        padding: 0.6rem;
+    }
+    
+    .info-label {
+        font-size: 0.7rem;
+    }
+    
+    .info-value {
+        font-size: 0.85rem;
     }
 }

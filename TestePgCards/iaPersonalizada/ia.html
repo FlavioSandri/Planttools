@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Personalizada - Planttools</title>
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../sidebar.css">
+  <link rel="stylesheet" href="./ia.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul class="sidebar-menu">
+        <li><a href="../../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../servico/servicos.html">Serviços</a></li>
+        <li><a href="../contato/contatos.html">Contatos</a></li>
+      </ul>
+      
+      <div class="sidebar-profile">
+        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
+        <div class="sidebar-profile-info">
+          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
+          <a href="../planta/planta.html">Planta</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Header estilo Nike -->
+  <header class="nike-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="../../index.html" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <span class="logo-text">Planttools</span>
+        </a>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícone Plantas -->
+        <a href="../planta/planta.html" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="../../login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="../planta/planta.html" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="../contato/contatos.html" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section IA Personalizada -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="brand-subtitle fade-in-up">Planttools</div>
+          <h1 class="hero-title fade-in-up" data-delay="0.2">ASSISTENTE <span class="highlight">IA</span></h1>
+          <p class="hero-description fade-in-up" data-delay="0.4">
+            Nossa inteligência artificial especializada em plantas está aqui para ajudar! 
+            Identifique espécies, receba cuidados personalizados e tire todas suas dúvidas.
+          </p>
+        </div>
+        <div class="hero-image fade-in" data-delay="0.6">
+          <img src="../../img/ia-hero.png" alt="Assistente IA">
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção do Chat IA -->
+    <section class="features-apple">
+      <div class="section-container">
+        <div class="ia-section">
+          <!-- Painel do Chat -->
+          <div class="chat-container">
+            <div class="chat-header">
+              <div class="chat-bot-info">
+                <div class="bot-avatar">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="bot-details">
+                  <h3>PlantBot IA</h3>
+                  <span class="bot-status online">
+                    <i class="fas fa-circle"></i>
+                    Online
+                  </span>
+                </div>
+              </div>
+              <div class="chat-actions">
+                <button class="action-btn" title="Novo Chat" id="novoChat">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <button class="action-btn" title="Configurações" id="configuracoes">
+                  <i class="fas fa-cog"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Área de Upload de Imagem -->
+            <div class="upload-section" id="uploadSection">
+              <div class="upload-content">
+                <i class="fas fa-camera"></i>
+                <h4>Identificar Planta por Foto</h4>
+                <p>Envie uma foto da sua planta para identificação automática</p>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+                <button class="upload-btn" id="uploadBtn">
+                  <i class="fas fa-upload"></i>
+                  Escolher Foto
+                </button>
+                <div class="upload-preview" id="uploadPreview"></div>
+              </div>
+            </div>
+
+            <!-- Área de Mensagens -->
+            <div class="chat-messages" id="chatMessages">
+              <!-- Mensagem de boas-vindas do bot -->
+              <div class="message bot-message">
+                <div class="message-avatar">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                  <div class="message-text">
+                    Olá! Sou o PlantBot, seu assistente especializado em plantas! 🌱
+                    Posso ajudar você a:
+                  </div>
+                  <div class="quick-actions">
+                    <button class="quick-action" data-action="identificar">
+                      <i class="fas fa-camera"></i>
+                      Identificar planta
+                    </button>
+                    <button class="quick-action" data-action="cuidados">
+                      <i class="fas fa-heart"></i>
+                      Cuidados básicos
+                    </button>
+                    <button class="quick-action" data-action="problemas">
+                      <i class="fas fa-bug"></i>
+                      Problemas comuns
+                    </button>
+                    <button class="quick-action" data-action="sugestoes">
+                      <i class="fas fa-lightbulb"></i>
+                      Sugestões de plantas
+                    </button>
+                  </div>
+                  <div class="message-time">Agora</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Área de Input -->
+            <div class="chat-input-container">
+              <div class="input-actions">
+                <button class="input-action-btn" title="Enviar foto" id="btnFoto">
+                  <i class="fas fa-camera"></i>
+                </button>
+                <button class="input-action-btn" title="Enviar arquivo" id="btnArquivo">
+                  <i class="fas fa-paperclip"></i>
+                </button>
+              </div>
+              <div class="chat-input-wrapper">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem ou faça uma pergunta sobre plantas...">
+                <button class="send-btn" id="sendBtn">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Painel de Informações -->
+          <div class="info-panel">
+            <div class="panel-section">
+              <h4>O que posso fazer por você?</h4>
+              <div class="capabilities-list">
+                <div class="capability">
+                  <i class="fas fa-camera"></i>
+                  <div>
+                    <h5>Identificação por Imagem</h5>
+                    <p>Envie fotos para identificar espécies de plantas</p>
+                  </div>
+                </div>
+                <div class="capability">
+                  <i class="fas fa-diagnoses"></i>
+                  <div>
+                    <h5>Diagnóstico de Problemas</h5>
+                    <p>Ajudo a identificar doenças e pragas</p>
+                  </div>
+                </div>
+                <div class="capability">
+                  <i class="fas fa-calendar-alt"></i>
+                  <div>
+                    <h5>Cuidados Personalizados</h5>
+                    <p>Receba orientações específicas para suas plantas</p>
+                  </div>
+                </div>
+                <div class="capability">
+                  <i class="fas fa-seedling"></i>
+                  <div>
+                    <h5>Recomendações</h5>
+                    <p>Sugestões de plantas ideais para seu espaço</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-section">
+              <h4>Exemplos de Perguntas</h4>
+              <div class="example-questions">
+                <button class="example-question" data-question="Como cuidar de uma suculenta?">
+                  "Como cuidar de uma suculenta?"
+                </button>
+                <button class="example-question" data-question="Minha planta está com as folhas amarelas, o que pode ser?">
+                  "Minha planta está com folhas amarelas"
+                </button>
+                <button class="example-question" data-question="Quais plantas são boas para apartamento?">
+                  "Plantas para apartamento"
+                </button>
+                <button class="example-question" data-question="Como fazer mudas de samambaia?">
+                  "Como fazer mudas de samambaia?"
+                </button>
+              </div>
+            </div>
+
+            <div class="panel-section stats-section">
+              <h4>Estatísticas</h4>
+              <div class="stats-grid">
+                <div class="stat">
+                  <div class="stat-number">1.2k+</div>
+                  <div class="stat-label">Plantas Identificadas</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Precisão</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">Disponível</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./ia.js"></script>
+  <script src="../../script/script.js"></script>
+  <script src="../../script/verificaLogin.js"></script>
+  <script src="../../script/sidebar.js"></script>
+  <script src="../../script/animations.js"></script>
+  <script src="../../script/header.js"></script>
+</body>
+</html>
