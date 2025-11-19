@@ -10,35 +10,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
   <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../sidebar.css">
   <link rel="stylesheet" href="contatos.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-content">
-      <ul class="sidebar-menu">
-        <li><a href="../../index.html">Início</a></li>
-        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
-        <li><a href="../servico/servicos.html">Serviços</a></li>
-        <li><a href="">Contatos</a></li>
-      </ul>
-      
-      <div class="sidebar-profile">
-        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
-        <div class="sidebar-profile-info">
-          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
-          <a href="../planta/planta.html">Planta</a>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Overlay do Sidebar -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
   <!-- Header estilo Nike -->
   <header class="nike-header">
     <div class="header-container">
@@ -58,7 +34,7 @@
           <li><a href="../../index.html" class="nav-link">Início</a></li>
           <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
           <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
-          <li><a href="" class="nav-link">Contatos</a></li>
+          <li><a href="" class="nav-link active">Contatos</a></li>
           <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
         </ul>
       </nav>
@@ -75,7 +51,7 @@
           </div>
         </div>
 
-        <!-- Ícone Plantas (substitui o coração) -->
+        <!-- Ícone Plantas -->
         <a href="../planta/planta.html" class="action-icon plants-icon">
           <i class="fas fa-leaf"></i>
         </a>
@@ -111,6 +87,52 @@
       </div>
     </div>
   </header>
+
+  <!-- Menu Mobile -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav">
+      <li class="mobile-nav-item">
+        <a href="../../index.html" class="mobile-nav-link">Início</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="../sobre/sobre.html" class="mobile-nav-link">Sobre Nós</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="../servico/servicos.html" class="mobile-nav-link">Serviços</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="" class="mobile-nav-link active">Contatos</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="../guia/guias.html" class="mobile-nav-link">Guias</a>
+      </li>
+    </ul>
+
+    <div class="mobile-search">
+      <div class="mobile-search-box">
+        <input type="text" class="mobile-search-input" placeholder="Buscar plantas...">
+        <button class="mobile-search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-profile">
+      <a href="../../login/index.html" class="mobile-profile-link">
+        <i class="fas fa-sign-in-alt"></i>
+        Fazer Login
+      </a>
+      <a href="../planta/planta.html" class="mobile-profile-link">
+        <i class="fas fa-leaf"></i>
+        Minhas Plantas
+      </a>
+      <a href="" class="mobile-profile-link">
+        <i class="fas fa-headset"></i>
+        Suporte
+      </a>
+    </div>
+  </div>
 
   <main>
     <!-- Hero Section Contatos -->
@@ -271,7 +293,6 @@
 
   <script src="../../script/script.js"></script>
   <script src="../../script/verificaLogin.js"></script>
-  <script src="../../script/sidebar.js"></script>
   <script src="../../script/animations.js"></script>
   <script src="../../script/header.js"></script>
   <script type="module" src="../../script/verificaLogin.js"></script>
