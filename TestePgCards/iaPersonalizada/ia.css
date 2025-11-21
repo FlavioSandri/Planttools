@@ -552,6 +552,144 @@
   color: #666;
 }
 
+/* ================================
+   ESTILOS PARA MENSAGENS DO USUÁRIO
+   ================================ */
+.message.user-message .message-content {
+    background: #d1f4d8;
+    /* verde suave tipo WhatsApp */
+    padding: 10px 12px;
+    border-radius: 14px;
+    border-top-right-radius: 4px;
+    max-width: 75%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+/* ================================
+   ESTILOS PARA MENSAGENS DO BOT
+   ================================ */
+.message.bot-message .message-content {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    padding: 10px 12px;
+    border-radius: 14px;
+    border-top-left-radius: 4px;
+    max-width: 75%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ================================
+   IMAGEM DENTRO DO CHAT
+   ================================ */
+.chat-image-preview {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+    display: block;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+}
+
+/* ================================
+   AVATAR
+   ================================ */
+.message-avatar i {
+    font-size: 20px;
+    color: #3c8d40;
+}
+
+/* ================================
+   TEXTO DA MENSAGEM
+   ================================ */
+.message-text {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #2a2a2a;
+    white-space: pre-line;
+}
+
+/* ================================
+   TEMPO (agora)
+   ================================ */
+.message-time {
+    color: #999;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* ================================
+   ÍCONES DE INPUT (câmera / clipe)
+   ================================ */
+.input-action-btn {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.input-action-btn:hover {
+    color: #3c8d40;
+    transform: scale(1.1);
+}
+
+/* ================================
+   ÁREA DO CHAT
+   ================================ */
+.chat-messages {
+    padding: 18px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ================================
+   DIGITAÇÃO (3 bolinhas animadas)
+   ================================ */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 5px 6px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background: #b9b9b9;
+    border-radius: 50%;
+    animation: blink 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes blink {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
+}
+
+/* ================================
+   RESPONSIVIDADE MOBILE
+   ================================ */
+@media (max-width: 480px) {
+    .message-content {
+        max-width: 85%;
+    }
+
+    .chat-image-preview {
+        max-width: 220px;
+    }
+}
+
+
 /* Responsive */
 @media (max-width: 1024px) {
   .ia-section {

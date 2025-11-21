@@ -148,8 +148,8 @@
                     <i class="fas fa-camera"></i>
                 </button>
             </div>
-            <h2 class="user-name">Maria Silva</h2>
-            <p class="user-email">maria.silva@email.com</p>
+            <h2 class="user-name" id="user">Maria Silva</h2>
+            <p class="user-email" id="email">maria.silva@email.com</p>
             
             <ul class="profile-menu">
                 <li><a href="#" class="menu-link active" data-target="minhas-plantas">
@@ -184,7 +184,7 @@
                 
                 <div class="plants-grid" id="plants-grid">
                     <!-- Card 1 - Berinjela -->
-                    <div class="plant-card-new">
+                    <!-- <div class="plant-card-new">
                         <div class="plant-card-header">
                             <button class="add-plant-btn">
                                 <i class="fas fa-camera"></i>
@@ -226,108 +226,10 @@
                                 <span class="info-value">7</span>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Card 2 - Tomate -->
-                    <div class="plant-card-new">
-                        <div class="plant-card-header">
-                            <button class="add-plant-btn">
-                                <i class="fas fa-camera"></i>
-                            </button>
-                            <h3>Tomate</h3>
-                        </div>
-                        
-                        <div class="plant-image-container">
-                            <div class="plant-image">
-                                <i class="fas fa-seedling"></i>
-                            </div>
-                            <div class="plant-progress">
-                                <div class="progress-circle">
-                                    <div class="progress-bar" data-progress="40"></div>
-                                    <div class="progress-text">40%</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="plant-info-grid">
-                            <div class="info-item">
-                                <span class="info-label">TIPO</span>
-                                <span class="info-value">Vegetal</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">PLANTA</span>
-                                <span class="info-value">Tomate</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">LOCAL</span>
-                                <span class="info-value">Horta</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">M²</span>
-                                <span class="info-value">8</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">PH</span>
-                                <span class="info-value">6.5</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 - Suculenta -->
-                    <div class="plant-card-new">
-                        <div class="plant-card-header">
-                            <button class="add-plant-btn">
-                                <i class="fas fa-camera"></i>
-                            </button>
-                            <h3>Suculenta</h3>
-                        </div>
-                        
-                        <div class="plant-image-container">
-                            <div class="plant-image">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div class="plant-progress">
-                                <div class="progress-circle">
-                                    <div class="progress-bar" data-progress="90"></div>
-                                    <div class="progress-text">90%</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="plant-info-grid">
-                            <div class="info-item">
-                                <span class="info-label">TIPO</span>
-                                <span class="info-value">Ornamental</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">PLANTA</span>
-                                <span class="info-value">Suculenta</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">LOCAL</span>
-                                <span class="info-value">Vaso</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">M²</span>
-                                <span class="info-value">0.5</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">PH</span>
-                                <span class="info-value">6.8</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
 
                     <!-- Card para Adicionar Nova Planta -->
-                    <div class="plant-card-new add-new-card">
-                        <div class="add-new-content">
-                            <div class="add-new-icon">
-                                <i class="fas fa-plus"></i>
-                            </div>
-                            <h3>Adicionar Planta</h3>
-                            <p>Clique para adicionar uma nova planta ao seu jardim</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
 
@@ -336,7 +238,7 @@
                 <p>Suas informações pessoais e dados da conta.</p>
                 
                 <div class="info-grid">
-                    <div class="info-card">
+                    <div class="info-card" id="info-pessoais">
                         <h3>Informações Básicas</h3>
                         <p><strong>Nome:</strong> Maria Silva</p>
                         <p><strong>Email:</strong> maria.silva@email.com</p>
@@ -344,7 +246,7 @@
                         <p><strong>Localização:</strong> São Paulo, SP</p>
                     </div>
                     
-                    <div class="info-card">
+                    <div class="info-card" id="estatisticas">
                         <h3>Estatísticas</h3>
                         <p><strong>Plantas:</strong> 12</p>
                         <p><strong>Posts Salvos:</strong> 8</p>
@@ -516,6 +418,9 @@
 
     <script src="../../script/header.js"></script>
     <script src="../../script/header.js"></script>
+    <script type="module" src="./scripts/buscarPlantas.js"></script>
+    <script type="module" src="./scripts/receitas.js"></script>
+    <script type="module" src="./scripts/alteraDados.js"></script>
 <script>
     // Menu Mobile Functionality
     document.addEventListener('DOMContentLoaded', function() {

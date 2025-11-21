@@ -5,7 +5,7 @@ const token = JSON.parse(localStorage.getItem('token'))
 let alteracoes = []
 
 window.addEventListener('DOMContentLoaded', async () => {
-    
+
     await exibirPlantas()
 
     document.querySelector('#edit-button').addEventListener('click', async () => {
@@ -52,7 +52,6 @@ async function exibirPlantas() {
 
     if (!plantas) return
 
-    container.innerHTML = ''
     plantas.forEach((planta, i) => {
         container.innerHTML +=
             `<div class="plant-card-new">
@@ -99,7 +98,17 @@ async function exibirPlantas() {
                         </div>
                     </div>`
     })
-
+    container.innerHTML += `
+                    <div class="plant-card-new add-new-card">
+                        <div class="add-new-content">
+                            <div class="add-new-icon" onclick="window.location.href='../planta/planta.html'">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3>Adicionar Planta</h3>
+                            <p>Clique para adicionar uma nova planta ao seu jardim</p>
+                        </div>
+                    </div>
+    `
     editarImg();
 }
 
@@ -115,19 +124,19 @@ async function buscaEspecies(token, plantas) {
                     'Authorization': `Bearer ${token}`
                 }
             });
-            
+
             if (!response.ok) return console.error('Erro ao buscar espécies:', response.statusText);
-    
-            
+
+
             const especiesAchadas = await response.json();
 
-            especies.push(especiesAchadas)    
+            especies.push(especiesAchadas)
         }
 
         return especies;
 
     } catch (error) {
-        
+
     }
 }
 
