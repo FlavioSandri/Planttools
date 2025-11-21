@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function alterarDadosUsuario(token, dadosAlterados) {
     const containerPlantas = document.querySelector('#plants-grid')
-    const containerPosts = document.querySelector('#posts-grid')
+    const containerPosts = document.querySelector('#posts-salvos')
     const containerReceitas = document.querySelector('#receitas')
-    const containerSettings = document.querySelector('#settings-form')
+    const containerSettings = document.querySelector('#configuracoes')
 
     const nome = document.querySelector('#user')
     const email = document.querySelector('#email')

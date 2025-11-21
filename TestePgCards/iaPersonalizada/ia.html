@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul class="sidebar-menu">
+        <li><a href="../../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../servico/servicos.html">Serviços</a></li>
+        <li><a href="../contato/contatos.html">Contatos</a></li>
+      </ul>
+
+      <div class="sidebar-profile">
+        <img src="../../img/perfil.png" alt="Perfil" class="sidebar-profile-icon">
+        <div class="sidebar-profile-info">
+          <a id="sidebarEntrar" href="../../login/index.html">Login</a>
+          <a href="../planta/planta.html">Planta</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
   <!-- Header estilo Nike -->
   <header class="nike-header">
     <div class="header-container">
@@ -61,8 +86,8 @@
           <a href="../../login/index.html" class="action-icon profile-icon">
             <i class="fas fa-user"></i>
           </a>
-          <div class="profile-dropdown">
-            <a href="../../login/index.html" class="dropdown-item">
+          <div class="profile-dropdown" id="profileDropdown">
+            <a href="../../login/index.html" class="dropdown-item" id="entrar">
               <i class="fas fa-sign-in-alt"></i>
               Fazer Login
             </a>
@@ -140,7 +165,7 @@
         <div class="hero-text">
           <h1 class="hero-title fade-in-up" data-delay="0.2">ASSISTENTE <span class="highlight">IA</span></h1>
           <p class="hero-description fade-in-up" data-delay="0.4">
-            Nossa inteligência artificial especializada em plantas está aqui para ajudar! 
+            Nossa inteligência artificial especializada em plantas está aqui para ajudar!
             Identifique espécies, receba cuidados personalizados e tire todas suas dúvidas.
           </p>
         </div>
@@ -179,20 +204,9 @@
               </div>
             </div>
 
-            <!-- Área de Upload de Imagem -->
-            <div class="upload-section" id="uploadSection">
-              <div class="upload-content">
-                <i class="fas fa-camera"></i>
-                <h4>Identificar Planta por Foto</h4>
-                <p>Envie uma foto da sua planta para identificação automática</p>
-                <input type="file" id="fileInput" accept="image/*" hidden>
-                <button class="upload-btn" id="uploadBtn">
-                  <i class="fas fa-upload"></i>
-                  Escolher Foto
-                </button>
-                <div class="upload-preview" id="uploadPreview"></div>
-              </div>
-            </div>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <div class="upload-preview" id="uploadPreview"></div>
+
 
             <!-- Área de Mensagens -->
             <div class="chat-messages" id="chatMessages">
@@ -240,7 +254,8 @@
                 </button>
               </div>
               <div class="chat-input-wrapper">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem ou faça uma pergunta sobre plantas...">
+                <input type="text" class="chat-input" id="chatInput"
+                  placeholder="Digite sua mensagem ou faça uma pergunta sobre plantas...">
                 <button class="send-btn" id="sendBtn">
                   <i class="fas fa-paper-plane"></i>
                 </button>
@@ -290,7 +305,8 @@
                 <button class="example-question" data-question="Como cuidar de uma suculenta?">
                   "Como cuidar de uma suculenta?"
                 </button>
-                <button class="example-question" data-question="Minha planta está com as folhas amarelas, o que pode ser?">
+                <button class="example-question"
+                  data-question="Minha planta está com as folhas amarelas, o que pode ser?">
                   "Minha planta está com folhas amarelas"
                 </button>
                 <button class="example-question" data-question="Quais plantas são boas para apartamento?">
@@ -307,6 +323,12 @@
     </section>
   </main>
 
-  <script src="ia.js"></script>
+  <script src="./ia.js"></script>
+  <script src="../../script/script.js"></script>
+  <script type="module" src="../../script/verificaLogin.js"></script>
+  <script src="../../script/sidebar.js"></script>
+  <script src="../../script/animations.js"></script>
+  <script src="../../script/header.js"></script>
 </body>
+
 </html>
