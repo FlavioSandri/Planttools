@@ -10,41 +10,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="sidebar.css">
-  <link rel="stylesheet" href="notification.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-content">
-      <ul class="sidebar-menu">
-        <li><a href="#">Início</a></li>
-        <li><a href="./page/sobre/sobre.html">Sobre Nós</a></li>
-        <li><a href="page/servico/servicos.html">Serviços</a></li>
-        <li><a href="page/contato/contatos.html">Contatos</a></li>
-      </ul>
-      
-      <div class="sidebar-profile">
-        <img src="img/perfil.png" alt="Perfil" class="sidebar-profile-icon" id="profileIcon">
-        <div class="sidebar-profile-info">
-          <a id="sidebarEntrar" href="login/index.html">Login</a>
-          <a href="/page/planta/planta.html">Planta</a>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Overlay do Sidebar -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
   <!-- Header estilo Nike -->
   <header class="nike-header">
     <div class="header-container">
       <!-- Logo -->
       <div class="header-logo">
-        <a href="../../index.html" class="logo-link">
+        <a href="index.html" class="logo-link">
           <div class="plant-logo">
             <i class="fas fa-seedling"></i>
           </div>
@@ -52,20 +27,20 @@
         </a>
       </div>
 
-      <!-- Navegação Principal -->
+      <!-- Navegação Principal - Visível no desktop -->
       <nav class="header-nav">
         <ul class="nav-menu">
-          <li><a href="#" class="nav-link">Início</a></li>
-          <li><a href="page/sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
-          <li><a href="page/servico/servicos.html" class="nav-link">Serviços</a></li>
-          <li><a href="page/contato/contatos.html" class="nav-link">Contatos</a></li>
-          <li><a href="page/guia/guias.html" class="nav-link">Guias</a></li>
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="./page/sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="./page/servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="./page/contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="./page/guia/guias.html" class="nav-link">Guias</a></li>
         </ul>
       </nav>
 
       <!-- Lado Direito - Ações -->
       <div class="header-actions">
-        <!-- Barra de Pesquisa -->
+        <!-- Barra de Pesquisa - Visível no desktop -->
         <div class="search-container">
           <div class="search-box">
             <input type="text" class="search-input" placeholder="Buscar plantas...">
@@ -75,33 +50,34 @@
           </div>
         </div>
 
-        <!-- Ícone Plantas (substitui o coração) -->
-        <a href="/page/planta/planta.html" class="action-icon plants-icon">
-          <i class="fas fa-leaf"></i>        </a>
+        <!-- Ícone Plantas -->
+        <a href="./page/planta/planta.html" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
 
         <!-- Ícone Perfil -->
         <div class="profile-container">
-          <a href="login/index.html" class="action-icon profile-icon">
+          <a href="./login/index.html" class="action-icon profile-icon">
             <i class="fas fa-user"></i>
           </a>
-          <span class="icon-badge">3</span>
-          <div class="profile-dropdown" id="profileDropdown">
-            <a href="login/index.html" class="dropdown-item" id="entrar">
-              <i class="fas fa-sign-in-alt" id="icon"></i>
+          <div class="profile-dropdown">
+            <a href="./login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
               Fazer Login
             </a>
-            <a href="/page/planta/planta.html" class="dropdown-item">
+            <a href="./page/planta/planta.html" class="dropdown-item">
               <i class="fas fa-leaf"></i>
               Minhas Plantas
             </a>
-            <a href="page/contato/contatos.html" class="dropdown-item">
+            <a href="./page/contato/contatos.html" class="dropdown-item">
               <i class="fas fa-headset"></i>
               Suporte
             </a>
           </div>
         </div>
 
-        <!-- Menu Hambúrguer para Mobile -->
+        <!-- Menu Hambúrguer para Mobile/Tablet -->
         <div class="hamburger-menu" id="hamburgerMenu">
           <span></span>
           <span></span>
@@ -111,104 +87,176 @@
     </div>
   </header>
 
+  <!-- Menu Mobile -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav">
+      <li class="mobile-nav-item">
+        <a href="./index.html" class="mobile-nav-link">Início</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="./page/sobre/sobre.html" class="mobile-nav-link">Sobre Nós</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="./page/servico/servicos.html" class="mobile-nav-link">Serviços</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="./page/contato/contatos.html" class="mobile-nav-link">Contatos</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="./page/guia/guias.html" class="mobile-nav-link">Guias</a>
+      </li>
+    </ul>
+
+    <div class="mobile-search">
+      <div class="mobile-search-box">
+        <input type="text" class="mobile-search-input" placeholder="Buscar plantas...">
+        <button class="mobile-search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-profile">
+      <a href="./login/index.html" class="mobile-profile-link">
+        <i class="fas fa-sign-in-alt"></i>
+        Fazer Login
+      </a>
+      <a href="./page/planta/planta.html" class="mobile-profile-link">
+        <i class="fas fa-leaf"></i>
+        Minhas Plantas
+      </a>
+      <a href="./page/contato/contatos.html" class="mobile-profile-link">
+        <i class="fas fa-headset"></i>
+        Suporte
+      </a>
+    </div>
+  </div>
+
   <main>
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
         <div class="hero-text">
-          <div class="brand-subtitle fade-in-up">Planttools</div>
-          <h1 class="hero-title fade-in-up" data-delay="0.2">AJUDANDO VOCÊ A<br><span class="highlight">CULTIVAR PLANTAS</span></h1>
-          <p class="hero-description fade-in-up" data-delay="0.4">Descubra o prazer de cultivar plantas com nossa plataforma inteligente. Desde o plantio até os cuidados diários, estamos aqui para transformar seu jardim em um oasis verde.</p>
+          <h1 class="hero-title fade-in-up" data-delay="0.2">
+            AJUDANDO VOCÊ A<br>
+            <span class="highlight">CULTIVAR PLANTAS</span>
+          </h1>
+          <p class="hero-description fade-in-up" data-delay="0.4">
+            Descubra o prazer de cultivar plantas com nossa plataforma inteligente. 
+            Desde o plantio até os cuidados diários, estamos aqui para transformar 
+            seu jardim em um oasis verde.
+          </p>
         </div>
-        <div class="hero-image fade-in" data-delay="0.6">
-          <img src="img/vasoplanta.png" alt="Planta em vaso">
+        <div class="hero-image fade-in" data-delay="0.8">
+          <img src="./img/index.png" alt="Planta em vaso">
         </div>
       </div>
     </section>
 
     <!-- Features Section Apple Style - Versão 3 Colunas -->
-<section class="features-apple">
-  <div class="section-container">
-    <div class="features-header">
-      <h2 class="features-title">Recursos Inteligentes</h2>
-      <p class="features-subtitle">Tudo que você precisa para cultivar plantas com sucesso</p>
-    </div>
-    
-    <div class="features-grid-apple-3col">
-      <div class="feature-apple-3col">
-        <div class="feature-icon-apple">
-          <i class="fas fa-search"></i>
+    <section class="features-apple">
+      <div class="section-container">
+        <div class="features-header">
+          <h2 class="features-title scroll-fade-in">Recursos Inteligentes</h2>
+          <p class="features-subtitle scroll-fade-in" data-delay="0.2">
+            Tudo que você precisa para cultivar plantas com sucesso
+          </p>
         </div>
-        <h3 class="feature-title-apple">Busca Avançada</h3>
-        <p class="feature-description-apple">Encontre plantas perfeitas para seu espaço, clima e nível de experiência com nossa busca inteligente.</p>
-        <a href="./TestePgCards/buscaAvançada/busca.html" class="feature-link-apple">
-          <span>Explorar plantas</span>
-          <i class="fas fa-chevron-right"></i>
-        </a>
-      </div>
-      
-      <div class="feature-apple-3col">
-        <div class="feature-icon-apple">
-          <i class="fas fa-robot"></i>
+        
+        <div class="features-grid-apple-3col">
+          <div class="feature-apple-3col scroll-slide-in" data-direction="left">
+            <div class="feature-icon-apple">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3 class="feature-title-apple">Busca Avançada</h3>
+            <p class="feature-description-apple">
+              Encontre plantas perfeitas para seu espaço, clima e nível de experiência 
+              com nossa busca inteligente.
+            </p>
+            <a href="./TestePgCards/buscaAvançada/busca.html" class="feature-link-apple">
+              <span>Explorar plantas</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+          
+          <div class="feature-apple-3col scroll-slide-in" data-direction="up">
+            <div class="feature-icon-apple">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="feature-title-apple">IA Personalizada</h3>
+            <p class="feature-description-apple">
+              Receba recomendações inteligentes baseadas nas suas plantas, ambiente 
+              e histórico de cuidados.
+            </p>
+            <a href="./TestePgCards/iaPersonalizada/ia.html" class="feature-link-apple">
+              <span>Experimentar IA</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+          
+          <div class="feature-apple-3col scroll-slide-in" data-direction="right">
+            <div class="feature-icon-apple">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="feature-title-apple">Sugestões Inteligentes</h3>
+            <p class="feature-description-apple">
+              Descubra plantas ideais para sua região, tipo de cultivo e condições 
+              específicas do seu espaço.
+            </p>
+            <a href="./TestePgCards/sugestõesInteligentes/sugestao.html" class="feature-link-apple">
+              <span>Ver sugestões</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+          
+          <div class="feature-apple-3col scroll-slide-in" data-direction="left">
+            <div class="feature-icon-apple">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h3 class="feature-title-apple">Guias Completos</h3>
+            <p class="feature-description-apple">
+              Aprenda tudo sobre cultivo, cuidados específicos, solução de problemas 
+              e técnicas avançadas.
+            </p>
+            <a href="./page/guia/guias.html" class="feature-link-apple">
+              <span>Acessar guias</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+          
+          <div class="feature-apple-3col scroll-slide-in" data-direction="up">
+            <div class="feature-icon-apple">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="feature-title-apple">Lembretes Inteligentes</h3>
+            <p class="feature-description-apple">
+              Receba notificações personalizadas para regar, adubar e cuidar das 
+              suas plantas no momento certo.
+            </p>
+            <a href="#" class="feature-link-apple">
+              <span>Configurar lembretes</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+          
+          <div class="feature-apple-3col scroll-slide-in" data-direction="right">
+            <div class="feature-icon-apple">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="feature-title-apple">Comunidade</h3>
+            <p class="feature-description-apple">
+              Conecte-se com outros cultivadores, compartilhe experiências e 
+              aprenda com a comunidade.
+            </p>
+            <a href="#" class="feature-link-apple">
+              <span>Entrar na comunidade</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
         </div>
-        <h3 class="feature-title-apple">IA Personalizada</h3>
-        <p class="feature-description-apple">Receba recomendações inteligentes baseadas nas suas plantas, ambiente e histórico de cuidados.</p>
-        <a href="./TestePgCards/iaPersonalizada/ia.html" class="feature-link-apple">
-          <span>Experimentar IA</span>
-          <i class="fas fa-chevron-right"></i>
-        </a>
       </div>
-      
-      <div class="feature-apple-3col">
-        <div class="feature-icon-apple">
-          <i class="fas fa-lightbulb"></i>
-        </div>
-        <h3 class="feature-title-apple">Sugestões Inteligentes</h3>
-        <p class="feature-description-apple">Descubra plantas ideais para sua região, tipo de cultivo e condições específicas do seu espaço.</p>
-        <a href="#" class="feature-link-apple">
-          <span>Ver sugestões</span>
-          <i class="fas fa-chevron-right"></i>
-        </a>
-      </div>
-      
-      <div class="feature-apple-3col">
-        <div class="feature-icon-apple">
-          <i class="fas fa-book-open"></i>
-        </div>
-        <h3 class="feature-title-apple">Guias Completos</h3>
-        <p class="feature-description-apple">Aprenda tudo sobre cultivo, cuidados específicos, solução de problemas e técnicas avançadas.</p>
-        <a href="./page/guia/guias.html" class="feature-link-apple">
-          <span>Acessar guias</span>
-          <i class="fas fa-chevron-right"></i>
-        </a>
-      </div>
-      
-      <div class="feature-apple-3col">
-        <div class="feature-icon-apple">
-          <i class="fas fa-calendar-alt"></i>
-        </div>
-        <h3 class="feature-title-apple">Lembretes Inteligentes</h3>
-        <p class="feature-description-apple">Receba notificações personalizadas para regar, adubar e cuidar das suas plantas no momento certo.</p>
-        <a href="#" class="feature-link-apple">
-          <span>Configurar lembretes</span>
-          <i class="fas fa-chevron-right"></i>
-        </a>
-      </div>
-      
-      <div class="feature-apple-3col">
-        <div class="feature-icon-apple">
-          <i class="fas fa-users"></i>
-        </div>
-        <h3 class="feature-title-apple">Comunidade</h3>
-        <p class="feature-description-apple">Conecte-se com outros cultivadores, compartilhe experiências e aprenda com a comunidade.</p>
-        <a href="#" class="feature-link-apple">
-          <span>Entrar na comunidade</span>
-          <i class="fas fa-chevron-right"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Purpose Section com Botões -->
     <section class="purpose">
@@ -254,12 +302,7 @@
     </section>
   </main>
 
-  <script src="script/script.js"></script>
-  <script type="module" src="script/verificaLogin.js"></script>
-  <script src="script/sidebar.js"></script>
-  <script src="script/animations.js"></script>
-  <script src="script/carousel.js"></script>
   <script src="script/header.js"></script>
-  <script type="module" src="script/notification.js"></script>
+  <script src="script/animations.js"></script>
 </body>
 </html>

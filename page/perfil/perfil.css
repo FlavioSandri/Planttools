@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header Styles - IDÊNTICO à página inicial */
+/* Header Styles - ATUALIZADO para ficar idêntico à página inicial */
 .nike-header {
     position: fixed;
     top: 0;
@@ -301,7 +301,7 @@ body {
     transform-origin: center;
 }
 
-/* Menu Mobile - CORREÇÃO COMPLETA */
+/* Menu Mobile - ATUALIZADO */
 .mobile-menu-overlay {
     position: fixed;
     top: 0;

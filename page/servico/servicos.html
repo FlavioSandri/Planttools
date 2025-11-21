@@ -14,7 +14,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
-  <!-- Header estilo Nike -->
+  <!-- Header estilo Nike ATUALIZADO -->
   <header class="nike-header">
     <div class="header-container">
       <!-- Logo -->
@@ -27,7 +27,7 @@
         </a>
       </div>
 
-      <!-- Navegação Principal -->
+      <!-- Navegação Principal - Será movida para o menu hambúrguer em mobile -->
       <nav class="header-nav">
         <ul class="nav-menu">
           <li><a href="../../index.html" class="nav-link">Início</a></li>
@@ -40,7 +40,7 @@
 
       <!-- Lado Direito - Ações -->
       <div class="header-actions">
-        <!-- Barra de Pesquisa -->
+        <!-- Barra de Pesquisa - Será escondida em mobile -->
         <div class="search-container">
           <div class="search-box">
             <input type="text" class="search-input" placeholder="Buscar plantas...">
@@ -53,13 +53,13 @@
         <!-- Ícone Plantas -->
         <a href="../planta/planta.html" class="action-icon plants-icon">
           <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
         </a>
 
         <!-- Ícone Perfil -->
         <div class="profile-container">
           <a href="../../login/index.html" class="action-icon profile-icon">
             <i class="fas fa-user"></i>
-            <span class="icon-badge">3</span>
           </a>
           <div class="profile-dropdown">
             <a href="../../login/index.html" class="dropdown-item">
@@ -77,7 +77,7 @@
           </div>
         </div>
 
-        <!-- Menu Hambúrguer para Mobile -->
+        <!-- Menu Hambúrguer para Mobile/Tablet -->
         <div class="hamburger-menu" id="hamburgerMenu">
           <span></span>
           <span></span>
@@ -134,34 +134,33 @@
   </div>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero Section COM ANIMAÇÕES -->
     <section class="hero-services">
       <div class="hero-content-services">
         <div class="hero-text-services">
-          <div class="brand-subtitle-services">Nossos Serviços</div>
-          <h1 class="hero-title-services">Cultive com <span class="highlight">Confiança</span></h1>
-          <p class="hero-description-services">Do iniciante ao especialista, oferecemos ferramentas inteligentes para transformar seu cultivo em uma experiência simples e bem-sucedida.</p>
+          <h1 class="hero-title-services fade-in-up" data-delay="0.2">Cultive com <span class="highlight">Confiança</span></h1>
+          <p class="hero-description-services fade-in-up" data-delay="0.4">Do iniciante ao especialista, oferecemos ferramentas inteligentes para transformar seu cultivo em uma experiência simples e bem-sucedida.</p>
           <div class="hero-actions">
-            <button class="cta-button primary">Começar Agora</button>
-            <button class="cta-button secondary">Ver Demonstração</button>
+            <button class="cta-button primary fade-in-up" data-delay="0.6">Começar Agora</button>
+            <button class="cta-button secondary fade-in-up" data-delay="0.8">Ver Demonstração</button>
           </div>
         </div>
-        <div class="hero-image-services">
-          <img src="../../img/vasoplanta.png" alt="Planta em vaso">
+        <div class="hero-image-services fade-in" data-delay="1.0">
+          <img src="../../img/servico.png" alt="Planta em vaso">
         </div>
       </div>
     </section>
 
-    <!-- Serviços em Destaque -->
+    <!-- Serviços em Destaque COM ANIMAÇÕES -->
     <section class="featured-services">
       <div class="section-container">
         <div class="services-header">
-          <h2 class="services-title">Soluções Completas para Seu Cultivo</h2>
-          <p class="services-subtitle">Tecnologia inteligente aliada ao conhecimento botânico para resultados excepcionais</p>
+          <h2 class="services-title scroll-fade-in">Soluções Completas para Seu Cultivo</h2>
+          <p class="services-subtitle scroll-fade-in" data-delay="0.2">Tecnologia inteligente aliada ao conhecimento botânico para resultados excepcionais</p>
         </div>
 
         <div class="services-grid-apple">
-          <div class="service-card-apple">
+          <div class="service-card-apple scroll-slide-in" data-direction="left">
             <div class="service-icon-apple">
               <i class="fas fa-robot"></i>
             </div>
@@ -172,13 +171,13 @@
               <li><i class="fas fa-check"></i> Recomendações personalizadas</li>
               <li><i class="fas fa-check"></i> Suporte 24/7</li>
             </ul>
-            <a href="#" class="service-link-apple">
+            <a href="../../TestePgCards/iaPersonalizada/ia.html" class="service-link-apple">
               <span>Experimentar IA</span>
               <i class="fas fa-chevron-right"></i>
             </a>
           </div>
 
-          <div class="service-card-apple">
+          <div class="service-card-apple scroll-slide-in" data-direction="up">
             <div class="service-icon-apple">
               <i class="fas fa-book-open"></i>
             </div>
@@ -189,13 +188,13 @@
               <li><i class="fas fa-check"></i> Cronogramas personalizados</li>
               <li><i class="fas fa-check"></i> Dicas de especialistas</li>
             </ul>
-            <a href="#" class="service-link-apple">
+            <a href="../guia/guias.html" class="service-link-apple">
               <span>Explorar Guias</span>
               <i class="fas fa-chevron-right"></i>
             </a>
           </div>
 
-          <div class="service-card-apple">
+          <div class="service-card-apple scroll-slide-in" data-direction="right">
             <div class="service-icon-apple">
               <i class="fas fa-seedling"></i>
             </div>
@@ -206,7 +205,7 @@
               <li><i class="fas fa-check"></i> Recomendações sazonais</li>
               <li><i class="fas fa-check"></i> Planejamento de jardim</li>
             </ul>
-            <a href="#" class="service-link-apple">
+            <a href="../../TestePgCards/sugestõesInteligentes/sugestao.html" class="service-link-apple">
               <span>Ver Sugestões</span>
               <i class="fas fa-chevron-right"></i>
             </a>
@@ -215,16 +214,16 @@
       </div>
     </section>
 
-    <!-- Serviços Adicionais -->
+    <!-- Serviços Adicionais COM ANIMAÇÕES -->
     <section class="additional-services">
       <div class="section-container">
         <div class="additional-header">
-          <h2>Mais Ferramentas para Seu Sucesso</h2>
-          <p>Recursos avançados para cultivadores que buscam excelência</p>
+          <h2 class="scroll-fade-in">Mais Ferramentas para Seu Sucesso</h2>
+          <p class="scroll-fade-in" data-delay="0.2">Recursos avançados para cultivadores que buscam excelência</p>
         </div>
 
         <div class="additional-grid">
-          <div class="additional-card">
+          <div class="additional-card scroll-fade-in" data-delay="0.4">
             <div class="additional-icon">
               <i class="fas fa-calendar-alt"></i>
             </div>
@@ -234,7 +233,7 @@
             </div>
           </div>
 
-          <div class="additional-card">
+          <div class="additional-card scroll-fade-in" data-delay="0.5">
             <div class="additional-icon">
               <i class="fas fa-chart-line"></i>
             </div>
@@ -244,7 +243,7 @@
             </div>
           </div>
 
-          <div class="additional-card">
+          <div class="additional-card scroll-fade-in" data-delay="0.6">
             <div class="additional-icon">
               <i class="fas fa-users"></i>
             </div>
@@ -254,7 +253,7 @@
             </div>
           </div>
 
-          <div class="additional-card">
+          <div class="additional-card scroll-fade-in" data-delay="0.7">
             <div class="additional-icon">
               <i class="fas fa-mobile-alt"></i>
             </div>
@@ -267,26 +266,26 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section COM ANIMAÇÕES -->
     <section class="cta-section">
       <div class="section-container">
         <div class="cta-content">
-          <h2>Pronto para Transformar Seu Cultivo?</h2>
-          <p>Junte-se a milhares de cultivadores que já estão tendo resultados incríveis com nossas ferramentas.</p>
+          <h2 class="scroll-fade-in">Pronto para Transformar Seu Cultivo?</h2>
+          <p class="scroll-fade-in" data-delay="0.2">Junte-se a milhares de cultivadores que já estão tendo resultados incríveis com nossas ferramentas.</p>
           <div class="cta-buttons">
-            <button class="cta-button large primary">Começar Gratuitamente</button>
-            <button class="cta-button large secondary">Agendar Demonstração</button>
+            <button class="cta-button large primary scroll-fade-in" data-delay="0.4">Começar Gratuitamente</button>
+            <button class="cta-button large secondary scroll-fade-in" data-delay="0.6">Agendar Demonstração</button>
           </div>
           <div class="cta-stats">
-            <div class="stat">
+            <div class="stat scroll-fade-in" data-delay="0.8">
               <div class="stat-number">10K+</div>
               <div class="stat-label">Plantas Cuidadas</div>
             </div>
-            <div class="stat">
+            <div class="stat scroll-fade-in" data-delay="1.0">
               <div class="stat-number">95%</div>
               <div class="stat-label">Taxa de Sucesso</div>
             </div>
-            <div class="stat">
+            <div class="stat scroll-fade-in" data-delay="1.2">
               <div class="stat-number">24/7</div>
               <div class="stat-label">Suporte Disponível</div>
             </div>
@@ -296,9 +295,160 @@
     </section>
   </main>
 
-  <script src="/script/script.js"></script>
-  <script src="/script/header.js"></script>
-  <script src="/script/servico.js"></script>
-  <script type="module" src="../../script/verificaLogin.js"></script>
+  <script>
+    // Header functionality - CORRIGIDO
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerMenu = document.getElementById('hamburgerMenu');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileSearchBtn = document.querySelector('.mobile-search-btn');
+      const mobileSearchInput = document.querySelector('.mobile-search-input');
+      
+      // Toggle do menu hambúrguer - CORREÇÃO
+      if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isActive = mobileMenu.classList.contains('active');
+          
+          if (isActive) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+      }
+      
+      // Fechar menu ao clicar no overlay
+      if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      }
+      
+      // Fechar menu ao clicar em um link - CORREÇÃO
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+      const mobileProfileLinks = document.querySelectorAll('.mobile-profile-link');
+      
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+      
+      mobileProfileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+      
+      // Busca no menu mobile
+      if (mobileSearchBtn && mobileSearchInput) {
+        mobileSearchBtn.addEventListener('click', function() {
+          performMobileSearch();
+        });
+        
+        mobileSearchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performMobileSearch();
+          }
+        });
+      }
+      
+      // Fechar menu ao redimensionar a janela para desktop
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 968) {
+          closeMobileMenu();
+        }
+      });
+      
+      function openMobileMenu() {
+        mobileMenu.classList.add('active');
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        animateHamburger(true);
+      }
+      
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        animateHamburger(false);
+      }
+      
+      function animateHamburger(isActive) {
+        const spans = hamburgerMenu.querySelectorAll('span');
+        if (isActive) {
+          spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+        } else {
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+        }
+      }
+      
+      function performMobileSearch() {
+        const searchTerm = mobileSearchInput.value.trim();
+        if (searchTerm) {
+          alert('Buscar por: ' + searchTerm);
+          // window.location.href = `/buscar?q=${encodeURIComponent(searchTerm)}`;
+        }
+      }
+      
+      // Header scroll effect
+      let lastScrollY = window.scrollY;
+      const header = document.querySelector('.nike-header');
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          header.style.background = 'rgba(255, 255, 255, 0.95)';
+          header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+          header.style.background = 'rgba(255, 255, 255, 0.98)';
+          header.style.boxShadow = 'none';
+        }
+        
+        lastScrollY = window.scrollY;
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      });
+
+      // ANIMAÇÕES DE SCROLL - CORRIGIDAS
+      const scrollElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-in');
+      
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+          elementTop <=
+          (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+      };
+      
+      const displayScrollElement = (element) => {
+        element.classList.add('active');
+      };
+      
+      const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+          if (elementInView(el, 1.2)) {
+            displayScrollElement(el);
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+      });
+      
+      // Initial check for elements in view
+      handleScrollAnimation();
+    });
+  </script>
 </body>
 </html>

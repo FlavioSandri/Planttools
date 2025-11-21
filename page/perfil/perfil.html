@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./perfil.css">
 </head>
 <body>
-    <!-- Header estilo Nike -->
+    <!-- Header estilo Nike ATUALIZADO -->
     <header class="nike-header">
         <div class="header-container">
             <!-- Logo -->
@@ -27,7 +27,7 @@
                 </a>
             </div>
 
-            <!-- Navegação Principal -->
+            <!-- Navegação Principal - Será movida para o menu hambúrguer em mobile -->
             <nav class="header-nav">
                 <ul class="nav-menu">
                     <li><a href="../../index.html" class="nav-link">Início</a></li>
@@ -40,7 +40,7 @@
 
             <!-- Lado Direito - Ações -->
             <div class="header-actions">
-                <!-- Barra de Pesquisa -->
+                <!-- Barra de Pesquisa - Será escondida em mobile -->
                 <div class="search-container">
                     <div class="search-box">
                         <input type="text" class="search-input" placeholder="Buscar plantas...">
@@ -53,16 +53,16 @@
                 <!-- Ícone Plantas -->
                 <a href="../planta/planta.html" class="action-icon plants-icon">
                     <i class="fas fa-leaf"></i>
+                    <span class="icon-badge">3</span>
                 </a>
 
                 <!-- Ícone Perfil -->
                 <div class="profile-container">
-                    <a href="#" class="action-icon profile-icon">
+                    <a href="./perfil.html" class="action-icon profile-icon">
                         <i class="fas fa-user"></i>
-                        <span class="icon-badge">3</span>
                     </a>
-                    <div class="profile-dropdown" id="profileDropdown">
-                        <a href="#" class="dropdown-item">
+                    <div class="profile-dropdown">
+                        <a href="./perfil.html" class="dropdown-item">
                             <i class="fas fa-user"></i>
                             Meu Perfil
                         </a>
@@ -74,14 +74,14 @@
                             <i class="fas fa-headset"></i>
                             Suporte
                         </a>
-                        <a href="../login/index.html" class="dropdown-item">
+                        <a href="../../login/index.html" class="dropdown-item">
                             <i class="fas fa-sign-out-alt"></i>
                             Sair
                         </a>
                     </div>
                 </div>
 
-                <!-- Menu Hambúrguer para Mobile -->
+                <!-- Menu Hambúrguer para Mobile/Tablet -->
                 <div class="hamburger-menu" id="hamburgerMenu">
                     <span></span>
                     <span></span>
@@ -122,9 +122,9 @@
         </div>
 
         <div class="mobile-profile">
-            <a href="../../login/index.html" class="mobile-profile-link">
-                <i class="fas fa-sign-in-alt"></i>
-                Fazer Login
+            <a href="./perfil.html" class="mobile-profile-link">
+                <i class="fas fa-user"></i>
+                Meu Perfil
             </a>
             <a href="../planta/planta.html" class="mobile-profile-link">
                 <i class="fas fa-leaf"></i>
@@ -137,13 +137,13 @@
         </div>
     </div>
 
+    <!-- SEU CONTEÚDO DO PERFIL AQUI (mantido igual) -->
     <main class="profile-main-container">
         <aside class="profile-sidebar">
             <div class="profile-pic-container">
                 <div class="profile-pic">
                     <i class="fas fa-user"></i>
                 </div>
-                <!-- BOTÃO CÂMERA ADICIONADO -->
                 <button class="camera-btn">
                     <i class="fas fa-camera"></i>
                 </button>
@@ -178,12 +178,11 @@
                 </button>
             </div>
             
-            <!-- SEÇÃO MINHAS PLANTAS ATUALIZADA -->
             <div id="minhas-plantas" class="content-section active">
                 <p>Gerencie todas as plantas do seu jardim virtual.</p>
                 
                 <div class="plants-grid" id="plants-grid">
-                    <!-- Card 1 - Berinjela -->
+                    <!-- Cards das plantas aqui (mantido igual) -->
                     <div class="plant-card-new">
                         <div class="plant-card-header">
                             <button class="add-plant-btn">
@@ -191,7 +190,6 @@
                             </button>
                             <h3>Berinjela</h3>
                         </div>
-                        
                         <div class="plant-image-container">
                             <div class="plant-image">
                                 <i class="fas fa-seedling"></i>
@@ -203,7 +201,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="plant-info-grid">
                             <div class="info-item">
                                 <span class="info-label">TIPO</span>
@@ -228,7 +225,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 - Tomate -->
                     <div class="plant-card-new">
                         <div class="plant-card-header">
                             <button class="add-plant-btn">
@@ -236,7 +232,6 @@
                             </button>
                             <h3>Tomate</h3>
                         </div>
-                        
                         <div class="plant-image-container">
                             <div class="plant-image">
                                 <i class="fas fa-seedling"></i>
@@ -248,7 +243,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="plant-info-grid">
                             <div class="info-item">
                                 <span class="info-label">TIPO</span>
@@ -273,7 +267,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 - Suculenta -->
                     <div class="plant-card-new">
                         <div class="plant-card-header">
                             <button class="add-plant-btn">
@@ -281,7 +274,6 @@
                             </button>
                             <h3>Suculenta</h3>
                         </div>
-                        
                         <div class="plant-image-container">
                             <div class="plant-image">
                                 <i class="fas fa-leaf"></i>
@@ -293,7 +285,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="plant-info-grid">
                             <div class="info-item">
                                 <span class="info-label">TIPO</span>
@@ -318,7 +309,6 @@
                         </div>
                     </div>
 
-                    <!-- Card para Adicionar Nova Planta -->
                     <div class="plant-card-new add-new-card">
                         <div class="add-new-content">
                             <div class="add-new-icon">
@@ -331,10 +321,9 @@
                 </div>
             </div>
 
-            <!-- SEÇÃO INFORMAÇÕES PESSOAIS CORRIGIDA -->
+            <!-- Outras seções do perfil aqui (mantidas iguais) -->
             <div id="informacoes" class="content-section">
                 <p>Suas informações pessoais e dados da conta.</p>
-                
                 <div class="info-grid">
                     <div class="info-card">
                         <h3>Informações Básicas</h3>
@@ -343,7 +332,6 @@
                         <p><strong>Telefone:</strong> (11) 99999-9999</p>
                         <p><strong>Localização:</strong> São Paulo, SP</p>
                     </div>
-                    
                     <div class="info-card">
                         <h3>Estatísticas</h3>
                         <p><strong>Plantas:</strong> 12</p>
@@ -351,12 +339,10 @@
                         <p><strong>Receitas:</strong> 5</p>
                         <p><strong>Membro desde:</strong> Jan 2024</p>
                     </div>
-                    
                     <div class="info-card">
                         <h3>Interesses</h3>
                         <p>Plantas ornamentais, Jardinagem interna, Suculentas, Hortaliças, Plantas medicinais</p>
                     </div>
-                    
                     <div class="info-card">
                         <h3>Próximas Tarefas</h3>
                         <p><strong>Regar Samambaia:</strong> Amanhã</p>
@@ -369,7 +355,6 @@
 
             <div id="posts-salvos" class="content-section">
                 <p>Artigos, dicas e tutoriais que você salvou para ler depois.</p>
-                
                 <div class="plants-grid">
                     <div class="plant-card">
                         <div class="plant-img" style="background-color: #e1f5fe;">
@@ -380,7 +365,6 @@
                             <p>Como adubar suas plantas corretamente</p>
                         </div>
                     </div>
-                    
                     <div class="plant-card">
                         <div class="plant-img" style="background-color: #f3e5f5;">
                             <i class="fas fa-tint"></i>
@@ -390,7 +374,6 @@
                             <p>Frequência ideal para cada tipo de planta</p>
                         </div>
                     </div>
-                    
                     <div class="plant-card">
                         <div class="plant-img" style="background-color: #e8f5e9;">
                             <i class="fas fa-bug"></i>
@@ -400,7 +383,6 @@
                             <p>Métodos naturais para proteger suas plantas</p>
                         </div>
                     </div>
-
                     <div class="plant-card">
                         <div class="plant-img" style="background-color: #fff3e0;">
                             <i class="fas fa-sun"></i>
@@ -415,7 +397,6 @@
 
             <div id="minhas-receitas" class="content-section">
                 <p>Suas receitas de adubos, pesticidas naturais e soluções caseiras.</p>
-                
                 <div class="plants-grid" id="receitas">
                     <div class="plant-card">
                         <div class="plant-img" style="background-color: #fff3e0;">
@@ -426,7 +407,6 @@
                             <p>Fertilizante natural com cascas de banana</p>
                         </div>
                     </div>
-                    
                     <div class="plant-card">
                         <div class="plant-img" style="background-color: #fce4ec;">
                             <i class="fas fa-spray-can"></i>
@@ -436,7 +416,6 @@
                             <p>Contra pulgões e cochonilhas</p>
                         </div>
                     </div>
-
                     <div class="plant-card">
                         <div class="plant-img" style="background-color: #e8f5e9;">
                             <i class="fas fa-mortar-pestle"></i>
@@ -446,7 +425,6 @@
                             <p>Com borra de café e cascas de ovo</p>
                         </div>
                     </div>
-
                     <div class="plant-card">
                         <div class="plant-img" style="background-color: #e1f5fe;">
                             <i class="fas fa-seedling"></i>
@@ -461,33 +439,27 @@
 
             <div id="configuracoes" class="content-section">
                 <p>Gerencie as configurações da sua conta e preferências.</p>
-                
                 <div class="settings-form">
                     <div class="form-group">
                         <label for="nome">Nome Completo</label>
                         <input type="text" id="nome" value="Maria Silva">
                     </div>
-                    
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" value="maria.silva@email.com">
                     </div>
-
                     <div class="form-group">
                         <label for="telefone">Telefone</label>
                         <input type="tel" id="telefone" value="(11) 99999-9999">
                     </div>
-                    
                     <div class="form-group">
                         <label for="localizacao">Localização</label>
                         <input type="text" id="localizacao" value="São Paulo, SP">
                     </div>
-                    
                     <div class="form-group">
                         <label for="interesses">Interesses</label>
                         <textarea id="interesses" rows="3">Plantas ornamentais, Jardinagem interna, Suculentas, Hortaliças, Plantas medicinais</textarea>
                     </div>
-                    
                     <div class="form-group">
                         <label for="notificacoes">Notificações</label>
                         <select id="notificacoes">
@@ -496,7 +468,6 @@
                             <option>Não receber notificações</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="privacidade">Privacidade do Perfil</label>
                         <select id="privacidade">
@@ -505,7 +476,6 @@
                             <option>Somente amigos</option>
                         </select>
                     </div>
-                    
                     <button class="save-btn">
                         <i class="fas fa-save"></i> Salvar Alterações
                     </button>
@@ -514,148 +484,226 @@
         </section>
     </main>
 
-    <script src="../../script/header.js"></script>
-    <script src="../../script/header.js"></script>
-<script>
-    // Menu Mobile Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburgerMenu = document.getElementById('hamburgerMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            hamburgerMenu.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            mobileMenuOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        }
-
-        // Event listeners for mobile menu
-        if (hamburgerMenu) {
-            hamburgerMenu.addEventListener('click', toggleMobileMenu);
-        }
-
-        if (mobileMenuOverlay) {
-            mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
-        }
-
-        // Close mobile menu when clicking on links
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', toggleMobileMenu);
-        });
-
-        // Close menu when clicking on mobile profile links
-        const mobileProfileLinks = document.querySelectorAll('.mobile-profile-link');
-        mobileProfileLinks.forEach(link => {
-            link.addEventListener('click', toggleMobileMenu);
-        });
-
-        // Navegação entre as seções do perfil
-        const menuLinks = document.querySelectorAll('.menu-link');
-        const contentSections = document.querySelectorAll('.content-section');
-        const contentTitle = document.getElementById('content-title');
-        
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Remove a classe active de todos os links e seções
-                menuLinks.forEach(item => item.classList.remove('active'));
-                contentSections.forEach(section => section.classList.remove('active'));
-                
-                // Adiciona a classe active ao link clicado
-                this.classList.add('active');
-                
-                // Mostra a seção correspondente
-                const targetId = this.getAttribute('data-target');
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
+    <script>
+        // Header functionality - CORRIGIDO
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileSearchBtn = document.querySelector('.mobile-search-btn');
+            const mobileSearchInput = document.querySelector('.mobile-search-input');
+            
+            // Toggle do menu hambúrguer - CORREÇÃO
+            if (hamburgerMenu) {
+                hamburgerMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isActive = mobileMenu.classList.contains('active');
                     
-                    // Atualiza o título da seção
-                    const sectionTitles = {
-                        'minhas-plantas': 'Minhas Plantas',
-                        'informacoes': 'Informações Pessoais',
-                        'posts-salvos': 'Posts Salvos',
-                        'minhas-receitas': 'Minhas Receitas',
-                        'configuracoes': 'Configurações'
-                    };
-                    
-                    contentTitle.textContent = sectionTitles[targetId] || 'Minhas Plantas';
+                    if (isActive) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                });
+            }
+            
+            // Fechar menu ao clicar no overlay
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', function() {
+                    closeMobileMenu();
+                });
+            }
+            
+            // Fechar menu ao clicar em um link - CORREÇÃO
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const mobileProfileLinks = document.querySelectorAll('.mobile-profile-link');
+            
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    closeMobileMenu();
+                });
+            });
+            
+            mobileProfileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    closeMobileMenu();
+                });
+            });
+            
+            // Busca no menu mobile
+            if (mobileSearchBtn && mobileSearchInput) {
+                mobileSearchBtn.addEventListener('click', function() {
+                    performMobileSearch();
+                });
+                
+                mobileSearchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        performMobileSearch();
+                    }
+                });
+            }
+            
+            // Fechar menu ao redimensionar a janela para desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 968) {
+                    closeMobileMenu();
                 }
             });
-        });
-        
-        // Botão de editar
-        const editButton = document.getElementById('edit-button');
-        editButton.addEventListener('click', function() {
-            alert('Modo de edição ativado!');
-            // Aqui você pode adicionar a lógica para habilitar a edição dos campos
-        });
-        
-        // Botão da câmera no perfil
-        const cameraBtn = document.querySelector('.camera-btn');
-        if (cameraBtn) {
-            cameraBtn.addEventListener('click', function() {
-                alert('Funcionalidade de alterar foto de perfil será implementada aqui!');
-            });
-        }
-        
-        // Inicializar barras de progresso circular
-        function initializeProgressBars() {
-            const progressBars = document.querySelectorAll('.progress-bar');
             
-            progressBars.forEach(bar => {
-                const progress = bar.getAttribute('data-progress');
-                const progressValue = (progress / 100) * 360;
+            function openMobileMenu() {
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                animateHamburger(true);
+            }
+            
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                animateHamburger(false);
+            }
+            
+            function animateHamburger(isActive) {
+                const spans = hamburgerMenu.querySelectorAll('span');
+                if (isActive) {
+                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            }
+            
+            function performMobileSearch() {
+                const searchTerm = mobileSearchInput.value.trim();
+                if (searchTerm) {
+                    alert('Buscar por: ' + searchTerm);
+                    // window.location.href = `/buscar?q=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+            
+            // Header scroll effect
+            let lastScrollY = window.scrollY;
+            const header = document.querySelector('.nike-header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                    header.style.boxShadow = 'none';
+                }
                 
-                // Aplica o gradiente conico com animação
-                setTimeout(() => {
-                    bar.style.background = `conic-gradient(#2d5a42 ${progressValue}deg, #e8f5e8 0deg)`;
-                }, 300);
+                lastScrollY = window.scrollY;
             });
-        }
 
-        // Função para adicionar nova planta
-        function setupAddPlantButton() {
-            const addNewCard = document.querySelector('.add-new-card');
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // SEU CÓDIGO EXISTENTE DO PERFIL
+            const menuLinks = document.querySelectorAll('.menu-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const contentTitle = document.getElementById('content-title');
             
-            if (addNewCard) {
-                addNewCard.addEventListener('click', function() {
-                    window.location = '../planta/planta.html';
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove a classe active de todos os links e seções
+                    menuLinks.forEach(item => item.classList.remove('active'));
+                    contentSections.forEach(section => section.classList.remove('active'));
+                    
+                    // Adiciona a classe active ao link clicado
+                    this.classList.add('active');
+                    
+                    // Mostra a seção correspondente
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                        
+                        // Atualiza o título da seção
+                        const sectionTitles = {
+                            'minhas-plantas': 'Minhas Plantas',
+                            'informacoes': 'Informações Pessoais',
+                            'posts-salvos': 'Posts Salvos',
+                            'minhas-receitas': 'Minhas Receitas',
+                            'configuracoes': 'Configurações'
+                        };
+                        
+                        contentTitle.textContent = sectionTitles[targetId] || 'Minhas Plantas';
+                    }
+                });
+            });
+            
+            // Botão de editar
+            const editButton = document.getElementById('edit-button');
+            editButton.addEventListener('click', function() {
+                alert('Modo de edição ativado!');
+            });
+            
+            // Botão da câmera no perfil
+            const cameraBtn = document.querySelector('.camera-btn');
+            if (cameraBtn) {
+                cameraBtn.addEventListener('click', function() {
+                    alert('Funcionalidade de alterar foto de perfil será implementada aqui!');
                 });
             }
             
-            // Botões de câmera nas plantas
-            const cameraButtons = document.querySelectorAll('.add-plant-btn');
-            cameraButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    alert('Funcionalidade de adicionar foto da planta será implementada aqui!');
+            // Inicializar barras de progresso circular
+            function initializeProgressBars() {
+                const progressBars = document.querySelectorAll('.progress-bar');
+                
+                progressBars.forEach(bar => {
+                    const progress = bar.getAttribute('data-progress');
+                    const progressValue = (progress / 100) * 360;
+                    
+                    // Aplica o gradiente conico com animação
+                    setTimeout(() => {
+                        bar.style.background = `conic-gradient(#2d5a42 ${progressValue}deg, #e8f5e8 0deg)`;
+                    }, 300);
+                });
+            }
+
+            // Função para adicionar nova planta
+            function setupAddPlantButton() {
+                const addNewCard = document.querySelector('.add-new-card');
+                
+                if (addNewCard) {
+                    addNewCard.addEventListener('click', function() {
+                        window.location.href = '../planta/planta.html';
+                    });
+                }
+                
+                // Botões de câmera nas plantas
+                const cameraButtons = document.querySelectorAll('.add-plant-btn');
+                cameraButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        alert('Funcionalidade de adicionar foto da planta será implementada aqui!');
+                    });
+                });
+            }
+
+            // Inicializar funcionalidades
+            initializeProgressBars();
+            setupAddPlantButton();
+            
+            // Re-inicializar quando mudar para a seção de plantas
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    setTimeout(initializeProgressBars, 300);
                 });
             });
-        }
-
-        // Inicializar funcionalidades
-        initializeProgressBars();
-        setupAddPlantButton();
-        
-        // Re-inicializar quando mudar para a seção de plantas
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                setTimeout(initializeProgressBars, 300);
-            });
         });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                toggleMobileMenu();
-            }
-        });
-    });
-</script>
+    </script>
 </body>
 </html>

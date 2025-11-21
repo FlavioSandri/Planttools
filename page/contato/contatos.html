@@ -11,7 +11,7 @@
   <link rel="manifest" href="/favicon/site.webmanifest">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="contatos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -28,20 +28,20 @@
         </a>
       </div>
 
-      <!-- Navegação Principal -->
+      <!-- Navegação Principal - Visível no desktop -->
       <nav class="header-nav">
         <ul class="nav-menu">
           <li><a href="../../index.html" class="nav-link">Início</a></li>
           <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
           <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
-          <li><a href="" class="nav-link active">Contatos</a></li>
+          <li><a href="../contato/contatos.html" class="nav-link active">Contatos</a></li>
           <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
         </ul>
       </nav>
 
       <!-- Lado Direito - Ações -->
       <div class="header-actions">
-        <!-- Barra de Pesquisa -->
+        <!-- Barra de Pesquisa - Visível no desktop -->
         <div class="search-container">
           <div class="search-box">
             <input type="text" class="search-input" placeholder="Buscar plantas...">
@@ -54,16 +54,16 @@
         <!-- Ícone Plantas -->
         <a href="../planta/planta.html" class="action-icon plants-icon">
           <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
         </a>
 
         <!-- Ícone Perfil -->
         <div class="profile-container">
           <a href="../../login/index.html" class="action-icon profile-icon">
             <i class="fas fa-user"></i>
-            <span class="icon-badge">3</span>
           </a>
-          <div class="profile-dropdown" id="profileDropdown">
-            <a href="../../login/index.html" class="dropdown-item" id="entrar">
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
               <i class="fas fa-sign-in-alt"></i>
               Fazer Login
             </a>
@@ -71,14 +71,14 @@
               <i class="fas fa-leaf"></i>
               Minhas Plantas
             </a>
-            <a href="" class="dropdown-item">
+            <a href="../contato/contatos.html" class="dropdown-item">
               <i class="fas fa-headset"></i>
               Suporte
             </a>
           </div>
         </div>
 
-        <!-- Menu Hambúrguer para Mobile -->
+        <!-- Menu Hambúrguer para Mobile/Tablet -->
         <div class="hamburger-menu" id="hamburgerMenu">
           <span></span>
           <span></span>
@@ -102,7 +102,7 @@
         <a href="../servico/servicos.html" class="mobile-nav-link">Serviços</a>
       </li>
       <li class="mobile-nav-item">
-        <a href="" class="mobile-nav-link active">Contatos</a>
+        <a href="../contato/contatos.html" class="mobile-nav-link active">Contatos</a>
       </li>
       <li class="mobile-nav-item">
         <a href="../guia/guias.html" class="mobile-nav-link">Guias</a>
@@ -127,7 +127,7 @@
         <i class="fas fa-leaf"></i>
         Minhas Plantas
       </a>
-      <a href="" class="mobile-profile-link">
+      <a href="../contato/contatos.html" class="mobile-profile-link">
         <i class="fas fa-headset"></i>
         Suporte
       </a>
@@ -139,29 +139,14 @@
     <section class="hero">
       <div class="hero-content">
         <div class="hero-text">
-          <div class="brand-subtitle fade-in-up">Planttools</div>
           <h1 class="hero-title fade-in-up" data-delay="0.2">PRECISA DE <span class="highlight">AJUDA?</span></h1>
           <p class="hero-description fade-in-up" data-delay="0.4">
             Estamos aqui para ajudar você! Entre em contato com nossa equipe de especialistas 
             e tire todas suas dúvidas sobre plantas, cuidados e nossa plataforma.
           </p>
-          <div class="hero-stats fade-in-up" data-delay="0.6">
-            <div class="stat">
-              <span class="stat-number">24h</span>
-              <span class="stat-label">Tempo de Resposta</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">95%</span>
-              <span class="stat-label">Satisfação</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Gratuito</span>
-            </div>
-          </div>
         </div>
-        <div class="hero-image fade-in" data-delay="0.6">
-          <img src="../../img/ctt.png" alt="Suporte e contato">
+        <div class="hero-image fade-in" data-delay="0.8">
+          <img src="../../img/contato.png" alt="Suporte e contato">
         </div>
       </div>
     </section>
@@ -171,13 +156,13 @@
       <div class="section-container">
         <div class="contact-section">
           <div class="contact-info">
-            <h2 class="features-title">Fale Conosco</h2>
-            <p class="features-subtitle">
+            <h2 class="features-title scroll-fade-in">Fale Conosco</h2>
+            <p class="features-subtitle scroll-fade-in" data-delay="0.2">
               Tem alguma dúvida, sugestão ou precisa de ajuda? Nossa equipe está pronta para atendê-lo!
             </p>
 
             <div class="contact-methods-grid">
-              <div class="contact-method">
+              <div class="contact-method scroll-slide-in" data-direction="left">
                 <div class="method-icon">
                   <i class="fas fa-envelope"></i>
                 </div>
@@ -188,7 +173,7 @@
                 </div>
               </div>
 
-              <div class="contact-method">
+              <div class="contact-method scroll-slide-in" data-direction="up">
                 <div class="method-icon">
                   <i class="fas fa-phone"></i>
                 </div>
@@ -199,7 +184,7 @@
                 </div>
               </div>
 
-              <div class="contact-method">
+              <div class="contact-method scroll-slide-in" data-direction="up">
                 <div class="method-icon">
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
@@ -209,7 +194,7 @@
                 </div>
               </div>
 
-              <div class="contact-method">
+              <div class="contact-method scroll-slide-in" data-direction="right">
                 <div class="method-icon">
                   <i class="fas fa-globe"></i>
                 </div>
@@ -223,9 +208,9 @@
           </div>
 
           <div class="contact-form-container">
-            <div class="contact-form">
+            <div class="contact-form scroll-fade-in" data-delay="0.4">
               <h3>Envie sua Mensagem</h3>
-              <form>
+              <form id="contactForm">
                 <div class="form-group">
                   <input type="text" placeholder="Seu nome completo" required>
                 </div>
@@ -260,28 +245,28 @@
     <section class="purpose" style="background: #f8fdf8;">
       <div class="section-container">
         <div class="purpose-content">
-          <h2>Perguntas Frequentes</h2>
-          <p class="purpose-description">
+          <h2 class="scroll-fade-in">Perguntas Frequentes</h2>
+          <p class="purpose-description scroll-fade-in" data-delay="0.2">
             Encontre respostas para as dúvidas mais comuns sobre nossa plataforma e cuidados com plantas.
           </p>
 
           <div class="faq-grid">
-            <div class="faq-item">
+            <div class="faq-item scroll-slide-in" data-direction="left">
               <h3>Como começar a usar o Planttools?</h3>
               <p>Basta criar uma conta gratuita, adicionar suas plantas e seguir nossas recomendações personalizadas.</p>
             </div>
             
-            <div class="faq-item">
+            <div class="faq-item scroll-slide-in" data-direction="up">
               <h3>O Planttools é realmente gratuito?</h3>
               <p>Sim! Oferecemos todas as funcionalidades básicas gratuitamente. Temos planos premium com recursos extras.</p>
             </div>
             
-            <div class="faq-item">
+            <div class="faq-item scroll-slide-in" data-direction="up">
               <h3>Como identificar uma planta doente?</h3>
               <p>Use nossa ferramenta de diagnóstico por foto ou descreva os sintomas para nossa IA ajudar.</p>
             </div>
             
-            <div class="faq-item">
+            <div class="faq-item scroll-slide-in" data-direction="right">
               <h3>Preciso ser especialista em plantas?</h3>
               <p>Não! Criamos o Planttools justamente para ajudar iniciantes a cuidarem melhor de suas plantas.</p>
             </div>
@@ -291,10 +276,8 @@
     </section>
   </main>
 
-  <script src="../../script/script.js"></script>
-  <script src="../../script/verificaLogin.js"></script>
-  <script src="../../script/animations.js"></script>
   <script src="../../script/header.js"></script>
-  <script type="module" src="../../script/verificaLogin.js"></script>
+  <script src="../../script/animations.js"></script>
+  <script src="contatos.js"></script>
 </body>
 </html>

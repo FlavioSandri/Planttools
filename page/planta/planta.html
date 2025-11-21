@@ -15,7 +15,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Header estilo Nike -->
+  <!-- Header estilo Nike ATUALIZADO -->
   <header class="nike-header">
     <div class="header-container">
       <!-- Logo -->
@@ -28,7 +28,7 @@
         </a>
       </div>
 
-      <!-- Navegação Principal -->
+      <!-- Navegação Principal - Será movida para o menu hambúrguer em mobile -->
       <nav class="header-nav">
         <ul class="nav-menu">
           <li><a href="../../index.html" class="nav-link">Início</a></li>
@@ -41,7 +41,7 @@
 
       <!-- Lado Direito - Ações -->
       <div class="header-actions">
-        <!-- Barra de Pesquisa -->
+        <!-- Barra de Pesquisa - Será escondida em mobile -->
         <div class="search-container">
           <div class="search-box">
             <input type="text" class="search-input" placeholder="Buscar plantas...">
@@ -54,13 +54,13 @@
         <!-- Ícone Plantas -->
         <a href="../planta/planta.html" class="action-icon plants-icon">
           <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
         </a>
 
         <!-- Ícone Perfil -->
         <div class="profile-container">
           <a href="../../login/index.html" class="action-icon profile-icon">
             <i class="fas fa-user"></i>
-            <span class="icon-badge">3</span>
           </a>
           <div class="profile-dropdown">
             <a href="../../login/index.html" class="dropdown-item">
@@ -78,7 +78,7 @@
           </div>
         </div>
 
-        <!-- Menu Hambúrguer para Mobile -->
+        <!-- Menu Hambúrguer para Mobile/Tablet -->
         <div class="hamburger-menu" id="hamburgerMenu">
           <span></span>
           <span></span>
@@ -139,7 +139,6 @@
     <section class="hero">
       <div class="hero-content">
         <div class="hero-text">
-          <div class="brand-subtitle fade-in-up">Planttools</div>
           <h1 class="hero-title fade-in-up" data-delay="0.2">REGISTRE SUA <span class="highlight">PLANTA</span></h1>
           <p class="hero-description fade-in-up" data-delay="0.4">
             Adicione suas plantas à nossa plataforma e receba cuidados personalizados, 
@@ -147,7 +146,7 @@
           </p>
         </div>
         <div class="hero-image fade-in" data-delay="0.6">
-          <img src="../../img/cadastroplanta.png" alt="Cadastro de planta">
+          <img src="../../img/cadastro.png" alt="Cadastro de planta">
         </div>
       </div>
     </section>
@@ -253,9 +252,130 @@
 
   <script type="module" src="./scripts/pegarDados.js"></script>
   <script type="module" src="./scripts/registra.js"></script>
-  <script src="../../script/script.js"></script>
-  <script src="../../script/verificaLogin.js"></script>
-  <script src="../../script/animations.js"></script>
-  <script src="../../script/header.js"></script>
+  <script>
+    // Header functionality - CORRIGIDO
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerMenu = document.getElementById('hamburgerMenu');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileSearchBtn = document.querySelector('.mobile-search-btn');
+      const mobileSearchInput = document.querySelector('.mobile-search-input');
+      
+      // Toggle do menu hambúrguer - CORREÇÃO
+      if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isActive = mobileMenu.classList.contains('active');
+          
+          if (isActive) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+      }
+      
+      // Fechar menu ao clicar no overlay
+      if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      }
+      
+      // Fechar menu ao clicar em um link - CORREÇÃO
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+      const mobileProfileLinks = document.querySelectorAll('.mobile-profile-link');
+      
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+      
+      mobileProfileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+      
+      // Busca no menu mobile
+      if (mobileSearchBtn && mobileSearchInput) {
+        mobileSearchBtn.addEventListener('click', function() {
+          performMobileSearch();
+        });
+        
+        mobileSearchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performMobileSearch();
+          }
+        });
+      }
+      
+      // Fechar menu ao redimensionar a janela para desktop
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 968) {
+          closeMobileMenu();
+        }
+      });
+      
+      function openMobileMenu() {
+        mobileMenu.classList.add('active');
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        animateHamburger(true);
+      }
+      
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        animateHamburger(false);
+      }
+      
+      function animateHamburger(isActive) {
+        const spans = hamburgerMenu.querySelectorAll('span');
+        if (isActive) {
+          spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+        } else {
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+        }
+      }
+      
+      function performMobileSearch() {
+        const searchTerm = mobileSearchInput.value.trim();
+        if (searchTerm) {
+          alert('Buscar por: ' + searchTerm);
+          // window.location.href = `/buscar?q=${encodeURIComponent(searchTerm)}`;
+        }
+      }
+      
+      // Header scroll effect
+      let lastScrollY = window.scrollY;
+      const header = document.querySelector('.nike-header');
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          header.style.background = 'rgba(255, 255, 255, 0.95)';
+          header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+          header.style.background = 'rgba(255, 255, 255, 0.98)';
+          header.style.boxShadow = 'none';
+        }
+        
+        lastScrollY = window.scrollY;
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

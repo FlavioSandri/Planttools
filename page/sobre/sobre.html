@@ -9,8 +9,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../sidebar.css">
   <link rel="stylesheet" href="sobre.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -29,7 +27,7 @@
         </a>
       </div>
 
-      <!-- Navegação Principal -->
+      <!-- Navegação Principal - Será movida para o menu hambúrguer em mobile -->
       <nav class="header-nav">
         <ul class="nav-menu">
           <li><a href="../../index.html" class="nav-link">Início</a></li>
@@ -42,7 +40,7 @@
 
       <!-- Lado Direito - Ações -->
       <div class="header-actions">
-        <!-- Barra de Pesquisa -->
+        <!-- Barra de Pesquisa - Será escondida em mobile -->
         <div class="search-container">
           <div class="search-box">
             <input type="text" class="search-input" placeholder="Buscar plantas...">
@@ -55,16 +53,16 @@
         <!-- Ícone Plantas -->
         <a href="../planta/planta.html" class="action-icon plants-icon">
           <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
         </a>
 
         <!-- Ícone Perfil -->
         <div class="profile-container">
           <a href="../../login/index.html" class="action-icon profile-icon">
             <i class="fas fa-user"></i>
-            <span class="icon-badge">3</span>
           </a>
-          <div class="profile-dropdown" id="profileDropdown">
-            <a href="../../login/index.html" class="dropdown-item" id="entrar">
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
               <i class="fas fa-sign-in-alt"></i>
               Fazer Login
             </a>
@@ -79,7 +77,7 @@
           </div>
         </div>
 
-        <!-- Menu Hambúrguer para Mobile -->
+        <!-- Menu Hambúrguer para Mobile/Tablet -->
         <div class="hamburger-menu" id="hamburgerMenu">
           <span></span>
           <span></span>
@@ -140,7 +138,6 @@
     <section class="hero">
       <div class="hero-content">
         <div class="hero-text">
-          <div class="brand-subtitle fade-in-up">Planttools</div>
           <h1 class="hero-title fade-in-up" data-delay="0.2">CONHEÇA NOSSA <span class="highlight">HISTÓRIA</span></h1>
           <p class="hero-description fade-in-up" data-delay="0.4">
             Somos apaixonados por plantas e acreditamos que o cultivo pode transformar vidas e espaços. 
@@ -292,11 +289,6 @@
     </section>
   </main>
 
-  <script src="../../script/script.js"></script>
-  <script src="../../script/verificaLogin.js"></script>
-  <script src="../../script/sidebar.js"></script>
-  <script src="../../script/animations.js"></script>
-  <script src="../../script/header.js"></script>
-  <script type="module" src="../../script/verificaLogin.js"></script>
+  <script src="sobre.js"></script>
 </body>
 </html>

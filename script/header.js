@@ -1,59 +1,89 @@
 // Header functionality
 document.addEventListener('DOMContentLoaded', function() {
   const hamburgerMenu = document.getElementById('hamburgerMenu');
-  const sidebar = document.getElementById('sidebar');
-  const sidebarOverlay = document.getElementById('sidebarOverlay');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+  const mobileSearchBtn = document.querySelector('.mobile-search-btn');
+  const mobileSearchInput = document.querySelector('.mobile-search-input');
   
-  // Toggle sidebar
+  // Toggle do menu hambúrguer
   if (hamburgerMenu) {
-    hamburgerMenu.addEventListener('click', function() {
-      const isSidebarOpen = sidebar.classList.contains('active');
+    hamburgerMenu.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isActive = mobileMenu.classList.contains('active');
       
-      if (isSidebarOpen) {
-        closeSidebar();
+      if (isActive) {
+        closeMobileMenu();
       } else {
-        openSidebar();
+        openMobileMenu();
       }
     });
   }
   
-  // Close sidebar when clicking overlay
-  if (sidebarOverlay) {
-    sidebarOverlay.addEventListener('click', closeSidebar);
-  }
-  
-  function openSidebar() {
-    sidebar.classList.add('active');
-    sidebarOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  
-  function closeSidebar() {
-    sidebar.classList.remove('active');
-    sidebarOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  
-  // Search functionality
-  const searchInput = document.querySelector('.search-input');
-  const searchBtn = document.querySelector('.search-btn');
-  
-  if (searchBtn) {
-    searchBtn.addEventListener('click', function() {
-      performSearch();
+  // Fechar menu ao clicar no overlay
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', function() {
+      closeMobileMenu();
     });
   }
   
-  if (searchInput) {
-    searchInput.addEventListener('keypress', function(e) {
+  // Fechar menu ao clicar em um link
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-profile-link');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      closeMobileMenu();
+    });
+  });
+  
+  // Busca no menu mobile
+  if (mobileSearchBtn && mobileSearchInput) {
+    mobileSearchBtn.addEventListener('click', function() {
+      performMobileSearch();
+    });
+    
+    mobileSearchInput.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
-        performSearch();
+        performMobileSearch();
       }
     });
   }
   
-  function performSearch() {
-    const searchTerm = searchInput.value.trim();
+  // Fechar menu ao redimensionar a janela para desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 968) {
+      closeMobileMenu();
+    }
+  });
+  
+  function openMobileMenu() {
+    mobileMenu.classList.add('active');
+    mobileMenuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    animateHamburger(true);
+  }
+  
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('active');
+    mobileMenuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    animateHamburger(false);
+  }
+  
+  function animateHamburger(isActive) {
+    const spans = hamburgerMenu.querySelectorAll('span');
+    if (isActive) {
+      spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+    } else {
+      spans[0].style.transform = 'none';
+      spans[1].style.opacity = '1';
+      spans[2].style.transform = 'none';
+    }
+  }
+  
+  function performMobileSearch() {
+    const searchTerm = mobileSearchInput.value.trim();
     if (searchTerm) {
       // Redirecionar para página de busca ou executar busca
       window.location.href = `/buscar?q=${encodeURIComponent(searchTerm)}`;
@@ -74,5 +104,76 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     lastScrollY = window.scrollY;
+  });
+
+  // Scroll animations
+  const scrollElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-in');
+  
+  const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+      elementTop <=
+      (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+  };
+  
+  const displayScrollElement = (element) => {
+    element.classList.add('active');
+  };
+  
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 1.2)) {
+        displayScrollElement(el);
+      }
+    });
+  };
+  
+  window.addEventListener('scroll', () => {
+    handleScrollAnimation();
+  });
+  
+  // Initial check for elements in view
+  handleScrollAnimation();
+
+  // Ajustar altura das seções dinamicamente
+  function adjustSectionHeights() {
+    const heroSection = document.querySelector('.hero');
+    const featuresSection = document.querySelector('.features-apple');
+    const purposeSection = document.querySelector('.purpose');
+    
+    const viewportHeight = window.innerHeight;
+    const headerHeight = 70;
+    
+    // Ajustar altura do hero para ocupar tela inteira
+    if (heroSection) {
+      heroSection.style.minHeight = `${viewportHeight - headerHeight}px`;
+    }
+    
+    // Ajustar outras seções principais
+    [featuresSection, purposeSection].forEach(section => {
+      if (section) {
+        const sectionHeight = Math.max(viewportHeight, section.scrollHeight);
+        section.style.minHeight = `${sectionHeight}px`;
+      }
+    });
+  }
+
+  // Executar ao carregar e redimensionar
+  adjustSectionHeights();
+  window.addEventListener('resize', adjustSectionHeights);
+
+  // Smooth scroll para links internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
 });

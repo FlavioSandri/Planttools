@@ -9,8 +9,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="guias.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
@@ -27,7 +28,7 @@
         </a>
       </div>
 
-      <!-- Navegação Principal -->
+      <!-- Navegação Principal - Visível no desktop -->
       <nav class="header-nav">
         <ul class="nav-menu">
           <li><a href="../../index.html" class="nav-link">Início</a></li>
@@ -40,7 +41,7 @@
 
       <!-- Lado Direito - Ações -->
       <div class="header-actions">
-        <!-- Barra de Pesquisa -->
+        <!-- Barra de Pesquisa - Visível no desktop -->
         <div class="search-container">
           <div class="search-box">
             <input type="text" class="search-input" placeholder="Buscar plantas...">
@@ -53,13 +54,13 @@
         <!-- Ícone Plantas -->
         <a href="../planta/planta.html" class="action-icon plants-icon">
           <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
         </a>
 
         <!-- Ícone Perfil -->
         <div class="profile-container">
           <a href="../../login/index.html" class="action-icon profile-icon">
             <i class="fas fa-user"></i>
-            <span class="icon-badge">3</span>
           </a>
           <div class="profile-dropdown">
             <a href="../../login/index.html" class="dropdown-item">
@@ -77,7 +78,7 @@
           </div>
         </div>
 
-        <!-- Menu Hambúrguer para Mobile -->
+        <!-- Menu Hambúrguer para Mobile/Tablet -->
         <div class="hamburger-menu" id="hamburgerMenu">
           <span></span>
           <span></span>
@@ -138,16 +139,14 @@
     <section class="hero-guides">
       <div class="hero-content-guides">
         <div class="hero-text-guides">
-          <div class="brand-subtitle-guides">Biblioteca de Conhecimento</div>
-          <h1 class="hero-title-guides">Aprenda a <span class="highlight">Cultivar</span> como um Especialista</h1>
-          <p class="hero-description-guides">Guias completos, tutoriais passo a passo e dicas especializadas para transformar você em um mestre da jardinagem.</p>
-          <div class="hero-actions">
-            <button class="cta-button primary">Explorar Guias</button>
-            <button class="cta-button secondary">Ver Tutoriais</button>
-          </div>
+          <h1 class="hero-title-guides fade-in-up" data-delay="0.2">Aprenda a <span class="highlight">Cultivar</span> como um Especialista</h1>
+          <p class="hero-description-guides fade-in-up" data-delay="0.4">
+            Guias completos, tutoriais passo a passo e dicas especializadas para transformar 
+            você em um mestre da jardinagem.
+          </p>
         </div>
-        <div class="hero-image-guides">
-          <img src="../../img/vasoplanta.png" alt="Guias de cultivo">
+        <div class="hero-image-guides fade-in" data-delay="0.8">
+          <img src="../../img/guia.png" alt="Guias de cultivo">
         </div>
       </div>
     </section>
@@ -156,17 +155,22 @@
     <section class="featured-guides">
       <div class="section-container">
         <div class="guides-header">
-          <h2 class="guides-title">Guias Completos para Seu Cultivo</h2>
-          <p class="guides-subtitle">Aprenda tudo sobre cultivo, cuidados específicos, solução de problemas e técnicas avançadas</p>
+          <h2 class="guides-title scroll-fade-in">Guias Completos para Seu Cultivo</h2>
+          <p class="guides-subtitle scroll-fade-in" data-delay="0.2">
+            Aprenda tudo sobre cultivo, cuidados específicos, solução de problemas e técnicas avançadas
+          </p>
         </div>
 
         <div class="guides-grid-apple">
-          <div class="guide-card-apple">
+          <div class="guide-card-apple scroll-slide-in" data-direction="left">
             <div class="guide-icon-apple">
               <i class="fas fa-seedling"></i>
             </div>
             <h3 class="guide-title-apple">Guia do Iniciante</h3>
-            <p class="guide-description-apple">Tudo que você precisa saber para começar sua jornada no cultivo de plantas, desde a escolha das espécies até os primeiros cuidados.</p>
+            <p class="guide-description-apple">
+              Tudo que você precisa saber para começar sua jornada no cultivo de plantas, 
+              desde a escolha das espécies até os primeiros cuidados.
+            </p>
             <ul class="guide-features">
               <li><i class="fas fa-check"></i> Escolha de plantas ideais</li>
               <li><i class="fas fa-check"></i> Preparação do solo</li>
@@ -178,12 +182,15 @@
             </a>
           </div>
 
-          <div class="guide-card-apple">
+          <div class="guide-card-apple scroll-slide-in" data-direction="up">
             <div class="guide-icon-apple">
               <i class="fas fa-tint"></i>
             </div>
             <h3 class="guide-title-apple">Guia de Rega</h3>
-            <p class="guide-description-apple">Aprenda a regar corretamente cada tipo de planta, identificando sinais de excesso ou falta de água.</p>
+            <p class="guide-description-apple">
+              Aprenda a regar corretamente cada tipo de planta, identificando sinais de 
+              excesso ou falta de água.
+            </p>
             <ul class="guide-features">
               <li><i class="fas fa-check"></i> Frequência ideal</li>
               <li><i class="fas fa-check"></i> Quantidade correta</li>
@@ -195,12 +202,15 @@
             </a>
           </div>
 
-          <div class="guide-card-apple">
+          <div class="guide-card-apple scroll-slide-in" data-direction="right">
             <div class="guide-icon-apple">
               <i class="fas fa-bug"></i>
             </div>
             <h3 class="guide-title-apple">Controle de Pragas</h3>
-            <p class="guide-description-apple">Identifique, previna e trate pragas e doenças com métodos naturais e eficazes para manter suas plantas saudáveis.</p>
+            <p class="guide-description-apple">
+              Identifique, previna e trate pragas e doenças com métodos naturais e eficazes 
+              para manter suas plantas saudáveis.
+            </p>
             <ul class="guide-features">
               <li><i class="fas fa-check"></i> Identificação de pragas</li>
               <li><i class="fas fa-check"></i> Métodos preventivos</li>
@@ -219,17 +229,21 @@
     <section class="step-by-step-guides">
       <div class="section-container">
         <div class="step-header">
-          <h2>Tutoriais Passo a Passo</h2>
-          <p>Aprenda com instruções detalhadas e visuais para técnicas específicas</p>
+          <h2 class="scroll-fade-in">Tutoriais Passo a Passo</h2>
+          <p class="scroll-fade-in" data-delay="0.2">
+            Aprenda com instruções detalhadas e visuais para técnicas específicas
+          </p>
         </div>
 
         <div class="tutorials-grid-apple">
-          <div class="tutorial-card-apple">
+          <div class="tutorial-card-apple scroll-slide-in" data-direction="left">
             <div class="tutorial-icon-apple">
               <i class="fas fa-spa"></i>
             </div>
             <h3 class="tutorial-title-apple">Preparação do Solo</h3>
-            <p class="tutorial-description-apple">Aprenda a criar a mistura de solo perfeita para diferentes tipos de plantas.</p>
+            <p class="tutorial-description-apple">
+              Aprenda a criar a mistura de solo perfeita para diferentes tipos de plantas.
+            </p>
             <div class="tutorial-steps">
               <div class="step">
                 <span class="step-number">1</span>
@@ -250,12 +264,14 @@
             </a>
           </div>
 
-          <div class="tutorial-card-apple">
+          <div class="tutorial-card-apple scroll-slide-in" data-direction="up">
             <div class="tutorial-icon-apple">
               <i class="fas fa-cut"></i>
             </div>
             <h3 class="tutorial-title-apple">Técnicas de Poda</h3>
-            <p class="tutorial-description-apple">Domine as técnicas de poda para manter suas plantas saudáveis e bonitas.</p>
+            <p class="tutorial-description-apple">
+              Domine as técnicas de poda para manter suas plantas saudáveis e bonitas.
+            </p>
             <div class="tutorial-steps">
               <div class="step">
                 <span class="step-number">1</span>
@@ -276,12 +292,14 @@
             </a>
           </div>
 
-          <div class="tutorial-card-apple">
+          <div class="tutorial-card-apple scroll-slide-in" data-direction="right">
             <div class="tutorial-icon-apple">
               <i class="fas fa-leaf"></i>
             </div>
             <h3 class="tutorial-title-apple">Propagação por Estacas</h3>
-            <p class="tutorial-description-apple">Aprenda a multiplicar suas plantas favoritas através de estacas.</p>
+            <p class="tutorial-description-apple">
+              Aprenda a multiplicar suas plantas favoritas através de estacas.
+            </p>
             <div class="tutorial-steps">
               <div class="step">
                 <span class="step-number">1</span>
@@ -309,12 +327,14 @@
     <section class="categories-guides">
       <div class="section-container">
         <div class="categories-header">
-          <h2>Explore por Categoria</h2>
-          <p>Encontre o guia perfeito para sua necessidade específica</p>
+          <h2 class="scroll-fade-in">Explore por Categoria</h2>
+          <p class="scroll-fade-in" data-delay="0.2">
+            Encontre o guia perfeito para sua necessidade específica
+          </p>
         </div>
 
         <div class="categories-grid-apple">
-          <div class="category-card-apple">
+          <div class="category-card-apple scroll-slide-in" data-direction="left">
             <div class="category-icon-apple">
               <i class="fas fa-seedling"></i>
             </div>
@@ -325,7 +345,7 @@
             </div>
           </div>
 
-          <div class="category-card-apple">
+          <div class="category-card-apple scroll-slide-in" data-direction="up">
             <div class="category-icon-apple">
               <i class="fas fa-tint"></i>
             </div>
@@ -336,7 +356,7 @@
             </div>
           </div>
 
-          <div class="category-card-apple">
+          <div class="category-card-apple scroll-slide-in" data-direction="up">
             <div class="category-icon-apple">
               <i class="fas fa-sun"></i>
             </div>
@@ -347,7 +367,7 @@
             </div>
           </div>
 
-          <div class="category-card-apple">
+          <div class="category-card-apple scroll-slide-in" data-direction="right">
             <div class="category-icon-apple">
               <i class="fas fa-vial"></i>
             </div>
@@ -365,13 +385,15 @@
     <section class="cta-guides">
       <div class="section-container">
         <div class="cta-content">
-          <h2>Pronto para Dominar a Arte do Cultivo?</h2>
-          <p>Junte-se a milhares de cultivadores que já transformaram seus jardins usando nossos guias especializados</p>
-          <div class="cta-buttons">
+          <h2 class="scroll-fade-in">Pronto para Dominar a Arte do Cultivo?</h2>
+          <p class="scroll-fade-in" data-delay="0.2">
+            Junte-se a milhares de cultivadores que já transformaram seus jardins usando nossos guias especializados
+          </p>
+          <div class="cta-buttons scroll-fade-in" data-delay="0.4">
             <button class="cta-button large primary">Explorar Todos os Guias</button>
             <button class="cta-button large secondary">Baixar App</button>
           </div>
-          <div class="cta-stats">
+          <div class="cta-stats scroll-fade-in" data-delay="0.6">
             <div class="stat">
               <div class="stat-number">500+</div>
               <div class="stat-label">Guias Disponíveis</div>
@@ -390,7 +412,8 @@
     </section>
   </main>
 
-  <script src="/script/header.js"></script>
+  <script src="../../script/header.js"></script>
+  <script src="../../script/animations.js"></script>
   <script src="guias.js"></script>
 </body>
 </html>
