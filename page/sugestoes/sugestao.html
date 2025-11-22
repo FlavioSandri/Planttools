@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sugestões Inteligentes - Planttools</title>
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="stylesheet" href="sugestao.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header estilo Nike -->
+  <header class="nike-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="../../index.html" class="logo-link">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <span class="logo-text">Planttools</span>
+        </a>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../sobre/sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servico/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="../contato/contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="../guia/guias.html" class="nav-link">Guias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito - Ações -->
+      <div class="header-actions">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Buscar plantas...">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícone Plantas -->
+        <a href="../planta/planta.html" class="action-icon plants-icon">
+          <i class="fas fa-leaf"></i>
+          <span class="icon-badge">3</span>
+        </a>
+
+        <!-- Ícone Perfil -->
+        <div class="profile-container">
+          <a href="../../login/index.html" class="action-icon profile-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="profile-dropdown">
+            <a href="../../login/index.html" class="dropdown-item">
+              <i class="fas fa-sign-in-alt"></i>
+              Fazer Login
+            </a>
+            <a href="../planta/planta.html" class="dropdown-item">
+              <i class="fas fa-leaf"></i>
+              Minhas Plantas
+            </a>
+            <a href="../contato/contatos.html" class="dropdown-item">
+              <i class="fas fa-headset"></i>
+              Suporte
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Hambúrguer para Mobile/Tablet -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu Mobile -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav">
+      <li class="mobile-nav-item">
+        <a href="../../index.html" class="mobile-nav-link">Início</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="../sobre/sobre.html" class="mobile-nav-link">Sobre Nós</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="../servico/servicos.html" class="mobile-nav-link">Serviços</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="../contato/contatos.html" class="mobile-nav-link">Contatos</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="../guia/guias.html" class="mobile-nav-link">Guias</a>
+      </li>
+    </ul>
+
+    <div class="mobile-search">
+      <div class="mobile-search-box">
+        <input type="text" class="mobile-search-input" placeholder="Buscar plantas...">
+        <button class="mobile-search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-profile">
+      <a href="../../login/index.html" class="mobile-profile-link">
+        <i class="fas fa-sign-in-alt"></i>
+        Fazer Login
+      </a>
+      <a href="../planta/planta.html" class="mobile-profile-link">
+        <i class="fas fa-leaf"></i>
+        Minhas Plantas
+      </a>
+      <a href="../contato/contatos.html" class="mobile-profile-link">
+        <i class="fas fa-headset"></i>
+        Suporte
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title fade-in-up" data-delay="0.2">
+            SUGESTÕES <span class="highlight">INTELIGENTES</span>
+          </h1>
+          <p class="hero-description fade-in-up" data-delay="0.4">
+            Descubra as plantas perfeitas para sua região, tipo de cultivo e condições 
+            específicas do seu espaço com nossa tecnologia de recomendação avançada.
+          </p>
+          <div class="hero-stats fade-in-up" data-delay="0.6">
+            <div class="stat">
+              <span class="stat-number">95%</span>
+              <span class="stat-label">Taxa de Acerto</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Espécies</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Personalizado</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image fade-in" data-delay="0.8">
+          <img src="/img/sugestao.png" alt="Sugestões Inteligentes">
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário de Sugestões -->
+    <section class="suggestions-form-section">
+      <div class="section-container">
+        <div class="form-header">
+          <h2 class="scroll-fade-in">Encontre Suas Plantas Ideais</h2>
+          <p class="scroll-fade-in" data-delay="0.2">
+            Preencha as informações abaixo e nossa IA irá recomendar as plantas perfeitas para você
+          </p>
+        </div>
+
+        <div class="form-container">
+          <form class="suggestions-form" id="suggestionsForm">
+            <div class="form-grid">
+              <!-- Localização -->
+              <div class="form-group">
+                <label for="state">Estado</label>
+                <select id="state" name="state" required>
+                  <option value="">Selecione seu estado</option>
+                  <option value="sp">São Paulo</option>
+                  <option value="rj">Rio de Janeiro</option>
+                  <option value="mg">Minas Gerais</option>
+                  <option value="rs">Rio Grande do Sul</option>
+                  <option value="pr">Paraná</option>
+                  <option value="sc">Santa Catarina</option>
+                  <option value="ba">Bahia</option>
+                  <option value="ce">Ceará</option>
+                  <option value="pe">Pernambuco</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="city">Cidade</label>
+                <input type="text" id="city" name="city" placeholder="Digite sua cidade" required>
+              </div>
+
+              <!-- Tipo de Cultivo -->
+              <div class="form-group">
+                <label for="cultivationType">Tipo de Cultivo</label>
+                <select id="cultivationType" name="cultivationType" required>
+                  <option value="">Selecione o tipo</option>
+                  <option value="indoor">Interior (Indoor)</option>
+                  <option value="outdoor">Exterior (Outdoor)</option>
+                  <option value="balcony">Varanda/Balcão</option>
+                  <option value="garden">Jardim</option>
+                  <option value="greenhouse">Estufa</option>
+                </select>
+              </div>
+
+              <!-- Espaço Disponível -->
+              <div class="form-group">
+                <label for="spaceSize">Espaço Disponível</label>
+                <select id="spaceSize" name="spaceSize" required>
+                  <option value="">Selecione o espaço</option>
+                  <option value="small">Pequeno (até 2m²)</option>
+                  <option value="medium">Médio (2-5m²)</option>
+                  <option value="large">Grande (5-10m²)</option>
+                  <option value="very-large">Muito Grande (+10m²)</option>
+                </select>
+              </div>
+
+              <!-- Experiência -->
+              <div class="form-group">
+                <label for="experience">Nível de Experiência</label>
+                <select id="experience" name="experience" required>
+                  <option value="">Selecione sua experiência</option>
+                  <option value="beginner">Iniciante</option>
+                  <option value="intermediate">Intermediário</option>
+                  <option value="advanced">Avançado</option>
+                </select>
+              </div>
+
+              <!-- Luz Solar -->
+              <div class="form-group">
+                <label for="sunlight">Luz Solar Disponível</label>
+                <select id="sunlight" name="sunlight" required>
+                  <option value="">Selecione a luz solar</option>
+                  <option value="full-sun">Sol Pleno (6+ horas/dia)</option>
+                  <option value="partial-sun">Meia Sombra (3-6 horas/dia)</option>
+                  <option value="shade">Sombra (menos de 3 horas/dia)</option>
+                  <option value="indirect">Luz Indireta</option>
+                </select>
+              </div>
+
+              <!-- Objetivo -->
+              <div class="form-group full-width">
+                <label for="purpose">Objetivo do Cultivo</label>
+                <select id="purpose" name="purpose" required>
+                  <option value="">Selecione seu objetivo</option>
+                  <option value="ornamental">Ornamental (Decoração)</option>
+                  <option value="culinary">Culinário (Ervas, Hortaliças)</option>
+                  <option value="medicinal">Medicinal</option>
+                  <option value="air-purifying">Purificação do Ar</option>
+                  <option value="beginner-friendly">Para Iniciantes</option>
+                </select>
+              </div>
+
+              <!-- Tempo Disponível -->
+              <div class="form-group full-width">
+                <label for="timeAvailable">Tempo Disponível para Cuidados</label>
+                <select id="timeAvailable" name="timeAvailable" required>
+                  <option value="">Selecione o tempo disponível</option>
+                  <option value="low">Pouco Tempo (cuidados básicos)</option>
+                  <option value="medium">Tempo Moderado</option>
+                  <option value="high">Muito Tempo (cuidados intensivos)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-magic"></i>
+              Encontrar Plantas Ideais
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resultados das Sugestões -->
+    <section class="suggestions-results" id="suggestionsResults" style="display: none;">
+      <div class="section-container">
+        <div class="results-header">
+          <h2 class="scroll-fade-in">Plantas Ideais para Você</h2>
+          <p class="scroll-fade-in" data-delay="0.2">
+            Baseado nas suas informações, estas são as plantas mais adequadas
+          </p>
+        </div>
+
+        <div class="results-grid" id="resultsGrid">
+          <!-- Os resultados serão inseridos aqui via JavaScript -->
+        </div>
+
+        <div class="results-actions">
+          <button class="cta-button secondary" onclick="resetForm()">
+            <i class="fas fa-redo"></i>
+            Nova Busca
+          </button>
+          <button class="cta-button primary">
+            <i class="fas fa-download"></i>
+            Salvar Sugestões
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="plant-modal" id="plantModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="modal-header">
+        <div class="modal-plant-icon">
+          <i class="fas fa-seedling" id="modalIcon"></i>
+        </div>
+        <div class="modal-title">
+          <h2 id="modalPlantName">Nome da Planta</h2>
+          <span class="modal-match" id="modalMatch">95% de compatibilidade</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Descrição</h3>
+          <p id="modalDescription">Descrição da planta...</p>
+        </div>
+
+        <div class="modal-grid">
+          <div class="modal-section">
+            <h3>Características</h3>
+            <div class="characteristics-grid">
+              <div class="characteristic">
+                <i class="fas fa-sun"></i>
+                <div>
+                  <strong>Luz Solar</strong>
+                  <span id="modalSunlight">Meia Sombra</span>
+                </div>
+              </div>
+              <div class="characteristic">
+                <i class="fas fa-tint"></i>
+                <div>
+                  <strong>Rega</strong>
+                  <span id="modalWater">Moderada</span>
+                </div>
+              </div>
+              <div class="characteristic">
+                <i class="fas fa-thermometer-half"></i>
+                <div>
+                  <strong>Temperatura</strong>
+                  <span id="modalTemperature">15-25°C</span>
+                </div>
+              </div>
+              <div class="characteristic">
+                <i class="fas fa-ruler-combined"></i>
+                <div>
+                  <strong>Porte</strong>
+                  <span id="modalSize">Médio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h3>Cuidados Específicos</h3>
+            <ul class="care-list" id="modalCareList">
+              <!-- Lista de cuidados será preenchida via JS -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3>Recomendações para Seu Perfil</h3>
+          <div class="recommendations" id="modalRecommendations">
+            <!-- Recomendações personalizadas -->
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3>Época de Plantio e Floração</h3>
+          <div class="season-info">
+            <div class="season-item">
+              <i class="fas fa-seedling"></i>
+              <div>
+                <strong>Melhor Época para Plantio</strong>
+                <span id="modalPlantingSeason">Primavera</span>
+              </div>
+            </div>
+            <div class="season-item">
+              <i class="fas fa-flower"></i>
+              <div>
+                <strong>Época de Floração</strong>
+                <span id="modalFloweringSeason">Verão</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="cta-button secondary" onclick="addToMyPlants()">
+          <i class="fas fa-plus"></i>
+          Adicionar às Minhas Plantas
+        </button>
+        <button class="cta-button primary" onclick="sharePlant()">
+          <i class="fas fa-share"></i>
+          Compartilhar
+        </button>
+        </div>
+        </div>
+    </div>
+
+
+    <!-- Como Funciona -->
+    <section class="how-it-works">
+      <div class="section-container">
+        <div class="how-it-works-header">
+          <h2 class="scroll-fade-in">Como Nossas Sugestões Funcionam</h2>
+          <p class="scroll-fade-in" data-delay="0.2">
+            Utilizamos inteligência artificial para analisar múltiplos fatores e encontrar as plantas perfeitas
+          </p>
+        </div>
+
+        <div class="how-it-works-grid">
+          <div class="how-it-works-card scroll-slide-in" data-direction="left">
+            <div class="how-it-works-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Análise de Localização</h3>
+            <p>Consideramos clima, temperatura e condições da sua região para sugerir plantas adaptadas</p>
+          </div>
+
+          <div class="how-it-works-card scroll-slide-in" data-direction="up">
+            <div class="how-it-works-icon">
+              <i class="fas fa-sun"></i>
+            </div>
+            <h3>Condições Ambientais</h3>
+            <p>Avaliamos luz solar, umidade e espaço disponível para recomendações precisas</p>
+          </div>
+
+          <div class="how-it-works-card scroll-slide-in" data-direction="right">
+            <div class="how-it-works-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>Perfil do Cultivador</h3>
+            <p>Adaptamos as sugestões ao seu nível de experiência e tempo disponível</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer estilo Apple -->
+<footer class="apple-footer">
+  <div class="footer-container">
+    <!-- Seção Superior -->
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="plant-logo">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <span class="footer-logo-text">Planttools</span>
+        </div>
+        <p class="footer-tagline">
+          Transformando o cultivo de plantas em uma experiência simples e inteligente
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Rápidos -->
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <h3 class="footer-column-title">Planttools</h3>
+          <ul class="footer-links">
+            <li><a href="../../index.html" class="footer-link">Início</a></li>
+            <li><a href="../sobre/sobre.html" class="footer-link">Sobre Nós</a></li>
+            <li><a href="../servico/servicos.html" class="footer-link">Serviços</a></li>
+            <li><a href="../contato/contatos.html" class="footer-link">Contatos</a></li>
+            <li><a href="../guia/guias.html" class="footer-link">Guias</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-column-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="../servico/servicos.html" class="footer-link">Assistência com IA</a></li>
+            <li><a href="../guia/guias.html" class="footer-link">Guias de Cultivo</a></li>
+            <li><a href="./sugestao.html" class="footer-link">Sugestões Inteligentes</a></li>
+            <li><a href="#" class="footer-link">Comunidade</a></li>
+            <li><a href="#" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-column-title">Suporte</h3>
+          <ul class="footer-links">
+            <li><a href="../contato/contatos.html" class="footer-link">Central de Ajuda</a></li>
+            <li><a href="../contato/contatos.html" class="footer-link">Fale Conosco</a></li>
+            <li><a href="#" class="footer-link">Status do Sistema</a></li>
+            <li><a href="#" class="footer-link">Política de Privacidade</a></li>
+            <li><a href="#" class="footer-link">Termos de Uso</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-column-title">Baixe o App</h3>
+          <div class="app-download">
+            <p>Disponível para iOS e Android</p>
+            <div class="app-badges">
+              <a href="#" class="app-badge">
+                <i class="fab fa-apple"></i>
+                <div>
+                  <span>Download on the</span>
+                  <strong>App Store</strong>
+                </div>
+              </a>
+              <a href="#" class="app-badge">
+                <i class="fab fa-google-play"></i>
+                <div>
+                  <span>Get it on</span>
+                  <strong>Google Play</strong>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divisor -->
+    <div class="footer-divider"></div>
+
+    <!-- Seção Inferior -->
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <p>&copy; 2024 Planttools. Todos os direitos reservados.</p>
+      </div>
+      
+      <div class="footer-legal">
+        <a href="#" class="legal-link">Privacidade</a>
+        <span class="legal-separator">|</span>
+        <a href="#" class="legal-link">Termos</a>
+        <span class="legal-separator">|</span>
+        <a href="#" class="legal-link">Mapa do Site</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="sugestao.js"></script>
+  <script src="../../script/header.js"></script>
+  <script src="../../script/animations.js"></script>
+</body>
+</html>

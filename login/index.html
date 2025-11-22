@@ -1,61 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | Cadastro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Planttools</title>
   <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <div class="container" id="container">
-    <div class="form-container sign-up-container">
-      <form action="#">
-        <h1>Criar Conta</h1>
-        <input id="Nome" type="text" placeholder="Nome" />
-        <input id="Sobrenome" type="text" placeholder="Sobrenome" />
-        <input id="Email" type="email" placeholder="Email" />
-        <input id="Senha" type="password" placeholder="Senha" />
-        <button id="cadastrar">CADASTRAR</button>
-        <script src="./fetchs/cadastro.js"></script>
-      </form>
-    </div>
+  <!-- Logo apenas no topo -->
+  <div class="login-header">
+    <a href="../../index.html" class="logo-link">
+      <div class="plant-logo">
+        <i class="fas fa-seedling"></i>
+      </div>
+      <span class="logo-text">Planttools</span>
+    </a>
+  </div>
 
-    <div class="form-container sign-in-container">
-      <form action="#">
-        <h1>Entrar</h1>
-        <input id="email_login" type="email" placeholder="Email" />
-        <input id="senha_login" type="password" placeholder="Senha" />
-        <a href="#">Esqueci minha senha</a>
-        <button id="entrar">Entrar</button>
-        <script src="./fetchs/login.js"></script>
-      </form>
-    </div>
-
-    <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <img src="/img/plantaWHITE.png" alt="planta" class="img-planta" />
-          <h1><strong>Login</strong></h1>
-          <p>Já tem uma conta?<br />Faça login</p>
-          <button class="ghost" id="signIn">ENTRAR</button>
+  <main>
+    <div class="login-hero">
+      <div class="login-container">
+        <!-- Formulário Ativo - Começa com Login -->
+        <div class="form-active" id="formActive">
+          <!-- Login será carregado aqui -->
         </div>
-        <div class="overlay-panel overlay-right">
-          <img src="/img/vasoplanta.png" alt="planta" class="img-planta" />
-          <h1><strong>Cadastro</strong></h1>
-          <p>Não tem uma conta?<br />Faça o cadastro</p>
-          <button class="ghost" id="signUp">CADASTRO</button>
+
+        <!-- Ilustração lateral -->
+        <div class="login-illustration">
+          <div class="illustration-content">
+            <div class="illustration-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h2 id="illustrationTitle">Bem-vindo de volta!</h2>
+            <p id="illustrationText">Entre na sua conta e continue cuidando das suas plantas</p>
+            <button class="ghost-btn" id="switchIllustrationBtn">
+              <span id="switchBtnText">Criar uma conta</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script type="module" src="script.js"></script>
-</body>
+  </main>
 
+  <!-- Templates dos formulários -->
+  <template id="loginTemplate">
+    <form action="#" class="login-form">
+      <h1>Entrar na Conta</h1>
+      <div class="input-group">
+        <input id="email_login" type="email" placeholder="Email" required />
+        <i class="fas fa-envelope input-icon"></i>
+      </div>
+      <div class="input-group">
+        <input id="senha_login" type="password" placeholder="Senha" required />
+        <i class="fas fa-lock input-icon"></i>
+      </div>
+      <a href="#" class="forgot-password">Esqueci minha senha</a>
+      <button type="submit" class="login-btn primary">ENTRAR</button>
+    </form>
+  </template>
+
+  <template id="signupTemplate">
+    <form action="#" class="signup-form">
+      <h1>Criar Nova Conta</h1>
+      <div class="input-group">
+        <input id="Nome" type="text" placeholder="Nome completo" required />
+        <i class="fas fa-user input-icon"></i>
+      </div>
+      <div class="input-group">
+        <input id="Email" type="email" placeholder="Email" required />
+        <i class="fas fa-envelope input-icon"></i>
+      </div>
+      <div class="input-group">
+        <input id="Senha" type="password" placeholder="Senha" required />
+        <i class="fas fa-lock input-icon"></i>
+      </div>
+      <div class="input-group">
+        <input id="ConfirmarSenha" type="password" placeholder="Confirmar senha" required />
+        <i class="fas fa-lock input-icon"></i>
+      </div>
+      <button type="submit" class="login-btn primary">CRIAR CONTA</button>
+    </form>
+  </template>
+
+  <script src="script.js"></script>
+</body>
 </html>

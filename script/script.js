@@ -21,3 +21,31 @@ document.addEventListener("click", (event) => {
   }
 });
 
+// Footer animations (opcional)
+document.addEventListener('DOMContentLoaded', function() {
+  // Observa quando o footer entra na viewport
+  const footer = document.querySelector('.apple-footer');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  if (footer) {
+    observer.observe(footer);
+  }
+  
+  // Smooth scroll para links do footer
+  document.querySelectorAll('.footer-link[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
