@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 async function buscarPlantas(userToken) {
     try {
-        const response = await fetch(`http://localhost:3000/planttool/v1/plantasUsuario/`, {
+        const response = await fetch(`https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/plantasUsuario/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ async function buscaEspecies(token, plantas) {
 
     try {
         for (let planta of plantas) {
-            const response = await fetch(`http://localhost:3000/planttool/v1/especies/${planta.plantaEspecie_id}`, {
+            const response = await fetch(`https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/especies/${planta.plantaEspecie_id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

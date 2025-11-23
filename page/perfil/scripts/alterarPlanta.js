@@ -8,7 +8,7 @@ export async function salvarAlterções(token, alteracoes) {
         try {
             console.log('Enviando alteração para a planta ID:', alteracao.idPlanta);
 
-            const r = await fetch(`http://localhost:3000/planttool/v1/plantaUsuario/alterarImagem/${alteracao.idPlanta}`, {
+            const r = await fetch(`https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/plantaUsuario/alterarImagem/${alteracao.idPlanta}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`

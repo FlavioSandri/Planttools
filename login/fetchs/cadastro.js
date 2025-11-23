@@ -18,7 +18,7 @@ btn_cadastro.addEventListener('click', () => {
 
 async function cadastrar(data) {
     try {
-        const response = await fetch('http://localhost:3000/planttool/v1/registrarUsuario', {
+        const response = await fetch('https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/registrarUsuario', {
             method: 'POST',
             headers: {
                 'Content-Type': "application/json"

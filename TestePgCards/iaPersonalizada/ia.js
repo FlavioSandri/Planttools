@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(imageFile, text);
 
         try {
-            const response = await fetch("http://localhost:3000/planttool/v1/gemini", {
+            const response = await fetch("https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/gemini", {
                 method: "POST",
                 headers: {
                     'Authorization': `Bearer ${token}`

@@ -68,7 +68,7 @@
                 status.textContent = `Localização: ${latitude.toFixed(3)}, ${longitude.toFixed(3)}`;
                 const params = new URLSearchParams({ latitude, longitude });
 
-                const url = `http://localhost:3000/planttool/v1/clima?${params}`;
+                const url = `https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/clima?${params}`;
                 const response = await fetch(url);
                 const data = await response.json();
 
