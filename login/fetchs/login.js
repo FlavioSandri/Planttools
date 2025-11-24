@@ -1,17 +1,22 @@
-const btn_login = document.querySelector('#entrar')
+document.addEventListener('DOMContentLoaded', () => {
+    const btn_login = document.querySelector('.login-btn');
+    console.log(btn_login);
 
-btn_login.addEventListener('click', (event) => {
-    event.preventDefault()
+    if (!btn_login) return; // evita erro se o template não foi inserido
 
-    const DATA = {
-        email: document.querySelector('#email_login').value,
-        senha: document.querySelector('#senha_login').value
-    }
+    btn_login.addEventListener('click', (event) => {
+        event.preventDefault();
 
-    console.log(DATA)
+        const DATA = {
+            email: document.querySelector('#email_login').value,
+            senha: document.querySelector('#senha_login').value
+        };
 
-    login(DATA)
-})
+        console.log(DATA);
+
+        login(DATA);
+    });
+});
 
 async function login(data) {
 
