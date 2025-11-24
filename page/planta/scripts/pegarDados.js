@@ -21,7 +21,7 @@ async function dadosForm() {
 export async function pegarEspeciePlanta() {
 
     try {
-        const response = await fetch(`http://localhost:3000/planttool/v1/especies`, {
+        const response = await fetch(`https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/especies`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

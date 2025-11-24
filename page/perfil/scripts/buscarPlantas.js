@@ -1,20 +1,28 @@
 import { salvarAlterções } from "./alterarPlanta.js";
 
-const token = JSON.parse(localStorage.getItem('token'))
-
 let alteracoes = []
 
 window.addEventListener('DOMContentLoaded', async () => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    if (!token) {
+        console.warn('Token ausente: usuário não está autenticado.');
+        return;
+    }
 
-    await exibirPlantas()
+    try {
+        await exibirPlantas(token)
+    } catch (err) {
+        console.error('Erro em exibirPlantas:', err);
+    }
 
-    document.querySelector('#edit-button').addEventListener('click', async () => {
-        const data = await salvarAlterções(token, alteracoes)
-
-        console.log(document.querySelector('#edit-button'))
-        console.log(data)
-    })
-
+    const editBtn = document.querySelector('#edit-button');
+    if (editBtn) {
+        editBtn.addEventListener('click', async () => {
+            const data = await salvarAlterções(token, alteracoes)
+            console.log(editBtn)
+            console.log(data)
+        })
+    }
 })
 
 async function buscarPlantas(userToken) {
@@ -31,37 +39,47 @@ async function buscarPlantas(userToken) {
             throw new Error(`HTTP ${response.status} - ${errorText}`);
         }
         const plantas = await response.json();
-
-        console.log(plantas)
-
         return plantas;
     } catch (error) {
         console.error('Erro ao buscar plantas do usuário:', error);
+        return null;
     }
 }
 
-async function exibirPlantas() {
-    let container = document.querySelector('#plants-grid');
-    const plantas = await buscarPlantas(token);
-    const especiesData = await buscaEspecies(token, plantas);
+async function exibirPlantas(token) {
+    const container = document.querySelector('#plants-grid');
+    if (!container) {
+        console.warn('Container #plants-grid não encontrado no DOM.');
+        return;
+    }
 
-    const nomesEspecies = especiesData.map(item => {
-        return item[0].plantaEspecie_nome
+    const plantas = await buscarPlantas(token);
+    if (!plantas || plantas.length === 0) {
+        console.info('Nenhuma planta retornada pela API.');
+        return
+    }
+
+    const especiesData = await buscaEspecies(token, plantas);
+    if (!Array.isArray(especiesData)) {
+        console.warn('Especies retornadas inválidas:', especiesData);
+    }
+
+    const nomesEspecies = (especiesData || []).map(item => {
+        return (item && item[0] && item[0].plantaEspecie_nome) || '—'
     })
 
-
-    if (!plantas) return
+    // limpa antes de preencher (evita duplicação se re-renderizar)
+    container.innerHTML = '';
 
     plantas.forEach((planta, i) => {
         container.innerHTML +=
-            `<div class="plant-card-new">
+            `<div class="plant-card-new" id="${planta.userPlanta_id || ''}">
                         <div class="plant-card-header">
                             <button class="add-plant-btn">
                                 <i class="fas fa-camera"></i>
                             </button>
-                            <h3>${planta.userPlanta_nome}</h3>
+                            <h3>${planta.userPlanta_nome || 'Sem nome'}</h3>
                         </div>
-                        
                         <div class="plant-image-container">
                             <div class="plant-image">
                                 <i class="fas fa-seedling"></i>
@@ -73,7 +91,6 @@ async function exibirPlantas() {
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="plant-info-grid">
                             <div class="info-item">
                                 <span class="info-label">TIPO</span>
@@ -81,7 +98,7 @@ async function exibirPlantas() {
                             </div>
                             <div class="info-item">
                                 <span class="info-label">PLANTA</span>
-                                <span class="info-value">${nomesEspecies[i]}</span>
+                                <span class="info-value">${nomesEspecies[i] || '—'}</span>
                             </div>
                             <div class="info-item">
                                 <span class="info-label">LOCAL</span>
@@ -98,6 +115,7 @@ async function exibirPlantas() {
                         </div>
                     </div>`
     })
+
     container.innerHTML += `
                     <div class="plant-card-new add-new-card">
                         <div class="add-new-content">
@@ -114,7 +132,6 @@ async function exibirPlantas() {
 
 async function buscaEspecies(token, plantas) {
     let especies = []
-
     try {
         for (let planta of plantas) {
             const response = await fetch(`https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/especies/${planta.plantaEspecie_id}`, {
@@ -125,36 +142,37 @@ async function buscaEspecies(token, plantas) {
                 }
             });
 
-            if (!response.ok) return console.error('Erro ao buscar espécies:', response.statusText);
-
+            if (!response.ok) {
+                console.error('Erro ao buscar espécies:', response.status, await response.text());
+                especies.push(null);
+                continue;
+            }
 
             const especiesAchadas = await response.json();
-
-            especies.push(especiesAchadas)
+            especies.push(especiesAchadas || null)
         }
-
+        
         return especies;
 
     } catch (error) {
-
+        console.error('Erro em buscaEspecies:', error);
+        return especies;
     }
 }
 
 function editarImg() {
-    const imagens = document.querySelectorAll(".plant-img");
+    // seletor ajustado para ".plant-image"
+    const imagens = document.querySelectorAll(".plant-image");
 
     imagens.forEach(imgDiv => {
-        // Cria um input de arquivo para cada imagem
         const inputFile = document.createElement("input");
         inputFile.type = "file";
         inputFile.accept = "image/*";
         inputFile.style.display = "none";
         imgDiv.appendChild(inputFile);
 
-        // Quando clicar na imagem → abre o seletor
         imgDiv.addEventListener("click", () => inputFile.click());
 
-        // Quando o usuário escolher um arquivo
         inputFile.addEventListener("change", (e) => {
             const file = e.target.files[0];
             if (file) {

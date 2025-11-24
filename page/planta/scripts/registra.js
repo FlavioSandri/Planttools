@@ -16,7 +16,7 @@ btn_form.addEventListener('click', async (e) => {
 
 async function registrarPlanta(data) {
     try {
-        const response = await fetch(`http://localhost:3000/planttool/v1/registrarPlanta`, {
+        const response = await fetch(`https://planttool-tcc-production-1d76.up.railway.app/planttool/v1/registrarPlanta`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

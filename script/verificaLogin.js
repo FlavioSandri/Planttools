@@ -23,14 +23,14 @@ function init() {
     return;
   }
   
-  
-  mudarRota.innerHTML = '<i class="fas fa-user" id="icon"></i> Perfil';
-  mudarRota.href = '/page/perfil/perfil.html';
-  
   const logado = token && usuario;
   console.log(logado ? "Usuário logado" : "Usuário não logado");
 
   if (!logado) return;
+  
+  mudarRota.innerHTML = '<i class="fas fa-user" id="icon"></i> Perfil';
+  mudarRota.href = '/page/perfil/perfil.html';
+  
 
   criarBotaoSair(dropDown);
 }
